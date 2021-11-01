@@ -1,6 +1,6 @@
 title = "Rabbit&Carrot"
-baseURL = "/hugo-website"
-languageCode = "en-us"
+baseURL = "/blogs"
+languageCode = "zh-cn"
 theme = "gohugo-theme-ananke"
 themesDir = "themes"
 

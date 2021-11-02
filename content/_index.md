@@ -1,6 +1,4 @@
----
-title: "Ananke: a Hugo Theme"
-featured_image: '/images/gohugo-default-sample-hero-image.jpg'
-description: "The last theme you'll ever need. Maybe."
----
-Welcome to my blog with some of my work in progress. I've been working on this book idea. You can read some of the chapters below.
++++
+author = "Hugo Authors"
+description = "A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo." # set your site's description here. will be use for home page content meta tags (seo).
++++

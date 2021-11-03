@@ -1,4 +1,4 @@
-baseURL = "http://example.com/"
+baseURL = "/hugo-website"
 languageCode = "zh-cn"
 title = "Rabbit&Carrot"
 theme = "minimal"

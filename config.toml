@@ -1,4 +1,4 @@
-baseURL = "/hugo-website"
+baseURL = "/blog"
 languageCode = "zh-cn"
 title = "Rabbit&Carrot"
 theme = "minimal"

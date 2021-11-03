@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>ng-options学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">ng-options学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>ng-options学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h1 id="ng-options学习笔记">ng-options学习笔记</h1>
+<blockquote>
+<p><strong>重点1：</strong> ng-model的比较的是引用，不是值，所以当比较内容是数组或对象就会容易出现不相等，导致选项中出现<strong>空白选项</strong>
+<strong>重点2：</strong> Do not use <strong>select as</strong> and <strong>track by</strong> in the same expression. They are not designed to work together.</p>
+</blockquote>
+<h2 id="ngoptions">ngOptions</h2>
+<blockquote>
+<ul>
+<li><strong>array data sources</strong></li>
+</ul>
+<blockquote>
+<ol>
+<li>label <strong>for</strong> value <strong>in</strong> array</li>
+<li>select <strong>as</strong> label <strong>for</strong> value <strong>in</strong> array</li>
+<li>label <strong>group by</strong> group <strong>for</strong> value <strong>in</strong> array</li>
+<li>label <strong>disable when</strong> disable <strong>for</strong> value <strong>in</strong> array</li>
+<li>label <strong>group by</strong> group <strong>for</strong> value <strong>in</strong> array <strong>track by</strong> trackexpr</li>
+<li>label <strong>disable when</strong> disable <strong>for</strong> value <strong>in</strong> array <strong>track by</strong> trackexpr</li>
+<li>label <strong>for</strong> value <strong>in</strong> array | orderBy:orderexpr <strong>track by</strong> trackexpr (for including a filter with <strong>track by</strong>)</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>object data sources</strong></li>
+</ul>
+<blockquote>
+<ol>
+<li>label <strong>for</strong> (key , value) <strong>in</strong> object</li>
+<li>select <strong>as</strong> label <strong>for</strong> (key , value) <strong>in</strong> object</li>
+<li>label <strong>group by</strong> group <strong>for</strong> (key, value) <strong>in</strong> object</li>
+<li>label <strong>disable when</strong> disable <strong>for</strong> (key, value) <strong>in</strong> object</li>
+<li>select <strong>as</strong> label <strong>group by</strong> group <strong>for</strong> (key, value) <strong>in</strong> object</li>
+<li>select <strong>as</strong> label <strong>disable when</strong> disable <strong>for</strong> (key, value) <strong>in</strong> object</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>单词解释</p>
+<blockquote>
+<ul>
+<li><strong>array / object</strong>: an expression which evaluates to an array / object to iterate over.</li>
+<li><strong>value</strong>: local variable which will refer to each item in the array or each property value of object during iteration.</li>
+<li><strong>key</strong>: local variable which will refer to a property name in object during iteration.</li>
+<li><strong>label</strong>: The result of this expression will be the label for <code>&lt;option&gt;</code> element. The expression will most likely refer to the value variable (e.g. value.propertyName).</li>
+<li><strong>select</strong>: The result of this expression will be bound to the model of the parent <code>&lt;select&gt;</code> element. If not specified, select expression will default to value.</li>
+<li><strong>group</strong>: The result of this expression will be used to group options using the <code>&lt;optgroup&gt;</code> DOM element.</li>
+<li><strong>disable</strong>: The result of this expression will be used to disable the rendered <code>&lt;option&gt;</code> element. Return true to disable.</li>
+<li><strong>trackexpr</strong>: Used when working with an array of objects. The result of this expression will be used to identify the objects in the array. The trackexpr will most likely refer to the value variable (e.g. value.propertyName). With this the selection is preserved even when the options are recreated (e.g. reloaded from the server).</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="完整例子">完整例子</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ng-options&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;optionsModule&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;OptionsController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">optionsCtrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+
+            <span style="color:#a6e22e">optionsCtrl</span>.<span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [{
+                <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+                <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;aLabel&#39;</span>,
+                <span style="color:#a6e22e">subItem</span><span style="color:#f92672">:</span> {
+                    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;aSubItem&#39;</span>
+                }
+            }, {
+                <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+                <span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bLabel&#39;</span>,
+                <span style="color:#a6e22e">subItem</span><span style="color:#f92672">:</span> {
+                    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bSubItem&#39;</span>
+                }
+            }];
+
+            <span style="color:#75715e">// optionsCtrl.selected = optionsCtrl.items[0].subItem;
+</span><span style="color:#75715e"></span>
+            <span style="color:#75715e">//由于ngModel默认比较的是引用，所以当比较的是数组或对象时，items中的值不相等，所以
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//会产生空白的选择。
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">optionsCtrl</span>.<span style="color:#a6e22e">selected</span> <span style="color:#f92672">=</span> {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;aSubItem&#39;</span>
+            };
+
+            <span style="color:#a6e22e">optionsCtrl</span>.<span style="color:#a6e22e">colors</span> <span style="color:#f92672">=</span> [{
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;black&#39;</span>,
+                <span style="color:#a6e22e">shade</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dark&#39;</span>
+            }, {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;white&#39;</span>,
+                <span style="color:#a6e22e">shade</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;light&#39;</span>,
+                <span style="color:#a6e22e">notAnOption</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+            }, {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span>,
+                <span style="color:#a6e22e">shade</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dark&#39;</span>
+            }, {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;blue&#39;</span>,
+                <span style="color:#a6e22e">shade</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;dark&#39;</span>,
+                <span style="color:#a6e22e">notAnOption</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+            }, {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;yellow&#39;</span>,
+                <span style="color:#a6e22e">shade</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;light&#39;</span>,
+                <span style="color:#a6e22e">notAnOption</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+            }];
+            <span style="color:#a6e22e">optionsCtrl</span>.<span style="color:#a6e22e">myColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">optionsCtrl</span>.<span style="color:#a6e22e">colors</span>[<span style="color:#ae81ff">2</span>]; <span style="color:#75715e">// red
+</span><span style="color:#75715e"></span>        }]);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;OptionsController as optionsCtrl&#34;</span>&gt;
+    &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.subItem as item.label for item in optionsCtrl.items track by item.id&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.selected&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">select</span>&gt;
+    &lt;<span style="color:#f92672">ul</span>&gt;
+        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color in optionsCtrl.colors&#34;</span>&gt;
+            &lt;<span style="color:#f92672">label</span>&gt;Name:
+                &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name&#34;</span>&gt;
+            &lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">label</span>&gt;
+                &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.notAnOption&#34;</span>&gt; Disabled?&lt;/<span style="color:#f92672">label</span>&gt;
+            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.colors.splice($index, 1)&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Remove&#34;</span>&gt;X&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.colors.push({})&#34;</span>&gt;add&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+    &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;<span style="color:#f92672">hr</span>/&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Color (null not allowed):
+        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.myColor&#34;</span> <span style="color:#a6e22e">ng-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name for color in optionsCtrl.colors&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">select</span>&gt;
+    &lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Color (null allowed):
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nullable&#34;</span>&gt;
+    &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.myColor&#34;</span> <span style="color:#a6e22e">ng-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name for color in optionsCtrl.colors&#34;</span>&gt;
+      &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;-- choose color --&lt;/<span style="color:#f92672">option</span>&gt;
+    &lt;/<span style="color:#f92672">select</span>&gt;
+  &lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Color grouped by shade:
+        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.myColor&#34;</span> <span style="color:#a6e22e">ng-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name group by color.shade for color in optionsCtrl.colors&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">select</span>&gt;
+    &lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Color grouped by shade, with some disabled:
+        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.myColor&#34;</span> <span style="color:#a6e22e">ng-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name group by color.shade disable when color.notAnOption for color in optionsCtrl.colors&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">select</span>&gt;
+    &lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">br</span>/&gt; Select
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;optionsCtrl.myColor = { name:&#39;not in list&#39;, shade: &#39;other&#39; }&#34;</span>&gt;bogus&lt;/<span style="color:#f92672">button</span>&gt;.
+    &lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">hr</span>/&gt;
+	<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 这里注意写法 </span><span style="color:#75715e">--&gt;</span>
+    Currently selected: {{ {selected_color:optionsCtrl.myColor} }}&lt;<span style="color:#f92672">hr</span>/&gt;
+    Currently selected: {&#34;selected_color&#34;:{{optionsCtrl.myColor}} }
+    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> 这里注意写法 </span><span style="color:#75715e">--&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;border:solid 1px black; height:20px&#34;</span> <span style="color:#a6e22e">ng-style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{&#39;background-color&#39;:optionsCtrl.myColor.name}&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>ngModel学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">ngModel学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>ngModel学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h1 id="ngmodel学习笔记">ngModel学习笔记</h1>
+<blockquote>
+<p><strong>建议1：</strong> 比较的是引用而不是值，所以对于值为数组或对象时需要特别注意
+<strong>注意1：</strong> ngModel自动创建的对象，是创建到当前$scope中的，所以需要注意创建的区域是否有其他Scope对象</p>
+</blockquote>
+<h2 id="gettersetter">getter/setter</h2>
+<blockquote>
+<p><strong>建议2：</strong> 由于angular会频繁的调用getter,所以get方法尽量要速度快</p>
+</blockquote>
+<h1 id="ngmodeloptions">ngModelOptions</h1>
+<blockquote>
+<p><strong>注意1：</strong> ng-submit提交时处于pending状态的ng-model会立刻触发pending，然后才会提交updated model，而ng-click方式则不会触发ng-model的pending状态，会把当前的ng-model立即提交，<strong>详细例子参见ng-form文档</strong>
+<strong>注意2：</strong> 该指令会影响当前元素和其子类元素的ng-model</p>
+</blockquote>
+<h2 id="arguments">Arguments</h2>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ngModelOptions</td>
+<td>Object</td>
+<td>options to apply to the current model</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Details:</strong></p>
+<ul>
+<li><strong>updateOn</strong>: string specifying which event should the input be bound to. You can set several events using an space delimited list. There is a special event called default that matches the default events belonging of the control.</li>
+<li><strong>debounce</strong>: integer value which contains the debounce model update value in milliseconds. A value of 0 triggers an immediate update. If an object is supplied instead, you can specify a custom value for each event. For example: <code>ng-model-options=&quot;{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }&quot;</code></li>
+<li><strong>allowInvalid</strong>: boolean value which indicates that the model can be set with values that did not validate correctly instead of the default behavior of setting the model to undefined.</li>
+<li><strong>getterSetter</strong>: boolean value which determines whether or not to treat functions bound to ngModel as getters/setters.</li>
+<li><strong>timezone</strong>: Defines the timezone to be used to read/write the Date instance in the model for <code>&lt;input type=&quot;date&quot;&gt;, &lt;input type=&quot;time&quot;&gt;</code>, &hellip; . It understands UTC/GMT and the continental US time zone abbreviations, but for general use, use a time zone offset, for example, <code>'+0430'</code> (4 hours, 30 minutes east of the Greenwich meridian) If not specified, the timezone of the browser will be used.</li>
+</ul>
+<h1 id="完整代码">完整代码</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ng-model(options)&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;modelModule&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;ModelController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">modelCtrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>,
+                <span style="color:#a6e22e">_name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;huis&#39;</span>;
+
+            <span style="color:#75715e">//getter/setter
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">modelCtrl</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newName</span>) {
+                    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">?</span> (<span style="color:#a6e22e">_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newName</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">_name</span>;
+                }
+            }
+
+            <span style="color:#a6e22e">modelCtrl</span>.<span style="color:#a6e22e">cancel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">27</span>) {
+                    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">rollbackForm</span>.<span style="color:#a6e22e">rollbackName</span>.<span style="color:#a6e22e">$rollbackViewValue</span>();
+                    <span style="color:#75715e">//注意这里不能是用modelCtrl,也就是说View中的form 
+</span><span style="color:#75715e"></span>                    <span style="color:#75715e">//对象仍然处于$scope中
+</span><span style="color:#75715e"></span>                }
+            }
+        }])
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ModelController as modelCtrl&#34;</span>&gt;
+    &lt;<span style="color:#f92672">caption</span>&gt;
+        getterSetter, updateOn, debounce
+    &lt;/<span style="color:#f92672">caption</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.user.name&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{getterSetter: true, updateOn: &#39;default blur&#39;, 
+</span><span style="color:#e6db74">	debounce: {default: 500, blur: 0}}&#34;</span>&gt; {{modelCtrl.user.name()}}
+    &lt;<span style="color:#f92672">br</span>&gt; $rollbackViewValue
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rollbackForm&#34;</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rollbackName&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.user.name&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{getterSetter: true, updateOn: &#39;blur&#39;}&#34;</span> <span style="color:#a6e22e">ng-keyup</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.cancel($event)&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userForm&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;Name:
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.user.name&#34;</span> 
+            <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{ debounce: 1000,getterSetter:true }&#34;</span> /&gt;
+        &lt;/<span style="color:#f92672">label</span>&gt;
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userForm.userName.$rollbackViewValue(); modelCtrl.user.name(&#39;&#39;)&#34;</span>&gt;Clear&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;<span style="color:#f92672">br</span> /&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+    &lt;<span style="color:#f92672">pre</span>&gt;user.name = &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-bind</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.user.name()&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">pre</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

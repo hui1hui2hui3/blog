@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>ng-repeat 学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">ng-repeat 学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>ng-repeat 学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h1 id="ng-repeat-学习笔记">ng-repeat 学习笔记</h1>
+<blockquote>
+<p><strong>重点1：</strong> ng-repeat的每一个子项都会产生一个scope
+<strong>重点2：</strong> ng-repeat虽然可以使用Object,如：<code>ng-repeat=&quot;(key, value) in myObj&quot;</code> 但这不是推荐的方式，推荐的是Array, 参考链接**<a href="http://ngmodules.org/modules/angular-toArrayFilter">toArrayFilter</a>**</p>
+</blockquote>
+<h2 id="properties">properties</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$index</code></td>
+<td>number</td>
+<td>iterator offset of the repeated element (0..length-1)</td>
+</tr>
+<tr>
+<td><code>$first</code></td>
+<td>boolean</td>
+<td>true if the repeated element is first in the iterator.</td>
+</tr>
+<tr>
+<td><code>$middle</code></td>
+<td>boolean</td>
+<td>true if the repeated element is between the first and last in the iterator.</td>
+</tr>
+<tr>
+<td><code>$last</code></td>
+<td>boolean</td>
+<td>true if the repeated element is last in the iterator.</td>
+</tr>
+<tr>
+<td><code>$even</code></td>
+<td>boolean</td>
+<td>true if the iterator position $index is even (otherwise false).</td>
+</tr>
+<tr>
+<td><code>$odd</code></td>
+<td>boolean</td>
+<td>true if the iterator position $index is odd (otherwise false).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dom-changes">DOM Changes</h2>
+<ul>
+<li>When an item is <strong>added</strong>, a new instance of the template is added to the DOM.</li>
+<li>When an item is <strong>removed</strong>, its template instance is removed from the DOM.</li>
+<li>When items are <strong>reordered</strong>, their respective templates are reordered in the DOM.</li>
+</ul>
+<h2 id="track-by">Track By</h2>
+<blockquote>
+<p><strong>注意1：</strong> ngRepeat中是不允许存在重复的item的，如果想要重复，则自定义修改通过track by
+<strong>注意2：</strong> track by 必须是最后的表达式</p>
+</blockquote>
+<p>###默认方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;obj in collection track by $id(obj)&#34;</span>&gt;
+  {{obj.prop}}
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>###自定义方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n in [42, 42, 43, 43] track by $index&#34;</span>&gt;
+  {{n}}
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;n in [42, 42, 43, 43] track by myTrackingFunction(n)&#34;</span>&gt;
+  {{n}}
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model in collection track by model.id&#34;</span>&gt;
+  {{model.name}}
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model in collection | orderBy: &#39;id&#39; as filtered_result track by model.id&#34;</span>&gt;
+    {{model.name}}
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><h2 id="ngrepeat">ngRepeat</h2>
+<blockquote>
+<ul>
+<li><strong>variable in expression</strong>.</li>
+</ul>
+<blockquote>
+<ol>
+<li><strong>For example</strong>: <code>album in artist.albums</code></li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>(key, value) in expression</strong>.</li>
+</ul>
+<blockquote>
+<ol>
+<li><strong>For example</strong>: (name, age) in <code>{'adam':10, 'amalie':12}</code></li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>variable in expression track by tracking_expression</strong>.</li>
+</ul>
+<blockquote>
+<ol>
+<li><strong>For example</strong>: <code>item in items</code> is equivalent to <code>item in items track by $id(item)</code>.</li>
+<li><strong>For example</strong>: <code>item in items track by item.id</code>.</li>
+<li><strong>For example</strong>: <code>item in items | filter:searchText track by item.id</code></li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>variable in expression as alias_expression</strong>.</li>
+</ul>
+<blockquote>
+<ol>
+<li><strong>For example</strong>: <code>item in items | filter:x as results</code></li>
+<li><strong>For example</strong>: <code>item in items | filter : x | orderBy : order | limitTo : limit as results</code> .</li>
+</ol>
+</blockquote>
+</blockquote>
+<h2 id="完整例子">完整例子</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;repeatModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ng-repeat&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;repeatModule&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;RepeatController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+
+        }]);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RepeatController as repeatCtrl&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-init</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;friends = [
+</span><span style="color:#e6db74">  {name:&#39;John&#39;, age:25, gender:&#39;boy&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Jessie&#39;, age:30, gender:&#39;girl&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Johanna&#39;, age:28, gender:&#39;girl&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Joy&#39;, age:15, gender:&#39;girl&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Mary&#39;, age:28, gender:&#39;girl&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Peter&#39;, age:95, gender:&#39;boy&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Sebastian&#39;, age:50, gender:&#39;boy&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Erika&#39;, age:27, gender:&#39;girl&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Patrick&#39;, age:40, gender:&#39;boy&#39;},
+</span><span style="color:#e6db74">  {name:&#39;Samantha&#39;, age:60, gender:&#39;girl&#39;}
+</span><span style="color:#e6db74">]&#34;</span>&gt;
+        I have {{friends.length}} friends. They are:
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;q&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;filter friends...&#34;</span> <span style="color:#a6e22e">aria-label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;filter friends&#34;</span> /&gt;
+        &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example-animate-container&#34;</span>&gt;
+            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;animate-repeat&#34;</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;friend in friends | filter:q as results track by friend.name&#34;</span>&gt;
+                [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+            &lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;animate-repeat&#34;</span> <span style="color:#a6e22e">ng-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;results.length == 0&#34;</span>&gt;
+                &lt;<span style="color:#f92672">strong</span>&gt;No results found...&lt;/<span style="color:#f92672">strong</span>&gt;
+            &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>select学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">select学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>select学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h1 id="select学习笔记">select学习笔记</h1>
+<blockquote>
+<p><strong>重点：</strong> 生成select的两种方式<strong>ng-options</strong>和<strong>ng-model</strong>
+<strong>区别：</strong> ng-model绑定的值会转换为string，如果想要绑定不是string的值可以自己用directive convert</p>
+</blockquote>
+<h2 id="官方例子绑定数字">官方例子（绑定数字）</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;model.id&#34;</span> <span style="color:#a6e22e">convert-to-number</span>&gt;
+  &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;Zero&lt;/<span style="color:#f92672">option</span>&gt;
+  &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;One&lt;/<span style="color:#f92672">option</span>&gt;
+  &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;Two&lt;/<span style="color:#f92672">option</span>&gt;
+&lt;/<span style="color:#f92672">select</span>&gt;
+{{ model }}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;nonStringSelect&#39;</span>, [])
+.<span style="color:#a6e22e">run</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$rootScope</span>) {
+  <span style="color:#a6e22e">$rootScope</span>.<span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
+})
+.<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#39;convertToNumber&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">require</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ngModel&#39;</span>,
+    <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>, <span style="color:#a6e22e">ngModel</span>) {
+      <span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$parsers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">val</span>) {
+        <span style="color:#66d9ef">return</span> parseInt(<span style="color:#a6e22e">val</span>, <span style="color:#ae81ff">10</span>);
+      });
+      <span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$formatters</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">val</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">val</span>;
+      });
+    }
+  };
+});
+</code></pre></div><blockquote>
+<p><strong>解释：</strong> 如果不用convertToNumber指令，则会出现select选中空白的情况，因为两者不相等。</p>
+</blockquote>
+<h2 id="完整例子">完整例子</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selectModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;select&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;selectModule&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;SelectController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">selectCtrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+
+            <span style="color:#75715e">// 内容为字符串则不用转换
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// selectCtrl.menus = [&#39;test1&#39;,&#39;test2&#39;,&#39;test3&#39;];
+</span><span style="color:#75715e"></span>
+            <span style="color:#a6e22e">selectCtrl</span>.<span style="color:#a6e22e">menus</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+            <span style="color:#a6e22e">selectCtrl</span>.<span style="color:#a6e22e">selMenu</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">selectCtrl</span>.<span style="color:#a6e22e">menus</span>[<span style="color:#ae81ff">0</span>];
+        }])
+        .<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#39;convertToNumber&#39;</span>, [<span style="color:#66d9ef">function</span>() {
+            <span style="color:#66d9ef">return</span> {
+                <span style="color:#a6e22e">require</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ngModel&#39;</span>,
+                <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>, <span style="color:#a6e22e">ngModel</span>) {
+                    <span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$parsers</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">viewView</span>) {
+                        <span style="color:#66d9ef">return</span> parseInt(<span style="color:#a6e22e">viewView</span>, <span style="color:#ae81ff">10</span>);
+                    });
+                    <span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$formatters</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">modelValue</span>) {
+                        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">modelValue</span>;
+                    });
+                }
+            };
+        }]);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SelectController as selectCtrl&#34;</span>&gt;
+    &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selectCtrl.selMenu&#34;</span> <span style="color:#a6e22e">convert-to-number</span>&gt;
+        &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu in selectCtrl.menus&#34;</span> <span style="color:#a6e22e">ng-value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;menu&#34;</span>&gt;{{menu}}&lt;/<span style="color:#f92672">option</span>&gt;
+    &lt;/<span style="color:#f92672">select</span>&gt;
+    {{selectCtrl.selMenu}}
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-pluralize/">ngPluralize学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

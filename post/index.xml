@@ -72,5 +72,260 @@
 卖出 = 佣金 + 过户费 + 印花税</description>
     </item>
     
+    <item>
+      <title>Angular animation学习笔记</title>
+      <link>/blog/post/angular/guide/animation/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/guide/animation/</guid>
+      <description>[TOC]
+Angular animation 总结  参考文章
+ AngularJS中实现动画效果有两大种方式
+ 基于CSS的动画效果  CSS Transition Animation CSS Class-based Animation   基于Javascript的动画效果  官方给出的能支持动画效果的Directives： Directive | Supported Animations &amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- ngRepeat	| enter, leave and move ngView	| enter and leave ngInclude	| enter and leave ngSwitch	| enter and leave ngIf	| enter and leave ngClass	| add and remove (the CSS class(es) present) ngShow&amp;amp;ngHide	| add and remove (the ng-hide class value) form&amp;amp;ngModel	| add and remove (dirty, pristine, valid, invalid &amp;amp; all other validations) ngMessages	| add and remove (ng-active &amp;amp; ng-inactive) ngMessage	| enter and leave</description>
+    </item>
+    
+    <item>
+      <title>Form(ng-form) 学习笔记</title>
+      <link>/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>#Form(ng-form) 学习笔记 [TOC]
+##1. CSS classes
+ 详情参见Form API
+  ng-valid is set if the form is valid. ng-invalid is set if the form is invalid. ng-pristine is set if the form is pristine. ng-dirty is set if the form is dirty. ng-submitted is set if the form was submitted.  上面的CSS名称表示的是当form处于某种状态时，form会触发的样式。
+例子：想要实现的是form当中有为通过校验的控件时，显示背景色为红色。 CSS实现代码：
+.my-form { transition: all linear 0.5s; background: transparent; } .my-form.ng-invalid { background: red; } HTML实现代码：</description>
+    </item>
+    
+    <item>
+      <title>Form(ng-form) 学习笔记</title>
+      <link>/blog/post/angular/directive/ng-form/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-form/</guid>
+      <description>#Form(ng-form) 学习笔记 [TOC]
+##1. CSS classes
+ 详情参见Form API
+  ng-valid is set if the form is valid. ng-invalid is set if the form is invalid. ng-pristine is set if the form is pristine. ng-dirty is set if the form is dirty. ng-submitted is set if the form was submitted.  上面的CSS名称表示的是当form处于某种状态时，form会触发的样式。
+例子：想要实现的是form当中有为通过校验的控件时，显示背景色为红色。 CSS实现代码：
+.my-form { transition: all linear 0.5s; background: transparent; } .my-form.ng-invalid { background: red; } HTML实现代码：</description>
+    </item>
+    
+    <item>
+      <title>Input(ng-input) 学习笔记</title>
+      <link>/blog/post/angular/directive/ng-input/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-input/</guid>
+      <description>#Input(ng-input) 学习笔记
+ 参考链接：Input API
+  **注意事项: **
+ 不是所有的input都支持ng-model, *input[file]*不支持 使用ng-model属性时，必须使用a.b形式，不能单独使用b的形式   ##Arguments
+   Param Type Details     ngModel string Assignable angular expression to data-bind to.   name(optional) string Property name of the form under which the control is published.   required(optional) string Sets required validation error key if the value is not entered.   ngRequired(optional) boolean Sets required attribute if set to true   ngMinlength(optional) number Sets minlength validation error key if the value is shorter than minlength.</description>
+    </item>
+    
+    <item>
+      <title>Input[type] 系列学习笔记</title>
+      <link>/blog/post/angular/directive/inputtype/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/inputtype/</guid>
+      <description>#Input[type] 系列学习笔记 [TOC]
+input[checkbox] 额外属性 Arguments：    Param Type Details     ngTrueValue(optional) expression The value to which the expression should be set when selected.   ngFalseValue(optional) expression The value to which the expression should be set when not selected.    完整代码 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;inputCheckBox&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;ng-input[checkbox]&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;#34;../bower_components/angular/angular.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; angular.module(&amp;#39;inputCheckBox&amp;#39;, []) .controller(&amp;#39;CheckBoxController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.check = { test1: true, test2: &amp;#39;HEHE&amp;#39; } }]) &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body ng-controller=&amp;#34;CheckBoxController&amp;#34;&amp;gt; &amp;lt;form name=&amp;#34;checkboxForm&amp;#34;&amp;gt; &amp;lt;label&amp;gt; Value1: &amp;lt;input type=&amp;#34;checkbox&amp;#34; name=&amp;#34;check1&amp;#34; ng-model=&amp;#34;check.</description>
+    </item>
+    
+    <item>
+      <title>ng-bind-html &amp; $sce学习笔记</title>
+      <link>/blog/post/angular/directive/ng-bind-htmlsce/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-bind-htmlsce/</guid>
+      <description>#ng-bind-html &amp;amp; $sce学习笔记
+ 注意事项： 用该指令bind内容时，必须依赖ngSanitize模块，同时调用$sce.trustAsHtml等方法，否则会出现 Attempting to use an unsafe value in a safe context. 异常
+ ng-bind-html源码 注意： 可以发现内部是调用的$sce.getTrustedHtml 方法
+var ngBindHtmlDirective = [&amp;#39;$sce&amp;#39;, function($sce) { return function(scope, element, attr) { element.addClass(&amp;#39;ng-binding&amp;#39;).data(&amp;#39;$binding&amp;#39;, attr.ngBindHtml); scope.$watch(attr.ngBindHtml, function ngBindHtmlWatchAction(value) { element.html($sce.getTrustedHtml(value) || &amp;#39;&amp;#39;); }); }; }]; trustAs Vs getTrusted 理解不是透彻，先把想法写一下
+ trustAs 参数是信任内容，调用该方法后会得到一个继承自TrustedValueHolderType对象的对象包裹住真正的内容，该对象须调用getTrusted才可得到包装的内容 getTrusted 参数是包裹内容的trusted对象或者是普通内容，如果是trusted内容则不会做过多处理，如果是普通内容则按照一定的规则删除不信任的内容，该规则可自定义（详情参见$sceDelegateProvider)  官方代码Code &amp;lt;div ng-controller=&amp;#34;AppController as myCtrl&amp;#34;&amp;gt; &amp;lt;i ng-bind-html=&amp;#34;myCtrl.explicitlyTrustedHtml&amp;#34; id=&amp;#34;explicitlyTrustedHtml&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt; &amp;lt;b&amp;gt;User comments&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt; By default, HTML that isn&amp;#39;t explicitly trusted (e.</description>
+    </item>
+    
+    <item>
+      <title>ng-change学习笔记</title>
+      <link>/blog/post/angular/directive/ng-change/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-change/</guid>
+      <description>ng-change学习笔记  注意事项1： 当值改变时，ng-change绑定的expression会立即执行，而不像on-change事件（需要用户离开Form元素或点击回车） 注意事项2： 不会触发ng-change的情况有以下几种：
+  如果通过$parsers返回的值没有改变，则不会触发（if the value returned from the $parsers transformation pipeline has not changed）   如果当前input处于invalid状态，model的值为null，则不会触发（if the input has continued to be invalid since the model will stay null） 如果model的值是通过编程的方式进行改变的而不是改变input value，则不会触发(if the model is changed programmatically and not by a change to the input value)   官方Code &amp;lt;script&amp;gt; angular.module(&amp;#39;changeExample&amp;#39;, []) .controller(&amp;#39;ExampleController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.counter = 0; $scope.change = function() { $scope.counter++; }; }]); &amp;lt;/script&amp;gt; &amp;lt;div ng-controller=&amp;#34;ExampleController&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; ng-model=&amp;#34;confirmed&amp;#34; ng-change=&amp;#34;change()&amp;#34; id=&amp;#34;ng-change-example1&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; ng-model=&amp;#34;confirmed&amp;#34; id=&amp;#34;ng-change-example2&amp;#34; /&amp;gt; &amp;lt;label for=&amp;#34;ng-change-example2&amp;#34;&amp;gt;Confirmed&amp;lt;/label&amp;gt;&amp;lt;br /&amp;gt; &amp;lt;tt&amp;gt;debug = {{confirmed}}&amp;lt;/tt&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;tt&amp;gt;counter = {{counter}}&amp;lt;/tt&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;/div&amp;gt;  Written with StackEdit.</description>
+    </item>
+    
+    <item>
+      <title>ng-checked学习笔记</title>
+      <link>/blog/post/angular/directive/ng-checked/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-checked/</guid>
+      <description>ng-checked学习笔记  注意事项： 该指令不能与ngModel同时使用，否则可能会出现意外的行为。
+ 官方Code &amp;lt;label&amp;gt;Check me to check both: &amp;lt;input type=&amp;#34;checkbox&amp;#34; ng-model=&amp;#34;master&amp;#34;&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;input id=&amp;#34;checkSlave&amp;#34; type=&amp;#34;checkbox&amp;#34; ng-checked=&amp;#34;master&amp;#34; aria-label=&amp;#34;Slave input&amp;#34;&amp;gt;  Written with StackEdit.
+ </description>
+    </item>
+    
+    <item>
+      <title>ng-class学习笔记</title>
+      <link>/blog/post/angular/directive/ng-class/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-class/</guid>
+      <description>ng-class学习笔记 [TOC]
+ 解析表达式expression的5种方式：
+  String Syntax 如果expression是string，则用1个或多个空格风格class names（If the expression evaluates to a string, the string should be one or more space-delimited class names.）, 比如：ng-class=&amp;quot;expression&amp;rdquo;   Map Syntax 如果expression是object, 则key-value形式的对应关系，如果value为true,则应用key作为class类名, 比如（{&amp;lsquo;red&amp;rsquo;: isImportant,&amp;lsquo;bold&amp;rsquo;:isBold}） Array Syntax 如果expression是array, 则数组的元素可以是类型1的string或类型2的object, 可以混用, 比如：[expression1,expression2] Expression Syntax 方式： expression ? &amp;lsquo;class1&amp;rsquo; : &amp;lsquo;class2&amp;rsquo; Select Map Syntax 方式比如： {true: &amp;lsquo;has-error&amp;rsquo;,false:&amp;lsquo;has-normal&amp;rsquo;}[isError], 注意这里的Map形式和第二种的Map相反, 另外需要注意的是isError必须===true 或者 false，不能是undefined | null，否则无法显示样式   参考链接：How to use ng-class
+Animations    name details     add happens just before the class is applied to the elements(ng-add)   remove happens just before the class is removed from the element(ng-remove)    代码演示Animation（官方） &amp;lt;input id=&amp;#34;setbtn&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;set&amp;#34; ng-click=&amp;#34;myVar=&amp;#39;my-class&amp;#39;&amp;#34;&amp;gt; &amp;lt;input id=&amp;#34;clearbtn&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;clear&amp;#34; ng-click=&amp;#34;myVar=&amp;#39;&amp;#39;&amp;#34;&amp;gt; &amp;lt;br&amp;gt; &amp;lt;span class=&amp;#34;base-class&amp;#34; ng-class=&amp;#34;myVar&amp;#34;&amp;gt;Sample Text&amp;lt;/span&amp;gt; .</description>
+    </item>
+    
+    <item>
+      <title>ng-controller学习笔记</title>
+      <link>/blog/post/angular/guide/studyguide/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/guide/studyguide/</guid>
+      <description>[TOC]
+1. ng-controller学习笔记 1.1 理解Controller  可做的事情
+  初始化$state状态 给$state 添加行为和方法   不可做的事情
+  操作DOM：Controller应该仅包含业务逻辑，不应该包含表示逻辑，应该用directive去封装手动操作DOM的逻辑 格式输入：用angular form controls代替 过滤器输出：用angular filters代替 共享状态和代码: 用angular services代替 管理其他组件的生命周期（例如：创建service实例）    Services  特性：
+  延迟初始化：angular只有当有组件依赖Service时才会实例化Service 单例： 每一个组件得到都是对单个实例的引用    Scope  Written with StackEdit.
+ </description>
+    </item>
+    
+    <item>
+      <title>ng-csp学习笔记</title>
+      <link>/blog/post/angular/directive/ng-csp/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-csp/</guid>
+      <description>ng-csp学习笔记 Affect Rules    Name Descriptions     unsafe-eval this rule forbids apps to use eval or Function(string) generated functions (among other things). Angular makes use of this in the $parse service to provide a 30% increase in the speed of evaluating Angular expressions.   unsafe-inline this rule forbids apps from inject custom styles into the document. Angular makes use of this to include some CSS rules (e.</description>
+    </item>
+    
+    <item>
+      <title>ng-options学习笔记</title>
+      <link>/blog/post/angular/directive/ng-options/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-options/</guid>
+      <description>ng-options学习笔记  重点1： ng-model的比较的是引用，不是值，所以当比较内容是数组或对象就会容易出现不相等，导致选项中出现空白选项 重点2： Do not use select as and track by in the same expression. They are not designed to work together.
+ ngOptions   array data sources    label for value in array select as label for value in array label group by group for value in array label disable when disable for value in array label group by group for value in array track by trackexpr label disable when disable for value in array track by trackexpr label for value in array | orderBy:orderexpr track by trackexpr (for including a filter with track by)      object data sources    label for (key , value) in object select as label for (key , value) in object label group by group for (key, value) in object label disable when disable for (key, value) in object select as label group by group for (key, value) in object select as label disable when disable for (key, value) in object     单词解释</description>
+    </item>
+    
+    <item>
+      <title>ng-repeat 学习笔记</title>
+      <link>/blog/post/angular/directive/ng-repeat/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-repeat/</guid>
+      <description>ng-repeat 学习笔记  重点1： ng-repeat的每一个子项都会产生一个scope 重点2： ng-repeat虽然可以使用Object,如：ng-repeat=&amp;quot;(key, value) in myObj&amp;quot; 但这不是推荐的方式，推荐的是Array, 参考链接**toArrayFilter**
+ properties    Variable Type Details     $index number iterator offset of the repeated element (0..length-1)   $first boolean true if the repeated element is first in the iterator.   $middle boolean true if the repeated element is between the first and last in the iterator.   $last boolean true if the repeated element is last in the iterator.</description>
+    </item>
+    
+    <item>
+      <title>ng-show学习笔记</title>
+      <link>/blog/post/angular/directive/ng-show/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-show/</guid>
+      <description>ng-show学习笔记 Overriding .ng-hide .ng-hide:not(.ng-hide-animate) { /* this is just another form of hiding an element */ display: block!important; position: absolute; top: -9999px; left: -9999px; } Animations 完整例子 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;showModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;ng-show&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .animate-show { line-height: 20px; opacity: 1; padding: 10px; border: 1px solid black; background: white; } .animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove.ng-hide-remove-active { -webkit-transition: all linear 0.5s; transition: all linear 0.5s; } .animate-show.ng-hide { line-height: 0; opacity: 0; padding: 0 10px; } .</description>
+    </item>
+    
+    <item>
+      <title>ngBindTemplate学习笔记</title>
+      <link>/blog/post/angular/directive/ngbindtemplate/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ngbindtemplate/</guid>
+      <description>ngBindTemplate学习笔记 官方Code &amp;lt;script&amp;gt; angular.module(&amp;#39;bindExample&amp;#39;, []) .controller(&amp;#39;ExampleController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.salutation = &amp;#39;Hello&amp;#39;; $scope.name = &amp;#39;World&amp;#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;div ng-controller=&amp;#34;ExampleController&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Salutation: &amp;lt;input type=&amp;#34;text&amp;#34; ng-model=&amp;#34;salutation&amp;#34;&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt; &amp;lt;label&amp;gt;Name: &amp;lt;input type=&amp;#34;text&amp;#34; ng-model=&amp;#34;name&amp;#34;&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt; &amp;lt;pre ng-bind-template=&amp;#34;{{salutation}} {{name}}!&amp;#34;&amp;gt;&amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;  Written with StackEdit.
+ </description>
+    </item>
+    
+    <item>
+      <title>ngModel-ngModelController学习笔记</title>
+      <link>/blog/post/angular/type/ngmodelngmodelcontroller/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/type/ngmodelngmodelcontroller/</guid>
+      <description>ngModel-ngModelController学习笔记 [TOC]
+ ngModelController API 地址
+ Methods $render(); 触发该方法的情况如下：
+ 调用$rollbackViewValue() 通过编程的方式更改ng-model, $modelValue和$viewValue 都和上一次的值不同  $isEmpty(value); 默认的判断empty的是undefined, &#39;&#39;, null or NaN。 可以重写自定义empty的判断条件
+$setValidity(validationErrorKey, isValid); Parameters    Param Type Details     validationErrorKey string Name of the validator. The validationErrorKey will be assigned to either $error[validationErrorKey] or $pending[validationErrorKey] (for unfulfilled $asyncValidators), so that it is available for data-binding. The validationErrorKey should be in camelCase and will get converted into dash-case for class name.</description>
+    </item>
+    
+    <item>
+      <title>ngModel学习笔记</title>
+      <link>/blog/post/angular/directive/ngmodelngmodeloptions/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ngmodelngmodeloptions/</guid>
+      <description>ngModel学习笔记  建议1： 比较的是引用而不是值，所以对于值为数组或对象时需要特别注意
+ getter/setter  建议2： 由于angular会频繁的调用getter,所以get方法尽量要速度快
+ ngModelOptions  注意1： ng-submit提交时处于pending状态的ng-model会立刻触发pending，然后才会提交updated model，而ng-click方式则不会触发ng-model的pending状态，会把当前的ng-model立即提交，详细例子参见ng-form文档 注意2： 该指令会影响当前元素和其子类元素的ng-model
+ Arguments    Param Type Details     ngModelOptions Object options to apply to the current model    Details:
+ updateOn: string specifying which event should the input be bound to. You can set several events using an space delimited list. There is a special event called default that matches the default events belonging of the control.</description>
+    </item>
+    
+    <item>
+      <title>ngModel学习笔记</title>
+      <link>/blog/post/angular/ng-model/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/ng-model/</guid>
+      <description>ngModel学习笔记  建议1： 比较的是引用而不是值，所以对于值为数组或对象时需要特别注意 注意1： ngModel自动创建的对象，是创建到当前$scope中的，所以需要注意创建的区域是否有其他Scope对象
+ getter/setter  建议2： 由于angular会频繁的调用getter,所以get方法尽量要速度快
+ ngModelOptions  注意1： ng-submit提交时处于pending状态的ng-model会立刻触发pending，然后才会提交updated model，而ng-click方式则不会触发ng-model的pending状态，会把当前的ng-model立即提交，详细例子参见ng-form文档 注意2： 该指令会影响当前元素和其子类元素的ng-model
+ Arguments    Param Type Details     ngModelOptions Object options to apply to the current model    Details:
+ updateOn: string specifying which event should the input be bound to. You can set several events using an space delimited list. There is a special event called default that matches the default events belonging of the control.</description>
+    </item>
+    
+    <item>
+      <title>ngPluralize学习笔记</title>
+      <link>/blog/post/angular/directive/ng-pluralize/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-pluralize/</guid>
+      <description>ngPluralize学习笔记  ngPluralize API链接
+  重点： 该指令依赖于 en-US localization rules，该规则已经绑定于angular.js当中，重写方法参见**Angular i18n** , 根据配置不同指令的使用参数表示意思参见**Plural categories** **Angular&#39;s default en-US locale: &amp;ldquo;one&amp;rdquo; and &amp;ldquo;other&amp;rdquo;.**
+ Arguments    Param Type Details     count string expression The variable to be bound to.   when string The mapping between plural category to its corresponding strings.   offset(optional) number Offset to deduct from the total number.    使用方法1 &amp;ndash; count and when (default:&amp;lsquo;en&amp;rsquo;) &amp;lt;input type=&amp;#34;text&amp;#34; ng-model=&amp;#34;personCount&amp;#34;&amp;gt; &amp;lt;ng-pluralize count=&amp;#34;personCount&amp;#34; when=&amp;#34;{&amp;#39;0&amp;#39;: &amp;#39;Nobody is viewing.</description>
+    </item>
+    
+    <item>
+      <title>no-cloak学习笔记</title>
+      <link>/blog/post/angular/directive/ng-cloak/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/ng-cloak/</guid>
+      <description>#no-cloak学习笔记
+完整代码 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;cloakModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;../bower_components/angular/angular.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; angular.module(&amp;#39;cloakModule&amp;#39;, []) .controller(&amp;#39;CloakController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { var self = this; self.testCloak = &amp;#34;tedt&amp;#34;; } ]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body ng-controller=&amp;#34;CloakController as cloakCtrl&amp;#34;&amp;gt; no-cloak:&amp;lt;span&amp;gt;{{cloakCtrl.testCloak}}&amp;lt;/span&amp;gt; &amp;lt;br&amp;gt; ng-cloak:&amp;lt;span ng-cloak&amp;gt;{{cloakCtrl.testCloak}}&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; for (var i = 0; i &amp;lt; 1000 * 100; i++) { document.write(&amp;#34;-&amp;#34;) } &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  Written with StackEdit.
+ </description>
+    </item>
+    
+    <item>
+      <title>rootScope.Scope学习笔记</title>
+      <link>/blog/post/angular/type/rootscope-scope/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/type/rootscope-scope/</guid>
+      <description>rootScope.Scope学习笔记 [TOC]
+ 注意： scope对象的$parent并不代表该scope一定继承自该$parentScope(或者说可以调用该$parentScope中的方法或属性)，而仅仅表示具有DOM中的上下级关系。真正能够访问的方法或属性是来自原型继承的parentScope(proto)
+ Methods $new(isolate,parent); Parameters
+   Param Type Details     isolate boolean If true, then the scope does not prototypically inherit from the parent scope. The scope is isolated, as it can not see parent scope properties. When creating widgets, it is useful for the widget to not accidentally read parent state.   parent(optional) Scope The Scope that will be the $parent of the newly created scope.</description>
+    </item>
+    
+    <item>
+      <title>select学习笔记</title>
+      <link>/blog/post/angular/directive/select/</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/angular/directive/select/</guid>
+      <description>select学习笔记  重点： 生成select的两种方式ng-options和ng-model 区别： ng-model绑定的值会转换为string，如果想要绑定不是string的值可以自己用directive convert
+ 官方例子（绑定数字） &amp;lt;select ng-model=&amp;#34;model.id&amp;#34; convert-to-number&amp;gt; &amp;lt;option value=&amp;#34;0&amp;#34;&amp;gt;Zero&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;1&amp;#34;&amp;gt;One&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;2&amp;#34;&amp;gt;Two&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; {{ model }} angular.module(&amp;#39;nonStringSelect&amp;#39;, []) .run(function($rootScope) { $rootScope.model = { id: 2 }; }) .directive(&amp;#39;convertToNumber&amp;#39;, function() { return { require: &amp;#39;ngModel&amp;#39;, link: function(scope, element, attrs, ngModel) { ngModel.$parsers.push(function(val) { return parseInt(val, 10); }); ngModel.$formatters.push(function(val) { return &amp;#39;&amp;#39; + val; }); } }; });  解释： 如果不用convertToNumber指令，则会出现select选中空白的情况，因为两者不相等。
+ 完整例子 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;selectModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;select&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;.</description>
+    </item>
+    
   </channel>
 </rss>

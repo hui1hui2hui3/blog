@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>ngModel-ngModelController学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">ngModel-ngModelController学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>ngModel-ngModelController学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h1 id="ngmodel-ngmodelcontroller学习笔记">ngModel-ngModelController学习笔记</h1>
+<p>[TOC]</p>
+<blockquote>
+<p><strong><a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController">ngModelController API 地址</a></strong></p>
+</blockquote>
+<h2 id="methods">Methods</h2>
+<h3 id="render"><code>$render();</code></h3>
+<p>触发该方法的情况如下：</p>
+<ol>
+<li>调用$rollbackViewValue()</li>
+<li>通过编程的方式更改ng-model, <code>$modelValue</code>和<code>$viewValue</code> 都和上一次的值不同</li>
+</ol>
+<h3 id="isemptyvalue"><code>$isEmpty(value);</code></h3>
+<p>默认的判断empty的是<code>undefined</code>, <code>''</code>, <code>null</code> or <code>NaN</code>。
+可以重写自定义empty的判断条件</p>
+<h3 id="setvalidityvalidationerrorkey-isvalid"><code>$setValidity(validationErrorKey, isValid);</code></h3>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validationErrorKey</td>
+<td>string</td>
+<td>Name of the validator. The validationErrorKey will be assigned to either <code>$error[validationErrorKey]</code> or <code>$pending[validationErrorKey] </code>(for unfulfilled <code>$asyncValidators</code>), so that it is available for data-binding. The validationErrorKey should be in camelCase and will get converted into dash-case for class name. Example: myError will result in <code>ng-valid-my-error</code> and <code>ng-invalid-my-error</code> class and can be bound to as <code>{{someForm.someControl.$error.myError}}</code> .</td>
+</tr>
+<tr>
+<td>isValid</td>
+<td>boolean</td>
+<td>Whether the current state is valid (true), invalid (false), pending (undefined), or skipped (null). Pending is used for unfulfilled <code>$asyncValidators</code>. Skipped is used by Angular when validators do not run because of parse errors and when <code>$asyncValidators</code> do not run because any of the <code>$validators</code> failed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setpristine"><code>$setPristine();</code></h3>
+<h3 id="setdirty"><code>$setDirty();</code></h3>
+<h3 id="setuntouched"><code>$setUntouched();</code></h3>
+<h3 id="settouched"><code>$setTouched();</code></h3>
+<h3 id="rollbackviewvalue"><code>$rollbackViewValue();</code></h3>
+<p>取消更新和复位input的value，同时阻止向<code>$modelValue</code> 更新</p>
+<blockquote>
+<p><strong>注意：</strong> 如果要对ng-model的<code>$modelValue</code>进行编程操作，同时如果处于pending状态中，则必须首先调用<code>$rollbackViewValue()</code> 用以保持view value 和 model value的值同步</p>
+</blockquote>
+<h4 id="代码演示官方">代码演示（官方）</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;cancel-update-example&#39;</span>, [])
+
+.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;CancelUpdateController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+  <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">resetWithCancel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">27</span>) {
+      <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">myForm</span>.<span style="color:#a6e22e">myInput1</span>.<span style="color:#a6e22e">$rollbackViewValue</span>();
+      <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">myValue</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    }
+  };
+  <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">resetWithoutCancel</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">keyCode</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">27</span>) {
+      <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">myValue</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    }
+  };
+}]);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CancelUpdateController&#34;</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;Try typing something in each input.  See that the model only updates when you
+     blur off the input.
+   &lt;/<span style="color:#f92672">p</span>&gt;
+   &lt;<span style="color:#f92672">p</span>&gt;Now see what happens if you start typing then press the Escape key&lt;/<span style="color:#f92672">p</span>&gt;
+
+  &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{ updateOn: &#39;blur&#39; }&#34;</span>&gt;
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputDescription1&#34;</span>&gt;With $rollbackViewValue()&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myInput1&#34;</span> <span style="color:#a6e22e">aria-describedby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputDescription1&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myValue&#34;</span>
+           <span style="color:#a6e22e">ng-keydown</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resetWithCancel($event)&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    myValue: &#34;{{ myValue }}&#34;
+
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputDescription2&#34;</span>&gt;Without $rollbackViewValue()&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myInput2&#34;</span> <span style="color:#a6e22e">aria-describedby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputDescription2&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myValue&#34;</span>
+           <span style="color:#a6e22e">ng-keydown</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resetWithoutCancel($event)&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    myValue: &#34;{{ myValue }}&#34;
+  &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><h3 id="validate"><code>$validate();</code></h3>
+<blockquote>
+<p><strong>注意：</strong> 如果ngModel验证不通过，则设置值为undefined, 除非<code>ngModelOptions.allowInvalid=true</code></p>
+</blockquote>
+<h3 id="commitviewvalue"><code>$commitViewValue();</code></h3>
+<h3 id="setviewvaluevalue-trigger"><code>$setViewValue(value, trigger);</code></h3>
+<blockquote>
+<p><strong>注意1：</strong> 如果newValue是Object(不是string或number),则在调用该方法以前必须copy newValue
+<strong>注意2：</strong> 该方法不会触发<code>$digest</code> 方法</p>
+</blockquote>
+<h2 id="代码演示">代码演示</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ngModel-ngModelController&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+    <span style="color:#f92672">[</span><span style="color:#f92672">contenteditable</span><span style="color:#f92672">]</span> {
+        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+        <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">white</span>;
+        <span style="color:#66d9ef">min-height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+    }
+    
+    .<span style="color:#a6e22e">ng-invalid</span> {
+        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;
+    }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular-sanitize/angular-sanitize.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;modelModule&#39;</span>, [<span style="color:#e6db74">&#39;ngSanitize&#39;</span>])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;ModelController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">modelCtrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+            <span style="color:#a6e22e">modelCtrl</span>.<span style="color:#a6e22e">divContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;change me&#39;</span>;
+        }])
+        .<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#39;contenteditable&#39;</span>, [<span style="color:#e6db74">&#39;$sce&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$sce</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+            <span style="color:#66d9ef">return</span> {
+                <span style="color:#a6e22e">require</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ngModel&#39;</span>,
+                <span style="color:#a6e22e">restrict</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;A&#39;</span>,
+                <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>, <span style="color:#a6e22e">ngModel</span>) {
+
+                    <span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$render</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                        <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+                        <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">$sce</span>.<span style="color:#a6e22e">getTrustedHtml</span>(<span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$viewValue</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;&#39;</span>));
+                    };
+
+                    <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;keyup change blur&#39;</span>, <span style="color:#66d9ef">function</span>() {
+                        <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$evalAsync</span>(<span style="color:#a6e22e">read</span>);
+                    });
+                    <span style="color:#a6e22e">read</span>();
+
+                    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">read</span>() {
+                        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">html</span>();
+                        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">init</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">html</span>) {
+                            <span style="color:#66d9ef">return</span>;
+                        }
+                        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">attrs</span>.<span style="color:#a6e22e">stripBr</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>) {
+                            <span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+                        }
+                        <span style="color:#a6e22e">ngModel</span>.<span style="color:#a6e22e">$setViewValue</span>(<span style="color:#a6e22e">html</span>);
+                        <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+                    }
+                }
+            };
+        }]);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ModelController as modelCtrl&#34;</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myName&#34;</span> <span style="color:#a6e22e">contenteditable</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.divContent&#34;</span> <span style="color:#a6e22e">strip-br</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">required</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.myName.$error.required&#34;</span>&gt;Required!&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;modelCtrl.divContent&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

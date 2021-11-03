@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>ng-bind-html &amp; $sce学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">ng-bind-html &amp; $sce学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>ng-bind-html &amp; $sce学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>#ng-bind-html &amp; $sce学习笔记</p>
+<blockquote>
+<p><strong>注意事项：</strong> 用该指令bind内容时，必须依赖ngSanitize模块，同时调用$sce.trustAsHtml等方法，否则会出现 <code>Attempting to use an unsafe value in a safe context.</code> 异常</p>
+</blockquote>
+<h2 id="ng-bind-html源码">ng-bind-html源码</h2>
+<p><strong>注意：</strong> 可以发现内部是调用的<code>$sce.getTrustedHtml</code> 方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ngBindHtmlDirective</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;$sce&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$sce</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attr</span>) {
+    <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;ng-binding&#39;</span>).<span style="color:#a6e22e">data</span>(<span style="color:#e6db74">&#39;$binding&#39;</span>, <span style="color:#a6e22e">attr</span>.<span style="color:#a6e22e">ngBindHtml</span>);
+    <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#a6e22e">attr</span>.<span style="color:#a6e22e">ngBindHtml</span>, <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ngBindHtmlWatchAction</span>(<span style="color:#a6e22e">value</span>) {
+      <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">html</span>(<span style="color:#a6e22e">$sce</span>.<span style="color:#a6e22e">getTrustedHtml</span>(<span style="color:#a6e22e">value</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;&#39;</span>);
+    });
+  };
+}];
+</code></pre></div><h2 id="trustas-vs-gettrusted">trustAs Vs getTrusted</h2>
+<p>理解不是透彻，先把想法写一下</p>
+<ul>
+<li><strong>trustAs</strong> 参数是信任内容，调用该方法后会得到一个继承自TrustedValueHolderType对象的对象包裹住真正的内容，该对象须调用getTrusted才可得到包装的内容</li>
+<li><strong>getTrusted</strong> 参数是包裹内容的trusted对象或者是普通内容，如果是trusted内容则不会做过多处理，如果是普通内容则按照一定的规则删除不信任的内容，该规则可自定义（详情参见<a href="https://docs.angularjs.org/api/ng/provider/$sceDelegateProvider"><code>$sceDelegateProvider</code></a>)</li>
+</ul>
+<h2 id="官方代码code">官方代码Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AppController as myCtrl&#34;</span>&gt;
+  &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">ng-bind-html</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myCtrl.explicitlyTrustedHtml&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;explicitlyTrustedHtml&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+  &lt;<span style="color:#f92672">b</span>&gt;User comments&lt;/<span style="color:#f92672">b</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+  By default, HTML that isn&#39;t explicitly trusted (e.g. Alice&#39;s comment) is sanitized when
+  $sanitize is available.  If $sanitize isn&#39;t available, this results in an error instead of an
+  exploit.
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;well&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userComment in myCtrl.userComments&#34;</span>&gt;
+      &lt;<span style="color:#f92672">b</span>&gt;{{userComment.name}}&lt;/<span style="color:#f92672">b</span>&gt;:
+      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-bind-html</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userComment.htmlComment&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;htmlComment&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+      &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;mySceApp&#39;</span>, [<span style="color:#e6db74">&#39;ngSanitize&#39;</span>])
+.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;AppController&#39;</span>, [<span style="color:#e6db74">&#39;$http&#39;</span>, <span style="color:#e6db74">&#39;$templateCache&#39;</span>, <span style="color:#e6db74">&#39;$sce&#39;</span>,
+  <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$http</span>, <span style="color:#a6e22e">$templateCache</span>, <span style="color:#a6e22e">$sce</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">self</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+    <span style="color:#a6e22e">$http</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;test_data.json&#34;</span>, {<span style="color:#a6e22e">cache</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">$templateCache</span>}).<span style="color:#a6e22e">success</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">userComments</span>) {
+      <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">userComments</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">userComments</span>;
+    });
+    <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">explicitlyTrustedHtml</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$sce</span>.<span style="color:#a6e22e">trustAsHtml</span>(
+        <span style="color:#e6db74">&#39;&lt;span onmouseover=&#34;this.textContent=&amp;quot;Explicitly trusted HTML bypasses &#39;</span> <span style="color:#f92672">+</span>
+        <span style="color:#e6db74">&#39;sanitization.&amp;quot;&#34;&gt;Hover over this text.&lt;/span&gt;&#39;</span>);
+  }]);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+  { <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Alice&#34;</span>,
+    <span style="color:#f92672">&#34;htmlComment&#34;</span>:
+        <span style="color:#e6db74">&#34;&lt;span onmouseover=&#39;this.textContent=\&#34;PWN3D!\&#34;&#39;&gt;Is &lt;i&gt;anyone&lt;/i&gt; reading this?&lt;/span&gt;&#34;</span>
+  },
+  { <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Bob&#34;</span>,
+    <span style="color:#f92672">&#34;htmlComment&#34;</span>: <span style="color:#e6db74">&#34;&lt;i&gt;Yes!&lt;/i&gt;  Am I the only other one?&#34;</span>
+  }
+]
+</code></pre></div><h2 id="完整代码例子">完整代码例子</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bindSceModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ng-bind-html--$sce&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular-sanitize/angular-sanitize.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;bindSceModule&#39;</span>, [<span style="color:#e6db74">&#39;ngSanitize&#39;</span>])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;SceController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#e6db74">&#39;$sce&#39;</span>, <span style="color:#e6db74">&#39;$http&#39;</span>, <span style="color:#e6db74">&#39;$templateCache&#39;</span>,
+            <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>, <span style="color:#a6e22e">$sce</span>, <span style="color:#a6e22e">$http</span>, <span style="color:#a6e22e">$templateCache</span>) {
+                <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">self</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+                <span style="color:#a6e22e">$http</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;../data/test_sce.json&#39;</span>).<span style="color:#a6e22e">success</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">result</span>) {
+                    <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">comments</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">result</span>;
+                });
+
+                <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span onmouseover=&#34;this.textContent=&amp;quot;Explicitly trusted HTML bypasses &#39;</span> <span style="color:#f92672">+</span>
+                    <span style="color:#e6db74">&#39;sanitization.&amp;quot;&#34;&gt;Hover over this text.&lt;/span&gt;&#39;</span>;
+
+                <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">html</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">html</span>;
+                <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">trustedHtml</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$sce</span>.<span style="color:#a6e22e">getTrustedHtml</span>(<span style="color:#a6e22e">html</span>);
+                <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">explictTrustedHtml</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$sce</span>.<span style="color:#a6e22e">trustAsHtml</span>(<span style="color:#a6e22e">html</span>);
+                <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">myTrustedHtml</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$sce</span>.<span style="color:#a6e22e">getTrustedHtml</span>(<span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">explictTrustedHtml</span>);
+            }
+        ])
+        .<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#39;ngBindHtmlSafe&#39;</span>, [<span style="color:#e6db74">&#39;$compile&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$compile</span>) {
+
+            <span style="color:#66d9ef">return</span> {
+                <span style="color:#a6e22e">link</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">attrs</span>, <span style="color:#a6e22e">controller</span>) {
+                    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">compile</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">html</span>) {
+                        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">htmlDom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$compile</span>(<span style="color:#a6e22e">html</span>)(<span style="color:#a6e22e">scope</span>);
+                        <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">html</span>(<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">htmlDom</span>);
+                    };
+
+                    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">htmlName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">attrs</span>.<span style="color:#a6e22e">ngBindHtmlSafe</span>;
+
+                    <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#a6e22e">htmlName</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newHtml</span>) {
+                        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">newHtml</span>) <span style="color:#66d9ef">return</span>;
+                        <span style="color:#a6e22e">compile</span>(<span style="color:#a6e22e">newHtml</span>);
+                    });
+                }
+            };
+        }]);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SceController as sceCtrl&#34;</span>&gt;
+    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">ng-bind-html</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sceCtrl.explictTrustedHtml&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">ng-bind-html</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sceCtrl.trustedHtml&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">ng-bind-html</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sceCtrl.html&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">ng-bind-html-safe</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sceCtrl.myTrustedHtml&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comment in sceCtrl.comments&#34;</span>&gt;
+        &lt;<span style="color:#f92672">b</span>&gt;{{comment.name}}&lt;/<span style="color:#f92672">b</span>&gt;
+        &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-bind-html</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comment.htmlComment&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><hr>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

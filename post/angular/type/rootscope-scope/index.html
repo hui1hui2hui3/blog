@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>rootScope.Scope学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">rootScope.Scope学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>rootScope.Scope学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h1 id="rootscopescope学习笔记">rootScope.Scope学习笔记</h1>
+<p>[TOC]</p>
+<blockquote>
+<p><strong>注意：</strong> scope对象的<code>$parent</code>并不代表该scope一定继承自该<code>$parentScope</code>(或者说可以调用该<code>$parentScope</code>中的方法或属性)，而仅仅表示具有DOM中的上下级关系。真正能够访问的方法或属性是来自原型继承的parentScope(<em>proto</em>)</p>
+</blockquote>
+<h2 id="methods">Methods</h2>
+<h3 id="newisolateparent"><code>$new(isolate,parent);</code></h3>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>isolate</strong></td>
+<td>boolean</td>
+<td>If true, then the scope does not prototypically inherit from the parent scope. The scope is isolated, as it can not see parent scope properties. When creating widgets, it is useful for the widget to not accidentally read parent state.</td>
+</tr>
+<tr>
+<td><strong>parent</strong>(<em>optional</em>)</td>
+<td>Scope</td>
+<td>The Scope that will be the $parent of the newly created scope. Defaults to this scope if not provided. This is used when creating a transclude scope to correctly place it in the scope hierarchy while maintaining the correct prototypical inheritance.(简单说就是为了transclude能够指定parent prototype继承)(<em><strong>default:this</strong></em>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="watchwatchexpression-listener-objectequality"><code>$watch(watchExpression, listener, [objectEquality]);</code></h3>
+<blockquote>
+<p><strong>注意1：</strong> 默认比较方式是newValue === oldValue, 但是当objectEquality = true时，会调用angular.copy保存上一次的值，并调用angular.equals方法比较newValue和oldValue。
+<strong>注意2：</strong> 第一次初始化时会调用一次listener，newValue和oldValue都为undefined</p>
+</blockquote>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>watchExpression</strong></td>
+<td>function() string</td>
+<td>Expression that is evaluated on each $digest cycle. A change in the return value triggers a call to the listener. - <code>string</code>: Evaluated as expression. - <code>function(scope)</code>: called with current scope as a parameter.</td>
+</tr>
+<tr>
+<td><strong>listener</strong></td>
+<td>function(newVal,oldVal,scope</td>
+<td>Callback called whenever the value of watchExpression changes. - newVal contains the current value of the watchExpression. - oldVal contains the previous value of the watchExpression. - scope refers to the current scope</td>
+</tr>
+<tr>
+<td><strong>objectEquality</strong>(<em>optional</em>)</td>
+<td>boolean</td>
+<td>Compare for object equality using <code>angular.equals</code> instead of comparing for reference equality.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="watchgroupwatchexpressions-listener"><code>$watchGroup(watchExpressions, listener);</code></h3>
+<blockquote>
+<p><strong>注意1：</strong> 这时用来同时检测多个值的，其中任意一个值变化都会触发listener
+<strong>注意2：</strong> 初始化时数组中虽然有多个值，但是仍然只会触发一次listener，而不是多次，这时的newValues和oldValues是[undefined, undefined&hellip;],</p>
+</blockquote>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>watchExpressions</strong></td>
+<td>Array(String,Function(Scope))</td>
+<td>Array of expressions that will be individually watched using $watch()</td>
+</tr>
+<tr>
+<td><strong>listener</strong></td>
+<td>function(newVals,oldVals,scope)</td>
+<td>Callback called whenever the return value of any expression in watchExpressions changes The newValues array contains the current values of the watchExpressions, with the indexes matching those of watchExpression and the oldValues array contains the previous values of the watchExpressions, with the indexes matching those of watchExpression The scope refers to the current scope.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="watchcollectionobj-listener"><code>$watchCollection(obj, listener);</code></h3>
+<blockquote>
+<p><strong>注意1：</strong> 浅监测 object 和 array
+<strong>注意2：</strong></p>
+<blockquote>
+<ul>
+<li>obj 触发$digest的条件是added, removed, moved
+如1： var obj = {a:1}<br>
+add:  obj.b = 1
+removed: delete obj.b
+moved: 无
+如2：var arr = [1]
+add: arr[1] = 2
+removed: arr.splice(1,1)
+moved: arr.sort(reverse)</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>Parameters</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>obj</strong></td>
+<td>string function(scope)</td>
+<td>Evaluated as expression. The expression value should evaluate to an object or an array which is observed on each $digest cycle. Any shallow change within the collection will trigger a call to the listener.</td>
+</tr>
+<tr>
+<td><strong>listener</strong></td>
+<td>function(newCollection,oldCollection,scope)</td>
+<td>a callback function called when a change is detected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="digest"><code>$digest();</code></h3>
+<blockquote>
+<p><strong>注意1：</strong> digest会执行watchers中的所有的listener，直到没有可以执行的listener或者重复执行超过10次（提示错误<code>'Maximum iteration limit exceeded.'</code>)
+<strong>注意2：</strong> 不应该在controllers和directives中调用$digest,而应该调用$apply方法(通常在directive中）</p>
+</blockquote>
+<h3 id="destroy"><code>$destroy();</code></h3>
+<blockquote>
+<p><strong>注意：</strong> 销毁前，会先发出boroadcast，type类型是<code>$destroy</code>, 可以用于通知子类首先完成destroy</p>
+</blockquote>
+<h3 id="evalexpression-locals"><code>$eval([expression], [locals]);</code></h3>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scope</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ng</span>.<span style="color:#a6e22e">$rootScope</span>.<span style="color:#a6e22e">Scope</span>();
+<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+<span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$eval</span>(<span style="color:#e6db74">&#39;a+b&#39;</span>)).<span style="color:#a6e22e">toEqual</span>(<span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">$eval</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>){ <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">b</span>; })).<span style="color:#a6e22e">toEqual</span>(<span style="color:#ae81ff">3</span>);
+</code></pre></div><h3 id="evalasyncexpression-locals"><code>$evalAsync([expression], [locals]);</code></h3>
+<blockquote>
+<p><strong>注意1：</strong> 它不能确保何时执行
+<strong>注意2：</strong> 如果在<code>$digest</code> 循环外调用，则或重新触发一次<code>$digest</code>，但建议改变model还是放在<code>$apply</code>中</p>
+</blockquote>
+<p><strong>执行条件：</strong></p>
+<ol>
+<li>方法安排后，最好在DOM渲染之前执行</li>
+<li>最后一个$digest circle中的最后执行</li>
+</ol>
+<h3 id="applyexp"><code>$apply([exp]);</code></h3>
+<blockquote>
+<p><strong>重点：</strong> 用于在其他框架中执行angular中的expression，包括（DOM events,setTimeout,XHR or third party librarys)</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;btnApply&#39;</span>).<span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+            	<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$apply</span>(<span style="color:#66d9ef">function</span>(){
+            		<span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;applyName&#39;</span>;
+            	});
+            };
+
+</code></pre></div><p><strong>伪代码：</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">$apply</span>(<span style="color:#a6e22e">expr</span>) {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$eval</span>(<span style="color:#a6e22e">expr</span>);
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+    <span style="color:#a6e22e">$exceptionHandler</span>(<span style="color:#a6e22e">e</span>);
+  } <span style="color:#66d9ef">finally</span> {
+    <span style="color:#a6e22e">$root</span>.<span style="color:#a6e22e">$digest</span>();
+  }
+}
+</code></pre></div><h3 id="applyasyncexp"><code>$applyAsync([exp]);</code></h3>
+<blockquote>
+<p><strong>重点1：</strong>  延迟执行$apply方法，通常在10ms左右
+<strong>重点2：</strong> 可以在一次digest方法中执行多个expressions</p>
+</blockquote>
+<h3 id="onname-listener"><code>$on(name, listener);</code></h3>
+<p><strong>listener</strong> function is <code>function(event,args...)</code>
+<strong>event</strong> object attribures:</p>
+<ul>
+<li><strong>targetScope</strong> - {Scope}: the scope on which the event was <code>$emit</code>-ed or <code>$broadcast</code>-ed.</li>
+<li><strong>currentScope</strong> - {Scope}: the scope that is currently handling the event. Once the event propagates through the scope hierarchy, this property is set to null.</li>
+<li><strong>name</strong> - {string}: name of the event.</li>
+<li><strong>stopPropagation</strong> - {function=}: calling stopPropagation function will cancel further event propagation (available only for events that were <code>$emit</code>-ed).</li>
+<li><strong>preventDefault</strong> - {function}: calling preventDefault sets defaultPrevented flag to true.</li>
+<li><strong>defaultPrevented</strong> - {boolean}: true if preventDefault was called.</li>
+</ul>
+<h3 id="emitname-args"><code>$emit(name, args);</code></h3>
+<p>**重点1：**根据scope层级结构向上传播，直到rootScope，如果中途有scope调用stopPropagation方法，则终止事件的传播</p>
+<h3 id="broadcastname-args"><code>$broadcast(name, args);</code></h3>
+<p><strong>重点2：</strong> 根据scope层级结构向下遍历所有子类传播，该事件不能被取消和终止</p>
+<h2 id="完整代码例子">完整代码例子</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;rootScope.Scope&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;scopeModule&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;ScopeController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>,<span style="color:#e6db74">&#39;$timeout&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>,<span style="color:#a6e22e">$timeout</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scopeCtrl</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+            <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">changeNumber</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>];
+            <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">complexItems</span> <span style="color:#f92672">=</span> [{
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;a&#39;</span>
+            }, {
+                <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;b&#39;</span>
+            }];
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $watch
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#75715e">//这里这样写会报错
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// $scope.$watch(scopeCtrl.name, function(newValue, oldValue) {
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//     if (newValue === oldValue) {
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//         return;
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//     }
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//     console.log(&#39;newValue:&#39; + newValue + &#39; oldValue:&#39; + oldValue);
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//     scopeCtrl.newName = newValue;
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// });
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span>;
+            }, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newValue</span>, <span style="color:#a6e22e">oldValue</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newValue</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">oldValue</span>) {
+                    <span style="color:#66d9ef">return</span>;
+                }
+                <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">newName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newValue</span>;
+
+                <span style="color:#75715e">/**
+</span><span style="color:#75715e">                 * 这里是为了演示比较这两个方法的
+</span><span style="color:#75715e">                 * -----------------------------
+</span><span style="color:#75715e">                 * $apply and $evalAsync
+</span><span style="color:#75715e">                 */</span>
+                <span style="color:#75715e">//该方法可以正确执行
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">/*$scope.$evalAsync(function(){
+</span><span style="color:#75715e">					scopeCtrl.name = &#39;evalAsyncName&#39;;
+</span><span style="color:#75715e">            	});*/</span>
+
+                <span style="color:#75715e">// 该方法会报错：$digest already in progress
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">/*$scope.$apply(function(){
+</span><span style="color:#75715e">					scopeCtrl.name = &#39;applyName&#39;;
+</span><span style="color:#75715e">            	});*/</span>
+            });
+
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $watchGroup
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watchGroup</span>([<span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span>;
+            }, <span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">age</span>;
+            }], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newValue</span>, <span style="color:#a6e22e">oldValue</span>, <span style="color:#a6e22e">scope</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newValue</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">oldValue</span>) {
+                    <span style="color:#66d9ef">return</span>;
+                }
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newValue</span>);
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">oldValue</span>);
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;-----------&#39;</span>);
+                <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">changeNumber</span><span style="color:#f92672">++</span>;
+            });
+
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $watchCollection
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watchCollection</span>(<span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">items</span>;
+            }, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newValues</span>, <span style="color:#a6e22e">oldValues</span>, <span style="color:#a6e22e">scope</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newValues</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">oldValues</span>) {
+                    <span style="color:#66d9ef">return</span>;
+                }
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newValues</span>);
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">oldValues</span>);
+                <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">changeNumber</span><span style="color:#f92672">++</span>;
+            });
+
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$watchCollection</span>(<span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">complexItems</span>;
+            }, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">newValues</span>, <span style="color:#a6e22e">oldValues</span>, <span style="color:#a6e22e">scope</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newValues</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">oldValues</span>) {
+                    <span style="color:#66d9ef">return</span>;
+                }
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newValues</span>);
+                <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">oldValues</span>);
+                <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">changeNumber</span><span style="color:#f92672">++</span>;
+            });
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $eval
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$eval</span>(<span style="color:#e6db74">&#39;a+b&#39;</span>));
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$eval</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">scope</span>) {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">scope</span>.<span style="color:#a6e22e">b</span>;
+            }));
+
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $apply
+</span><span style="color:#75715e">             */</span>
+            document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;btnApply&#39;</span>).<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$apply</span>(<span style="color:#66d9ef">function</span>() {
+                    <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;applyName&#39;</span>;
+                });
+            };
+
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $evalAsync
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">evalAsyncFn</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$evalAsync</span>(<span style="color:#66d9ef">function</span>() {
+                    <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;evalAsyncName&#39;</span>;
+                });
+            };
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $evalAsync
+</span><span style="color:#75715e">             */</span>
+            document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;btnApplyAsync&#39;</span>).<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$applyAsync</span>(<span style="color:#66d9ef">function</span>() {
+                    <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ApplyAsync&#39;</span>;
+                });
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$applyAsync</span>(<span style="color:#66d9ef">function</span>() {
+                    <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+                });
+            };
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $on
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$on</span>(<span style="color:#e6db74">&#39;emitTest&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">value</span>) {
+                <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+            });
+
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$on</span>(<span style="color:#e6db74">&#39;broadcastTest&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">value</span>) {
+                <span style="color:#a6e22e">scopeCtrl</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">value</span>;
+            });
+            
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $emit
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
+            	<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$apply</span>(<span style="color:#66d9ef">function</span>(){
+            		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#39;emitTest&#39;</span>, <span style="color:#e6db74">&#39;emitTest value&#39;</span>);
+            	});
+            }, <span style="color:#ae81ff">2000</span>);
+
+
+            <span style="color:#75715e">/**
+</span><span style="color:#75715e">             * ######################################
+</span><span style="color:#75715e">             * $broadcast
+</span><span style="color:#75715e">             */</span>
+            <span style="color:#a6e22e">$timeout</span>(<span style="color:#66d9ef">function</span>() {
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$broadcast</span>(<span style="color:#e6db74">&#39;broadcastTest&#39;</span>, <span style="color:#ae81ff">25</span>);
+            }, <span style="color:#ae81ff">2000</span>);
+
+        }]);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ScopeController as scopeCtrl&#34;</span>&gt;
+    name:
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.name&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{debounce:2000}&#34;</span>&gt; name:{{scopeCtrl.name}}
+    &lt;<span style="color:#f92672">br</span>&gt; newName:{{scopeCtrl.newName}}
+    &lt;<span style="color:#f92672">br</span>&gt; age:
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.age&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{debounce:1000}&#34;</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;&lt;<span style="color:#f92672">pre</span>&gt;{{scopeCtrl.changeNumber}}&lt;/<span style="color:#f92672">pre</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt; 简单数组[&#39;1&#39;,&#39;2&#39;]
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.items.push(scopeCtrl.name)&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;push(scopeCtrl.name)触发$digest&#34;</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.items[0]=&#39;test&#39;&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;items[0]=&#39;test&#39;触发$digest&#34;</span>&gt; {{scopeCtrl.items | json}}
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt; 复杂对象数组[{a:b}]
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.complexItems.push({name:scopeCtrl.name})&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.push({name:scopeCtrl.name})触发$digest&#34;</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.complexItems[0].name=&#39;test&#39;&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;complexItems[0].name=&#39;test&#39;不会触发$digest&#34;</span>&gt; {{scopeCtrl.complexItems | json}}
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnEvalAsync&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scopeCtrl.evalAsyncFn()&#34;</span>&gt;触发evalAsync&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnApply&#34;</span>&gt;触发apply&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btnApplyAsync&#34;</span>&gt;触发applyAsync&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-pluralize/">ngPluralize学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

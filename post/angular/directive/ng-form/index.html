@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Form(ng-form) 学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Form(ng-form) 学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Form(ng-form) 学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>#Form(ng-form) 学习笔记
+[TOC]</p>
+<p>##1. CSS classes</p>
+<blockquote>
+<p><strong>详情参见</strong><a href="https://docs.angularjs.org/api/ng/directive/form">Form API</a></p>
+</blockquote>
+<ol>
+<li><strong>ng-valid</strong> is set if the form is valid.</li>
+<li><strong>ng-invalid</strong> is set if the form is invalid.</li>
+<li><strong>ng-pristine</strong> is set if the form is pristine.</li>
+<li><strong>ng-dirty</strong> is set if the form is dirty.</li>
+<li><strong>ng-submitted</strong> is set if the form was submitted.</li>
+</ol>
+<p>上面的CSS名称表示的是当form处于某种状态时，form会触发的样式。</p>
+<p><strong>例子：想要实现的是form当中有为通过校验的控件时，显示背景色为红色。</strong>
+CSS实现代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">my-form</span> {
+	<span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">linear</span> <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">s</span>;
+	<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span>;
+}
+.<span style="color:#a6e22e">my-form</span>.<span style="color:#a6e22e">ng-invalid</span> {
+	<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+}
+</code></pre></div><p>HTML实现代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-form&#34;</span>&gt;
+	name:&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;huis1&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><p>用以上的代码你会发现，<strong>.ng-invalid样式不会生效</strong>。
+如果想要生效怎么办？看下面的代码</p>
+<p>HTML实现代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-form&#34;</span>&gt;
+	name:&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><p>总结：<strong>如果想要form下的css classes生效，则必须绑定ng-model</strong></p>
+<p>##2. form.FormController</p>
+<blockquote>
+<p><strong>详情参见</strong> <a href="https://docs.angularjs.org/api/ng/type/form.FormController">FormController API</a></p>
+</blockquote>
+<p>这里主要说属性：</p>
+<blockquote>
+<ul>
+<li>$pristine         <strong>form未修改过</strong></li>
+<li>$dirty              <strong>form修改过</strong></li>
+<li>$valid              <strong>验证通过</strong></li>
+<li>$invalid           <strong>验证不通过</strong></li>
+<li>$submitted      <strong>已提交</strong></li>
+<li>$error              <strong>验证不通过的错误</strong></li>
+</ul>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Built-in validation tokens:</p>
+</blockquote>
+<ol>
+<li>email</li>
+<li>max</li>
+<li>maxlength</li>
+<li>min</li>
+<li>minlength</li>
+<li>number</li>
+<li>pattern</li>
+<li>required</li>
+<li>url</li>
+<li>date</li>
+<li>datetimelocal</li>
+<li>time</li>
+<li>week</li>
+<li>month</li>
+</ol>
+</blockquote>
+<hr>
+<p>访问属性的方法，主要依赖属性：<strong>name</strong>
+例如：</p>
+<ol>
+<li>针对指定的input验证, 形式：<strong>formName.inputName.attr[key(only error)]</strong>
+<code>formName.inputName.$error.required</code> <code>formName.inputName.$pristine</code></li>
+<li>针对整个form的验证，形式：<strong>formName.attr[key(only error)]</strong></li>
+</ol>
+<h2 id="3-submitting-a-form">3 Submitting a form</h2>
+<blockquote>
+<p><strong>Submit的两种方式：</strong></p>
+<blockquote>
+<ul>
+<li><strong>ngSubmit</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"></code></pre></div></blockquote>
+<!-- raw HTML omitted -->
+</blockquote>
+<!-- raw HTML omitted -->
+<blockquote>
+<p><strong>注意1：</strong> 两种方式只能使用其中一种，不可两种同时使用
+<strong>注意2：</strong> ng-submit方式提交时处于pending状态的ng-model会立刻触发pending，然后才会提交，而ng-click方式则不会触发ng-model的pending状态，会把当前的ng-model立即提交</p>
+</blockquote>
+<h3 id="31-submit-例子">3.1. Submit 例子</h3>
+<p>该例子中我同时使用了两种方式，只是为了测试。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-form&#34;</span> <span style="color:#a6e22e">ng-submit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit()&#34;</span>&gt;
+		name:&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{debounce:2000}&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+		age: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{debounce:2000}&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> &lt;input type=&#34;submit&#34; value=&#34;submit&#34;&gt; </span><span style="color:#75715e">--&gt;</span>
+		&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Submit&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit2()&#34;</span>&gt;
+		&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.name.$error.required&#34;</span>&gt;Required&lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.name.$pristine&#34;</span>&gt;Pristine&lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+
+		&lt;<span style="color:#f92672">code</span>&gt;name:{{name}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;age:{{age}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.name.$valid:{{myForm.name.$valid}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.name.$error:{{myForm.name.$error}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.$valid:{{myForm.$valid}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.$error.required:{{!!myForm.$error.required}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">div</span>&gt;
+			list: {{list | json}}
+		&lt;/<span style="color:#f92672">div</span>&gt;
+	&lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><blockquote>
+<p><strong>Result:</strong>
+list: [ &ldquo;undefined:undefined (ng-click)&quot;, &ldquo;test:12 (ng-submit)&rdquo; ]</p>
+</blockquote>
+<h2 id="4完整代码参考">4.完整代码参考</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ng-form&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;ng-form&lt;/<span style="color:#f92672">title</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+	<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;ng-form&#39;</span>,[])
+	.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;NgFormController&#39;</span>,[<span style="color:#e6db74">&#39;$scope&#39;</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">list</span> <span style="color:#f92672">=</span> [];
+		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">submit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">age</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; (ng-submit)&#34;</span>);
+		};
+
+		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">submit2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+			<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">age</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; (ng-click)&#34;</span>);
+		};
+	}]);
+	&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+		.<span style="color:#a6e22e">my-form</span> {
+			<span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">linear</span> <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">s</span>;
+			<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">transparent</span>;
+		}
+
+		.<span style="color:#a6e22e">my-form</span>.<span style="color:#a6e22e">ng-invalid</span> {
+			<span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+		}
+	&lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;NgFormController&#34;</span>&gt;
+	&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-form&#34;</span> <span style="color:#a6e22e">ng-submit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit()&#34;</span>&gt;
+		name:&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{debounce:2000}&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+		age: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;age&#34;</span> <span style="color:#a6e22e">ng-model-options</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{debounce:2000}&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+		<span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> &lt;input type=&#34;submit&#34; value=&#34;submit&#34;&gt; </span><span style="color:#75715e">--&gt;</span>
+		&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Submit&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit2()&#34;</span>&gt;
+		&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.name.$error.required&#34;</span>&gt;Required&lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.name.$pristine&#34;</span>&gt;Pristine&lt;/<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+
+		&lt;<span style="color:#f92672">code</span>&gt;name:{{name}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;age:{{age}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.name.$valid:{{myForm.name.$valid}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.name.$error:{{myForm.name.$error}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.$valid:{{myForm.$valid}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">code</span>&gt;myForm.$error.required:{{!!myForm.$error.required}}&lt;/<span style="color:#f92672">code</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+		&lt;<span style="color:#f92672">div</span>&gt;
+			list: {{list | json}}
+		&lt;/<span style="color:#f92672">div</span>&gt;
+	&lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><hr>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

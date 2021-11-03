@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Angular animation学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Angular animation学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Angular animation学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>[TOC]</p>
+<h1 id="angular-animation-总结">Angular animation 总结</h1>
+<blockquote>
+<p><a href="http://www.cnblogs.com/wushangjue/p/4529063.html">参考文章</a></p>
+</blockquote>
+<p>AngularJS中实现动画效果有两大种方式</p>
+<ul>
+<li>基于CSS的动画效果
+<ul>
+<li>CSS Transition Animation</li>
+<li>CSS Class-based Animation</li>
+</ul>
+</li>
+<li>基于Javascript的动画效果</li>
+</ul>
+<p>官方给出的能支持动画效果的Directives：
+Directive | Supported Animations
+&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;-
+ngRepeat	| enter, leave and move
+ngView	 | enter and leave
+ngInclude	 | enter and leave
+ngSwitch	| enter and leave
+ngIf	| enter and leave
+ngClass	| add and remove (the CSS class(es) present)
+ngShow&amp;ngHide	| add and remove (the ng-hide class value)
+form&amp;ngModel	| add and remove (dirty, pristine, valid, invalid &amp; all other validations)
+ngMessages	| add and remove (ng-active &amp; ng-inactive)
+ngMessage	| enter and leave</p>
+<h2 id="基于css的动画效果">基于CSS的动画效果</h2>
+<h3 id="1-css-transition-animation">1. CSS Transition Animation</h3>
+<p>示例（官方DEMO）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+        <span style="color:#75715e">/* 开始时的样式 */</span>
+        .<span style="color:#a6e22e">fade</span>.<span style="color:#a6e22e">ng-enter</span> {
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span> <span style="color:#66d9ef">all</span>; <span style="color:#75715e">/* 当使用css transition实现动画效果时，在开始时的样式中必须包含transition的设置 */</span>
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+        }
+
+            <span style="color:#75715e">/* 结束时的样式 */</span>
+            .<span style="color:#a6e22e">fade</span>.<span style="color:#a6e22e">ng-enter</span>.<span style="color:#a6e22e">ng-enter-active</span> {
+                <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+            }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular-animate.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+        (<span style="color:#66d9ef">function</span> () {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;cssBasedAnimationTest&#39;</span>, [<span style="color:#e6db74">&#39;ngAnimate&#39;</span>]);
+        })();
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cssBasedAnimationTest&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fade&#34;</span>&gt;
+        Fade me in out
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool=true&#34;</span>&gt;Fade In!&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool=false&#34;</span>&gt;Fade Out!&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><blockquote>
+<p>使用CSS Transition时，ng-EVENT（动画开始前的样式）和ng-EVENT-active（动画执行完毕后的样式）这两组样式必须同时出现，且在ng-EVENT中必须包含transition的设置。
+<strong>注意：这种写法需要使用ng-Event和ng-Event-active</strong></p>
+</blockquote>
+<p>另一种CSS transition的写法是使用CSS的Keyframe关键字</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+    <span style="color:#75715e">/* 开始时的样式，使用keyframes不需要定义结束时的样式 */</span>
+    .<span style="color:#a6e22e">fade</span>.<span style="color:#a6e22e">ng-enter</span> {
+        <span style="color:#66d9ef">animation</span>: my_fade_animation <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span>;
+        <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: my_fade_animation <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span>;
+    }
+
+    @<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">my_fade_animation</span> {
+        <span style="color:#f92672">from</span> {
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+        }
+
+        <span style="color:#f92672">to</span> {
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+        }
+    }
+
+    @<span style="color:#66d9ef">-webkit-keyframes</span> <span style="color:#f92672">my_fade_animation</span> {
+        <span style="color:#f92672">from</span> {
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+        }
+
+        <span style="color:#f92672">to</span> {
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+        }
+    }
+&lt;/<span style="color:#f92672">style</span>&gt;
+</code></pre></div><blockquote>
+<p><strong>注意：这种写法不需要ng-EVENT-active</strong></p>
+</blockquote>
+<h3 id="2-css-class-based-animation">2. CSS Class-based Animation</h3>
+<p>Class-based Animation即为通过ngClass、ngShow、ngHide等Directives执行动画效果。<br>
+示例2：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+        .<span style="color:#a6e22e">fade</span>.<span style="color:#a6e22e">ng-hide</span> {
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span> <span style="color:#66d9ef">all</span>;
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+        }
+
+        .<span style="color:#a6e22e">fade</span>.<span style="color:#a6e22e">ng-show</span> {
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span> <span style="color:#66d9ef">all</span>;
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular-animate.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+        (<span style="color:#66d9ef">function</span> () {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;cssClassBasedAnimationTest&#39;</span>, [<span style="color:#e6db74">&#39;ngAnimate&#39;</span>]);
+        })();
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cssClassBasedAnimationTest&#34;</span> <span style="color:#a6e22e">ng-init</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool=true&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fade&#34;</span>&gt;
+        This is ng-show.
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-hide</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fade&#34;</span>&gt;
+        This is ng-hide.
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool=!bool&#34;</span>&gt;Toggle&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>实际观察Html的变化，无论是ngShow还是ngHide，其实都是在隐藏元素时，默认添加ng-hide-animate、ng-hide-add、ng-hide-add-active样式。也就是针对像ngHide、ngShow等这些可以感知动画的Directives，由AngularJS的ngAnimate模块自动添加了CSS Transition动画。</p>
+<p>ngAminate能检测的行为是样式的add或者remove， 那如何显式的指定add和remove的样式呢？</p>
+<p>示例3：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+        .<span style="color:#a6e22e">highlight</span> {
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span> <span style="color:#66d9ef">all</span>;
+        }
+
+            .<span style="color:#a6e22e">highlight</span>.<span style="color:#a6e22e">on-add</span> {
+                <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">white</span>;
+            }
+
+            .<span style="color:#a6e22e">highlight</span>.<span style="color:#a6e22e">on</span> {
+                <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">yellow</span>;
+            }
+
+            .<span style="color:#a6e22e">highlight</span>.<span style="color:#a6e22e">on-remove</span> {
+                <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">black</span>;
+            }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular-animate.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+        (<span style="color:#66d9ef">function</span> () {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;cssClassBasedAnimationTest&#39;</span>, [<span style="color:#e6db74">&#39;ngAnimate&#39;</span>]);
+        })();
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cssClassBasedAnimationTest&#34;</span> <span style="color:#a6e22e">ng-init</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bool=true&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{on:onOff}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;
+        Highlight this box
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onOff=!onOff&#34;</span>&gt;Toggle&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p><a href="http://codepen.io/anon/pen/QjwXLp">Live Demo</a>
+我们让ng-class随着点击Toggle按钮变化，当onOff=true时样式on会被ngAnimate执行on-add的过程，反之则执行on-remove的过程。由于显式指定了样式，当我们运行示例3时，这个过程就一目了然了。</p>
+<h2 id="基于javascript的动画效果">基于Javascript的动画效果</h2>
+<p>使用基于Javascript的动画效果可以让你在脚本中使用其他的Service甚至引用第三方的脚本进行动画的制作，使动画效果更丰富多变。</p>
+<p>与基于CSS的动画效果相似，基于Javascript的动画效果也会由AngularJS自动添加一些指定的样式到元素上，但基于Javascript的动画效果还需要使用module.animation()添加动画脚本。</p>
+<p>示例4：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/angular-animate.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Scripts/jquery-1.9.1.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+        (<span style="color:#66d9ef">function</span> () {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;javascriptBasedAnimationTest&#39;</span>, [<span style="color:#e6db74">&#39;ngAnimate&#39;</span>]);
+
+            <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">animation</span>(<span style="color:#e6db74">&#39;.slide&#39;</span>, [<span style="color:#66d9ef">function</span> () {
+                <span style="color:#66d9ef">return</span> {
+                    <span style="color:#a6e22e">enter</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">doneFn</span>) {
+                        <span style="color:#a6e22e">jQuery</span>(<span style="color:#a6e22e">element</span>).<span style="color:#a6e22e">fadeIn</span>(<span style="color:#ae81ff">1000</span>, <span style="color:#a6e22e">doneFn</span>);
+                    },
+
+                    <span style="color:#a6e22e">move</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">doneFn</span>) {
+                        <span style="color:#a6e22e">jQuery</span>(<span style="color:#a6e22e">element</span>).<span style="color:#a6e22e">fadeIn</span>(<span style="color:#ae81ff">1000</span>, <span style="color:#a6e22e">doneFn</span>);
+                    },
+
+                    <span style="color:#a6e22e">leave</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">element</span>, <span style="color:#a6e22e">doneFn</span>) {
+                        <span style="color:#a6e22e">jQuery</span>(<span style="color:#a6e22e">element</span>).<span style="color:#a6e22e">fadeOut</span>(<span style="color:#ae81ff">1000</span>, <span style="color:#a6e22e">doneFn</span>);
+                    }
+                }
+            }]);
+
+            <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;myController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$scope</span>) {
+                <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Tom&#34;</span>,<span style="color:#e6db74">&#34;Jack&#34;</span>,<span style="color:#e6db74">&#34;Alice&#34;</span>,<span style="color:#e6db74">&#34;May&#34;</span>,<span style="color:#e6db74">&#34;Thomas&#34;</span>];
+            }]);
+        })();
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascriptBasedAnimationTest&#34;</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myController&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">ng-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;isshow&#34;</span> <span style="color:#a6e22e">ng-repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stu in students&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;slide&#34;</span>&gt;
+        {{ stu }}
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Toggle&#34;</span> <span style="color:#a6e22e">ng-click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;isshow=!isshow&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

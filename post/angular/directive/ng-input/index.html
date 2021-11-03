@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Input(ng-input) 学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Input(ng-input) 学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Input(ng-input) 学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>#Input(ng-input) 学习笔记</p>
+<blockquote>
+<p><strong>参考链接</strong>：<a href="https://docs.angularjs.org/api/ng/directive/input">Input API</a></p>
+</blockquote>
+<blockquote>
+<p>**注意事项: **</p>
+<ol>
+<li>不是所有的input都支持ng-model, *input[file]*不支持</li>
+<li>使用ng-model属性时，必须使用a.b形式，不能单独使用b的形式</li>
+</ol>
+</blockquote>
+<p>##Arguments</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ngModel</td>
+<td>string</td>
+<td>Assignable angular expression to data-bind to.</td>
+</tr>
+<tr>
+<td>name(optional)</td>
+<td>string</td>
+<td>Property name of the form under which the control is published.</td>
+</tr>
+<tr>
+<td>required(optional)</td>
+<td>string</td>
+<td>Sets required validation error key if the value is not entered.</td>
+</tr>
+<tr>
+<td>ngRequired(optional)</td>
+<td>boolean</td>
+<td>Sets required attribute if set to true</td>
+</tr>
+<tr>
+<td>ngMinlength(optional)</td>
+<td>number</td>
+<td>Sets minlength validation error key if the value is shorter than minlength.</td>
+</tr>
+<tr>
+<td>ngMaxlength(optional)</td>
+<td>number</td>
+<td>Sets maxlength validation error key if the value is longer than maxlength. Setting the attribute to a negative or non-numeric value, allows view values of any length.</td>
+</tr>
+<tr>
+<td>ngPattern(optional)</td>
+<td>string</td>
+<td>Sets pattern validation error key if the ngModel value does not match a RegExp found by evaluating the Angular expression given in the attribute value. If the expression evaluates to a RegExp object, then this is used directly. <code>If the expression evaluates to a string, then it will be converted to a RegExp after wrapping it in ^ and $ characters. For instance, &quot;abc&quot; will be converted to new RegExp('^abc$').</code><strong>Note:</strong> Avoid using the g flag on the RegExp, as it will cause each successive search to start at the index of the last search's match, thus not taking the whole input value into account.</td>
+</tr>
+<tr>
+<td>ngChange(optional)</td>
+<td>string</td>
+<td>Angular expression to be executed when input changes due to user interaction with the input element.</td>
+</tr>
+<tr>
+<td>ngTrim(optional)</td>
+<td>boolean</td>
+<td>If set to false Angular will not automatically trim the input. This parameter is ignored for input[type=password] controls, which will never trim the input. <em>(default:true)</em></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>##完整参考代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html ng-app=&quot;inputModule&quot;&gt;
+&lt;head&gt;
+	&lt;title&gt;ng-input&lt;/title&gt;
+	&lt;script src=&quot;../bower_components/angular/angular.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+	&lt;script type=&quot;text/javascript&quot;&gt;
+	angular.module('inputModule',[])
+	.controller('inputController',['$scope',function($scope) {
+		$scope.user = {name:'huis',password:'123'};
+	}])
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body ng-controller=&quot;inputController&quot;&gt;
+&lt;form name=&quot;myForm&quot;&gt;
+	userName: &lt;input name=&quot;userName&quot; type=&quot;text&quot; ng-model=&quot;user.name&quot; required&gt;
+	&lt;div role=&quot;alert&quot;&gt;
+		&lt;span ng-show=&quot;myForm.userName.$error.required&quot;&gt;Required&lt;/span&gt;
+	&lt;/div&gt;
+	password: &lt;input type=&quot;password&quot; name=&quot;password&quot; ng-model=&quot;user.password&quot;
+	ng-minlength=&quot;2&quot; ng-maxlength=&quot;11&quot;&gt;
+	&lt;div role=&quot;alert&quot;&gt;
+		&lt;span ng-show=&quot;myForm.password.$error.minlength&quot;&gt;Too Short&lt;/span&gt;
+		&lt;span ng-show=&quot;myForm.password.$error.maxlength&quot;&gt;Too Long&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;br&gt;
+	&lt;code&gt;userName:{{user.name}}&lt;/code&gt;&lt;br&gt;
+	&lt;code&gt;password:{{user.password}}&lt;/code&gt;&lt;br&gt;
+
+	&lt;code&gt;myForm.userName.$valid:{{myForm.userName.$valid}}&lt;/code&gt;&lt;br&gt;
+	&lt;code&gt;myForm.userName.$error:{{myForm.userName.$error}}&lt;/code&gt;&lt;br&gt;
+
+
+	&lt;code&gt;myForm.password.$valid:{{myForm.password.$valid}}&lt;/code&gt;&lt;br&gt;
+	&lt;code&gt;myForm.password.$error:{{myForm.password.$error}}&lt;/code&gt;&lt;br&gt;
+
+	&lt;code&gt;myForm.$valid:{{myForm.$valid}}&lt;/code&gt;&lt;br&gt;
+	&lt;code&gt;myForm.$error.required:{{myForm.$error.required}}&lt;/code&gt;&lt;br&gt;	
+	&lt;code&gt;myForm.$error.minlength:{{myForm.$error.minlength}}&lt;/code&gt;&lt;br&gt;
+	&lt;code&gt;myForm.$error.maxlength:{{myForm.$error.maxlength}}&lt;/code&gt;&lt;br&gt;
+	
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><blockquote>
+<p>输出结果：
+<code>userName: password: myForm.userName.$valid:false myForm.userName.$error:{&quot;required&quot;:true} myForm.password.$valid:false myForm.password.$error:{&quot;maxlength&quot;:true} myForm.$valid:false myForm.$error.required:[{&quot;$viewValue&quot;:&quot;&quot;,&quot;$validators&quot;:{},&quot;$asyncValidators&quot;:{},&quot;$parsers&quot;:[],&quot;$formatters&quot;:[null],&quot;$viewChangeListeners&quot;:[],&quot;$untouched&quot;:false,&quot;$touched&quot;:true,&quot;$pristine&quot;:false,&quot;$dirty&quot;:true,&quot;$valid&quot;:false,&quot;$invalid&quot;:true,&quot;$error&quot;:{&quot;required&quot;:true},&quot;$name&quot;:&quot;userName&quot;,&quot;$options&quot;:null}] myForm.$error.minlength: myForm.$error.maxlength:[{&quot;$viewValue&quot;:&quot;123456789011&quot;,&quot;$validators&quot;:{},&quot;$asyncValidators&quot;:{},&quot;$parsers&quot;:[],&quot;$formatters&quot;:[null],&quot;$viewChangeListeners&quot;:[],&quot;$untouched&quot;:false,&quot;$touched&quot;:true,&quot;$pristine&quot;:false,&quot;$dirty&quot;:true,&quot;$valid&quot;:false,&quot;$invalid&quot;:true,&quot;$error&quot;:{&quot;maxlength&quot;:true},&quot;$name&quot;:&quot;password&quot;,&quot;$options&quot;:null}]</code></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>**注：**可以发现当出现错误时，<strong>ng-model对应的值为空</strong></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

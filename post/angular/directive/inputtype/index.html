@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Input[type] 系列学习笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Input[type] 系列学习笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Input[type] 系列学习笔记</h2>
+        <h5>May 26, 2016</h5>
+        
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>#Input[type] 系列学习笔记
+[TOC]</p>
+<h2 id="inputcheckbox">input[checkbox]</h2>
+<h3 id="额外属性-arguments">额外属性 Arguments：</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ngTrueValue(optional)</td>
+<td>expression</td>
+<td>The value to which the expression should be set when selected.</td>
+</tr>
+<tr>
+<td>ngFalseValue(optional)</td>
+<td>expression</td>
+<td>The value to which the expression should be set when not selected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="完整代码">完整代码</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inputCheckBox&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ng-input[checkbox]&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;inputCheckBox&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;CheckBoxController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">check</span> <span style="color:#f92672">=</span> {
+                <span style="color:#a6e22e">test1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+                <span style="color:#a6e22e">test2</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;HEHE&#39;</span>
+            }
+        }])
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;CheckBoxController&#34;</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkboxForm&#34;</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;
+            Value1:
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;check1&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;check.test1&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">label</span>&gt;
+        &lt;<span style="color:#f92672">label</span>&gt;
+            Value2:
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;check2&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;check.test2&#34;</span> <span style="color:#a6e22e">ng-true-value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;HEHE&#39;&#34;</span> <span style="color:#a6e22e">ng-false-value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#39;WHAT?&#39;&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">label</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">tt</span>&gt;Value1:{{check.test1}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">tt</span>&gt;Value2:{{check.test2}}&lt;/<span style="color:#f92672">tt</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><h2 id="inputdate--inputmonth--inputtime">input[date] | input[month] | input[time]</h2>
+<blockquote>
+<p><strong>注意事项：</strong> ng-model 必须是一个date object</p>
+</blockquote>
+<h3 id="额外属性-arguments-1">额外属性 Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>string</td>
+<td>Sets the min validation error key if the value entered is less than min. This must be a valid ISO date string (yyyy-MM-dd).</td>
+</tr>
+<tr>
+<td>max</td>
+<td>string</td>
+<td>Sets the max validation error key if the value entered is greater than max. This must be a valid ISO date string (yyyy-MM-dd).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="完整代码-1">完整代码</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dateModule&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;ng-input[date]&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;dateModule&#39;</span>, [])
+        .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;DateController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> {
+                <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2014</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">22</span>)
+            }
+        }])
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DateController&#34;</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dateForm&#34;</span>&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dateTime&#34;</span> <span style="color:#a6e22e">min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2014-02-01&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2015-03-21&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date.value&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span>&gt;
+        	&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dateForm.dateTime.$error.required&#34;</span>&gt;Required!&lt;/<span style="color:#f92672">span</span>&gt;
+        	&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dateForm.dateTime.$error.date&#34;</span>&gt;Time is error!&lt;/<span style="color:#f92672">span</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">code</span>&gt;date.value:{{date.value | date:&#34;yyyy-MM-dd&#34;}}&lt;/<span style="color:#f92672">code</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">code</span>&gt;dateForm.$error.required:{{dateForm.$error.required}}&lt;/<span style="color:#f92672">code</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">code</span>&gt;dateForm.$error.date:{{dateForm.$error.date}}&lt;/<span style="color:#f92672">code</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt;
+        &lt;<span style="color:#f92672">code</span>&gt;dateForm.$valid:{{dateForm.$valid}}&lt;/<span style="color:#f92672">code</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;/<span style="color:#f92672">html</span>&gt;
+
+</code></pre></div><h2 id="inputdatetime-local">input[datetime-local]</h2>
+<h3 id="额外属性-arguments-2">额外属性 Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>string</td>
+<td>Sets the min validation error key if the value entered is less than min. This must be a valid ISO datetime format (yyyy-MM-ddTHH:mm:ss).</td>
+</tr>
+<tr>
+<td>max</td>
+<td>string</td>
+<td>Sets the max validation error key if the value entered is greater than max. This must be a valid ISO datetime format (yyyy-MM-ddTHH:mm:ss).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码演示官方">代码演示（官方）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;dateExample&#39;</span>, [])
+    .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;DateController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+      <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">example</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2010</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">57</span>)
+      };
+    }]);
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DateController as dateCtrl&#34;</span>&gt;
+  &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleInput&#34;</span>&gt;Pick a date between in 2013:&lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;datetime-local&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleInput&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.value&#34;</span>
+      <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yyyy-MM-ddTHH:mm:ss&#34;</span> <span style="color:#a6e22e">min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2001-01-01T00:00:00&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2013-12-31T00:00:00&#34;</span> <span style="color:#a6e22e">required</span> /&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span>&gt;
+    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.required&#34;</span>&gt;
+        Required!&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.datetimelocal&#34;</span>&gt;
+        Not a valid date!&lt;/<span style="color:#f92672">span</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;value = {{example.value | date: &#34;yyyy-MM-ddTHH:mm:ss&#34;}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$valid = {{myForm.input.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$error = {{myForm.input.$error}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.$valid = {{myForm.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><h2 id="inputemail">input[email]</h2>
+<h3 id="额外属相arguments">额外属相（Arguments）</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pattern</td>
+<td>string</td>
+<td>Similar to ngPattern except that the attribute value is the actual string that contains the regular expression body that will be converted to a regular expression as in the ngPattern directive.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码演示官方-1">代码演示（官方）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;emailExample&#39;</span>, [])
+    .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;ExampleController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+      <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;me@example.com&#39;</span>
+      };
+    }]);
+&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ExampleController&#34;</span>&gt;
+    &lt;<span style="color:#f92672">label</span>&gt;Email:
+      &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email.text&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+    &lt;/<span style="color:#f92672">label</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span>&gt;
+      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.required&#34;</span>&gt;
+        Required!&lt;/<span style="color:#f92672">span</span>&gt;
+      &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.email&#34;</span>&gt;
+        Not valid email!&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">tt</span>&gt;text = {{email.text}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$valid = {{myForm.input.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$error = {{myForm.input.$error}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">tt</span>&gt;myForm.$valid = {{myForm.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">tt</span>&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+    &lt;<span style="color:#f92672">tt</span>&gt;myForm.$error.email = {{!!myForm.$error.email}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><h2 id="inputnumber">input[number]</h2>
+<blockquote>
+<p><strong>注意事项：</strong> input[number]不是不能输入number,比如 <strong>&lsquo;e&rsquo;</strong></p>
+</blockquote>
+<h3 id="额外属性arguments">额外属性（Arguments)</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pattern</td>
+<td>string</td>
+<td>Similar to ngPattern except that the attribute value is the actual string that contains the regular expression body that will be converted to a regular expression as in the ngPattern directive.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码演示官方-2">代码演示（官方）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  <span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;numberExample&#39;</span>, [])
+    .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;ExampleController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+      <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">example</span> <span style="color:#f92672">=</span> {
+        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+      };
+    }]);
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ExampleController&#34;</span>&gt;
+  &lt;<span style="color:#f92672">label</span>&gt;Number:
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.value&#34;</span>
+           <span style="color:#a6e22e">min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;99&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+ &lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span>&gt;
+    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.required&#34;</span>&gt;
+      Required!&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.number&#34;</span>&gt;
+      Not valid number!&lt;/<span style="color:#f92672">span</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;value = {{example.value}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$valid = {{myForm.input.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$error = {{myForm.input.$error}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.$valid = {{myForm.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+ &lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><h2 id="inputradio">input[radio]</h2>
+<h3 id="额外属性arguments-1">额外属性（Arguments)</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>The value to which the ngModel expression should be set when selected. Note that value only supports string values, i.e. the scope model needs to be a string, too. Use ngValue if you need complex models (number, object, &hellip;).</td>
+</tr>
+<tr>
+<td>ngValue</td>
+<td>string</td>
+<td>Angular expression to which ngModel will be be set when the radio is selected. Should be used instead of the value attribute if you need a non-string ngModel (boolean, array, &hellip;).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意事项：</strong> value属性只支持string类型，其他类型或Angular expression则要用ngValue</p>
+</blockquote>
+<h3 id="完整代码演示">完整代码演示</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radioModule&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;ng-input[radio]&lt;/<span style="color:#f92672">title</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+	<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;radioModule&#39;</span>,[])
+	.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;RadioController&#39;</span>,[<span style="color:#e6db74">&#39;$scope&#39;</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>){
+		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">complex</span> <span style="color:#f92672">=</span> {
+			<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;complex&#39;</span>
+		}
+		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> {
+			<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;red&#39;</span>
+		}
+	}]);
+	&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RadioController&#34;</span>&gt;
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radioForm&#34;</span>&gt;
+	&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;simpleRadio&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name&#34;</span>&gt;Red
+	&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;radio&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;simpleRadio&#34;</span> <span style="color:#a6e22e">ng-value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;complex&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color.name&#34;</span>&gt;Green
+	&lt;<span style="color:#f92672">br</span>&gt;
+	&lt;<span style="color:#f92672">code</span>&gt;color.name {{color.name | json}}&lt;/<span style="color:#f92672">code</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h2 id="inputtext">input[text]</h2>
+<h3 id="额外属性arguments-2">额外属性（Arguments)</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pattern(optional)</td>
+<td>string</td>
+<td>Similar to ngPattern except that the attribute value is the actual string that contains the regular expression body that will be converted to a regular expression as in the ngPattern directive.</td>
+</tr>
+<tr>
+<td>ngTrim(optional)</td>
+<td>boolean</td>
+<td>If set to false Angular will not automatically trim the input. This parameter is ignored for input[type=password] controls, which will never trim the input.(default=true)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="完整代码演示-1">完整代码演示</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">ng-app</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;textModule&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;ng-input[text]&lt;/<span style="color:#f92672">title</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/angular/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+	&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+	<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;textModule&#39;</span>,[])
+	.<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;TextController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>){
+		<span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">example</span> <span style="color:#f92672">=</span> {
+			<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Guest&#39;</span>,
+			<span style="color:#a6e22e">pattern</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/^\s*\w*\s*$/</span>
+		}
+	}])
+	&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;TextController&#34;</span>&gt;
+	&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;textForm&#34;</span>&gt;
+		&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;textName&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
+		<span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.value&#34;</span> <span style="color:#a6e22e">ng-pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.pattern&#34;</span> <span style="color:#a6e22e">ng-trim</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>&gt;
+
+		&lt;<span style="color:#f92672">br</span>&gt;&lt;<span style="color:#f92672">code</span>&gt;example.value:{{example.value}}&lt;/<span style="color:#f92672">code</span>&gt;
+		&lt;<span style="color:#f92672">br</span>&gt;&lt;<span style="color:#f92672">code</span>&gt;textForm.$error.pattern:{{textForm.$error.pattern}}&lt;/<span style="color:#f92672">code</span>&gt;
+
+	&lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h2 id="inputurl">input[url]</h2>
+<blockquote>
+<p>参考链接<a href="https://docs.angularjs.org/api/ng/input/input%5Burl%5D">Input[url] API</a></p>
+</blockquote>
+<h2 id="inputweek">input[week]</h2>
+<blockquote>
+<p><strong>注意事项：</strong> ng-model必须是一个date object</p>
+</blockquote>
+<h3 id="额外属性arguments-3">额外属性（Arguments）</h3>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>string</td>
+<td>Sets the min validation error key if the value entered is less than min. This must be a valid ISO week format (yyyy-W##).</td>
+</tr>
+<tr>
+<td>max</td>
+<td>string</td>
+<td>Sets the max validation error key if the value entered is greater than max. This must be a valid ISO week format (yyyy-W##).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="代码演示官方-3">代码演示（官方）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#a6e22e">angular</span>.<span style="color:#a6e22e">module</span>(<span style="color:#e6db74">&#39;weekExample&#39;</span>, [])
+  .<span style="color:#a6e22e">controller</span>(<span style="color:#e6db74">&#39;DateController&#39;</span>, [<span style="color:#e6db74">&#39;$scope&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">$scope</span>) {
+    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">example</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2013</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>)
+    };
+  }]);
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span> <span style="color:#a6e22e">ng-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DateController as dateCtrl&#34;</span>&gt;
+  &lt;<span style="color:#f92672">label</span>&gt;Pick a date between in 2013:
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;exampleInput&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;week&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;input&#34;</span> <span style="color:#a6e22e">ng-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.value&#34;</span>
+           <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;YYYY-W##&#34;</span> <span style="color:#a6e22e">min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2012-W32&#34;</span>
+           <span style="color:#a6e22e">max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2013-W52&#34;</span> <span style="color:#a6e22e">required</span> /&gt;
+  &lt;/<span style="color:#f92672">label</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert&#34;</span>&gt;
+    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.required&#34;</span>&gt;
+        Required!&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#a6e22e">ng-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm.input.$error.week&#34;</span>&gt;
+        Not a valid date!&lt;/<span style="color:#f92672">span</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;value = {{example.value | date: &#34;yyyy-Www&#34;}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$valid = {{myForm.input.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.input.$error = {{myForm.input.$error}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.$valid = {{myForm.$valid}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+  &lt;<span style="color:#f92672">tt</span>&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/<span style="color:#f92672">tt</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+</code></pre></div><hr>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/select/">select学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/type/rootscope-scope/">rootScope.Scope学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/angular/directive/ng-cloak/">no-cloak学习笔记</a></h4>
+    <h5>May 26, 2016</h5>
+    
+<a href="/blogtags/angular1.4"><kbd class="item-tag">Angular1.4</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

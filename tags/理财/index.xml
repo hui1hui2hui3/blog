@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>理财 on Rabbit&amp;Carrot</title>
+    <link>http://example.com/tags/%E7%90%86%E8%B4%A2/</link>
+    <description>Recent content in 理财 on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/%E7%90%86%E8%B4%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用小钱去理财能赚到钱吗</title>
+      <link>http://example.com/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
+      <description>现在理财风气盛行，大部分人手头有些余钱就会拿去理财，都想通过理财来扩充自己的财产甚至实现财富自由。但很少有人对理财进行深入了解，以下 2 种现象囊括了大部分人：
+  不懂理财知识，懵懵懂懂直接去理财；
+  只懂一点点就以为懂了，以为能赚钱了；
+  我属于第二种人，学习了一些理财知识，然后就开始梦想自己财务自由的那天了。直到前几天的一次交易，我才发现自己连每次交易费要多少都没弄清楚过，于是我汇总了自己历史的交易记录，整理出了一些信息。
+01 小额理财 理财品种有很多，常见理财品种有基金，债券和股票；交易也分为场内交易和场外交易；我主要说的是场内交易和小额理财。
+啥叫小额理财？
+意思是说每次交易（买入或卖出一次就算一次交易，分批次买入或卖出算多次交易）的金额很低或者直接就是总理财额度很低。
+比如说每次交易的额度在 500-3000 元之间或总理财额度只有 1w。这是我目前的情况，那这会造成啥问题呢？
+02 场内交易流程 我们先来回顾一下完整的交易流程
+  选择自己想要购买的股票、ETF 或债券
+  确定自己想要购买的成本价
+  输入购买量或钱，进行下单
+  等待交易成交
+  交易成功后在持仓中查看具体持有信息
+  隔 N+1 天（转债可以当天交易，但股票、ETF 等需要隔天才能交易）后，选择自己想要的卖出价和卖出量，下单卖出
+  等待交易成交
+  交易成功后，在持仓中查看具体持有信息和收益
+  这个流程中涉及到的买入和卖出，都需要支出相应的手续费，那具体要支出多少呢？
+03 场内交易手续费 我们以股票为例，一笔交易（这里指的是购买产品从买入到卖出）你要付多少手续费呢，股票手续费交易公式如下：
+买入 = 佣金 + 过户费
+卖出 = 佣金 + 过户费 + 印花税</description>
+    </item>
+    
+  </channel>
+</rss>

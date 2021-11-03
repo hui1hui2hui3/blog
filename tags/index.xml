@@ -2,165 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Rabbit&amp;Carrot</title>
-    <link>/hugo-website/tags/</link>
+    <link>/blog/tags/</link>
     <description>Recent content in Tags on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/hugo-website/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>理财</title>
-      <link>/hugo-website/tags/%E7%90%86%E8%B4%A2/</link>
+      <link>/blog/tags/%E7%90%86%E8%B4%A2/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/%E7%90%86%E8%B4%A2/</guid>
+      <guid>/blog/tags/%E7%90%86%E8%B4%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>生活</title>
-      <link>/hugo-website/tags/%E7%94%9F%E6%B4%BB/</link>
+      <link>/blog/tags/%E7%94%9F%E6%B4%BB/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/%E7%94%9F%E6%B4%BB/</guid>
+      <guid>/blog/tags/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>/hugo-website/tags/development/</link>
+      <link>/blog/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/development/</guid>
+      <guid>/blog/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>/hugo-website/tags/go/</link>
+      <link>/blog/tags/go/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/go/</guid>
+      <guid>/blog/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>/hugo-website/tags/golang/</link>
+      <link>/blog/tags/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/golang/</guid>
+      <guid>/blog/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>/hugo-website/tags/hugo/</link>
+      <link>/blog/tags/hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/hugo/</guid>
+      <guid>/blog/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>template</title>
-      <link>/hugo-website/tags/template/</link>
+      <link>/blog/tags/template/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/template/</guid>
+      <guid>/blog/tags/template/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>/hugo-website/tags/themes/</link>
+      <link>/blog/tags/themes/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/themes/</guid>
+      <guid>/blog/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>/hugo-website/tags/jekyll/</link>
+      <link>/blog/tags/jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/jekyll/</guid>
+      <guid>/blog/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static-site-generator</title>
-      <link>/hugo-website/tags/static-site-generator/</link>
+      <link>/blog/tags/static-site-generator/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/static-site-generator/</guid>
+      <guid>/blog/tags/static-site-generator/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bootstrap</title>
-      <link>/hugo-website/tags/bootstrap/</link>
+      <link>/blog/tags/bootstrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/bootstrap/</guid>
+      <guid>/blog/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>/hugo-website/tags/css/</link>
+      <link>/blog/tags/css/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/css/</guid>
+      <guid>/blog/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>highlight-js</title>
-      <link>/hugo-website/tags/highlight-js/</link>
+      <link>/blog/tags/highlight-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/highlight-js/</guid>
+      <guid>/blog/tags/highlight-js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>/hugo-website/tags/html/</link>
+      <link>/blog/tags/html/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/html/</guid>
+      <guid>/blog/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>/hugo-website/tags/js/</link>
+      <link>/blog/tags/js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/js/</guid>
+      <guid>/blog/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>responsive</title>
-      <link>/hugo-website/tags/responsive/</link>
+      <link>/blog/tags/responsive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/responsive/</guid>
+      <guid>/blog/tags/responsive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>syntax-highlighting</title>
-      <link>/hugo-website/tags/syntax-highlighting/</link>
+      <link>/blog/tags/syntax-highlighting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/tags/syntax-highlighting/</guid>
+      <guid>/blog/tags/syntax-highlighting/</guid>
       <description></description>
     </item>
     

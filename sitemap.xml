@@ -3,150 +3,150 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/hugo-website/example/project1/</loc>
+    <loc>/blog/example/project1/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/example/project2/</loc>
+    <loc>/blog/example/project2/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/example/project3/</loc>
+    <loc>/blog/example/project3/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/example/project4/</loc>
+    <loc>/blog/example/project4/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/post/</loc>
+    <loc>/blog/post/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/</loc>
+    <loc>/blog/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/</loc>
+    <loc>/blog/tags/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</loc>
+    <loc>/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/%E7%90%86%E8%B4%A2/</loc>
+    <loc>/blog/tags/%E7%90%86%E8%B4%A2/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <loc>/blog/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</loc>
+    <loc>/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/example/goisforlovers/</loc>
+    <loc>/blog/example/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/development/</loc>
+    <loc>/blog/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/example/</loc>
+    <loc>/blog/example/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/example/hugoisforlovers/</loc>
+    <loc>/blog/example/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/go/</loc>
+    <loc>/blog/tags/go/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/golang/</loc>
+    <loc>/blog/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/hugo/</loc>
+    <loc>/blog/tags/hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/template/</loc>
+    <loc>/blog/tags/template/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/themes/</loc>
+    <loc>/blog/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/jekyll/</loc>
+    <loc>/blog/tags/jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/example/migrate-from-jekyll/</loc>
+    <loc>/blog/example/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/static-site-generator/</loc>
+    <loc>/blog/tags/static-site-generator/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/bootstrap/</loc>
+    <loc>/blog/tags/bootstrap/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/categories/</loc>
+    <loc>/blog/categories/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/css/</loc>
+    <loc>/blog/tags/css/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/highlight-js/</loc>
+    <loc>/blog/tags/highlight-js/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/html/</loc>
+    <loc>/blog/tags/html/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/js/</loc>
+    <loc>/blog/tags/js/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/responsive/</loc>
+    <loc>/blog/tags/responsive/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/tags/syntax-highlighting/</loc>
+    <loc>/blog/tags/syntax-highlighting/</loc>
   </url>
   
   <url>
-    <loc>/hugo-website/about/</loc>
+    <loc>/blog/about/</loc>
   </url>
   
 </urlset>

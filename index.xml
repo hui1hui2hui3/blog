@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rabbit&amp;Carrot</title>
-    <link>/hugo-website/</link>
+    <link>/blog/</link>
     <description>Recent content on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/hugo-website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project 1</title>
-      <link>/hugo-website/example/project1/</link>
+      <link>/blog/example/project1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/project1/</guid>
+      <guid>/blog/example/project1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 2</title>
-      <link>/hugo-website/example/project2/</link>
+      <link>/blog/example/project2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/project2/</guid>
+      <guid>/blog/example/project2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 3</title>
-      <link>/hugo-website/example/project3/</link>
+      <link>/blog/example/project3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/project3/</guid>
+      <guid>/blog/example/project3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 4</title>
-      <link>/hugo-website/example/project4/</link>
+      <link>/blog/example/project4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/project4/</guid>
+      <guid>/blog/example/project4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>失眠后的深思：我是谁？</title>
-      <link>/hugo-website/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</link>
+      <link>/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</guid>
+      <guid>/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</guid>
       <description>我是谁？我有精神分裂吗？
 失眠，大部分人或多或少都有经历过。失眠时，大家一般都会在床上翻来覆去，尝试各种小妙招来让自己睡着，但我的这次失眠却让我陷入了沉思，让我变得不认识我自己了。
 01 失眠的开始 我不是一个沾床就睡的人，但却很少失眠。这次失眠时，我出差南京加班到凌晨 1 点半，拖着疲惫的身体回到酒店，稍稍洗漱后就躺在酒店的床上，摆了一个很舒服的姿势，像这样，
@@ -81,10 +81,10 @@
     
     <item>
       <title>用小钱去理财能赚到钱吗</title>
-      <link>/hugo-website/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
+      <link>/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
+      <guid>/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
       <description>现在理财风气盛行，大部分人手头有些余钱就会拿去理财，都想通过理财来扩充自己的财产甚至实现财富自由。但很少有人对理财进行深入了解，以下 2 种现象囊括了大部分人：
   不懂理财知识，懵懵懂懂直接去理财；
   只懂一点点就以为懂了，以为能赚钱了；
@@ -110,20 +110,20 @@
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/hugo-website/example/goisforlovers/</link>
+      <link>/blog/example/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/goisforlovers/</guid>
+      <guid>/blog/example/goisforlovers/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>/hugo-website/example/hugoisforlovers/</link>
+      <link>/blog/example/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/hugoisforlovers/</guid>
+      <guid>/blog/example/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo
@@ -134,22 +134,24 @@ Follow the following steps:
     
     <item>
       <title>Migrate from Jekyll</title>
-      <link>/hugo-website/example/migrate-from-jekyll/</link>
+      <link>/blog/example/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/example/migrate-from-jekyll/</guid>
+      <guid>/blog/example/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&#39;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
     <item>
-      <title>关于我</title>
-      <link>/hugo-website/about/</link>
+      <title>关于</title>
+      <link>/blog/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/hugo-website/about/</guid>
-      <description>我是谁</description>
+      <guid>/blog/about/</guid>
+      <description>关于我 关于博客 本博客的主要目的是用来学习和总结，写下自己学习中、生活中知识，用来提高自己的知识留存率。 从12年开始就想建一个自己博客，三分钟热度+懒惰+缺乏计划，导致始终没有开始，一直到21年，中间将近十年的时光流逝了。 但还不晚，希望我能坚持每月每周都能有内容输出，把我的经历用信息存档，即使我死后，也能在这个信息化的时代留下点东西。
+推荐的读物 《认知觉醒》 《稀缺》 《跃迁》 《冯唐成事心法》
+关注我  如对我写的内容有兴趣，也欢迎关注我的微信公众号：  </description>
     </item>
     
   </channel>

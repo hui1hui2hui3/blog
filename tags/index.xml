@@ -2,165 +2,165 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Rabbit&amp;Carrot</title>
-    <link>http://example.com/tags/</link>
+    <link>/hugo-website/tags/</link>
     <description>Recent content in Tags on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo-website/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>理财</title>
-      <link>http://example.com/tags/%E7%90%86%E8%B4%A2/</link>
+      <link>/hugo-website/tags/%E7%90%86%E8%B4%A2/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/%E7%90%86%E8%B4%A2/</guid>
+      <guid>/hugo-website/tags/%E7%90%86%E8%B4%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>生活</title>
-      <link>http://example.com/tags/%E7%94%9F%E6%B4%BB/</link>
+      <link>/hugo-website/tags/%E7%94%9F%E6%B4%BB/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/%E7%94%9F%E6%B4%BB/</guid>
+      <guid>/hugo-website/tags/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>http://example.com/tags/development/</link>
+      <link>/hugo-website/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/development/</guid>
+      <guid>/hugo-website/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>http://example.com/tags/go/</link>
+      <link>/hugo-website/tags/go/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/go/</guid>
+      <guid>/hugo-website/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>http://example.com/tags/golang/</link>
+      <link>/hugo-website/tags/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/golang/</guid>
+      <guid>/hugo-website/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>http://example.com/tags/hugo/</link>
+      <link>/hugo-website/tags/hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/hugo/</guid>
+      <guid>/hugo-website/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>template</title>
-      <link>http://example.com/tags/template/</link>
+      <link>/hugo-website/tags/template/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/template/</guid>
+      <guid>/hugo-website/tags/template/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>http://example.com/tags/themes/</link>
+      <link>/hugo-website/tags/themes/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/themes/</guid>
+      <guid>/hugo-website/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>http://example.com/tags/jekyll/</link>
+      <link>/hugo-website/tags/jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/jekyll/</guid>
+      <guid>/hugo-website/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static-site-generator</title>
-      <link>http://example.com/tags/static-site-generator/</link>
+      <link>/hugo-website/tags/static-site-generator/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/static-site-generator/</guid>
+      <guid>/hugo-website/tags/static-site-generator/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bootstrap</title>
-      <link>http://example.com/tags/bootstrap/</link>
+      <link>/hugo-website/tags/bootstrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/bootstrap/</guid>
+      <guid>/hugo-website/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>http://example.com/tags/css/</link>
+      <link>/hugo-website/tags/css/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/css/</guid>
+      <guid>/hugo-website/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>highlight-js</title>
-      <link>http://example.com/tags/highlight-js/</link>
+      <link>/hugo-website/tags/highlight-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/highlight-js/</guid>
+      <guid>/hugo-website/tags/highlight-js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>http://example.com/tags/html/</link>
+      <link>/hugo-website/tags/html/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/html/</guid>
+      <guid>/hugo-website/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>http://example.com/tags/js/</link>
+      <link>/hugo-website/tags/js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/js/</guid>
+      <guid>/hugo-website/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>responsive</title>
-      <link>http://example.com/tags/responsive/</link>
+      <link>/hugo-website/tags/responsive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/responsive/</guid>
+      <guid>/hugo-website/tags/responsive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>syntax-highlighting</title>
-      <link>http://example.com/tags/syntax-highlighting/</link>
+      <link>/hugo-website/tags/syntax-highlighting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/tags/syntax-highlighting/</guid>
+      <guid>/hugo-website/tags/syntax-highlighting/</guid>
       <description></description>
     </item>
     

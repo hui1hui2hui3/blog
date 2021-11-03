@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Rabbit&amp;Carrot</title>
-    <link>http://example.com/post/</link>
+    <link>/hugo-website/post/</link>
     <description>Recent content in Posts on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo-website/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>失眠后的深思：我是谁？</title>
-      <link>http://example.com/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</link>
+      <link>/hugo-website/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</guid>
+      <guid>/hugo-website/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</guid>
       <description>我是谁？我有精神分裂吗？
 失眠，大部分人或多或少都有经历过。失眠时，大家一般都会在床上翻来覆去，尝试各种小妙招来让自己睡着，但我的这次失眠却让我陷入了沉思，让我变得不认识我自己了。
 01 失眠的开始 我不是一个沾床就睡的人，但却很少失眠。这次失眠时，我出差南京加班到凌晨 1 点半，拖着疲惫的身体回到酒店，稍稍洗漱后就躺在酒店的床上，摆了一个很舒服的姿势，像这样，
@@ -45,10 +45,10 @@
     
     <item>
       <title>用小钱去理财能赚到钱吗</title>
-      <link>http://example.com/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
+      <link>/hugo-website/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.com/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
+      <guid>/hugo-website/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
       <description>现在理财风气盛行，大部分人手头有些余钱就会拿去理财，都想通过理财来扩充自己的财产甚至实现财富自由。但很少有人对理财进行深入了解，以下 2 种现象囊括了大部分人：
   不懂理财知识，懵懵懂懂直接去理财；
   只懂一点点就以为懂了，以为能赚钱了；

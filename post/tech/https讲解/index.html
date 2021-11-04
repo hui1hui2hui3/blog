@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>HTTPS讲解</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">HTTPS讲解</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>HTTPS讲解</h2>
+        <h5>December 13, 2016</h5>
+        
+<a href="/blogtags/https"><kbd class="item-tag">HTTPS</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="http缺点">HTTP缺点</h2>
+<ol>
+<li>通信使用的是明文，内容可能会被窃听</li>
+<li>不验证通信方的身份，有可能遭遇伪装</li>
+<li>无法证明报文的完整性，有可能已遭篡改</li>
+</ol>
+<h2 id="通信使用的是明文">通信使用的是明文</h2>
+<p><strong>问题：</strong></p>
+<pre><code>内容被窃听
+</code></pre>
+<p><strong>应对方法：</strong></p>
+<p>1.通信加密</p>
+<pre><code>HTTP通过和SSL（Secure Socket Layer,安全套接层）或TLS（Transport Layer Security,安全传输协议层）组合使用，加密通信内容,又被称为HTTPS（HTTP Secure,超文本传输安全协议）
+</code></pre>
+<p>2.内容加密</p>
+<pre><code>将参与通信的内容进行加密，前提要求的是客户端和服务器同时具备加密和解密的机制，这个仍然有很大风险
+</code></pre>
+<h2 id="不验证通信方的身份">不验证通信方的身份</h2>
+<p><strong>问题：</strong></p>
+<pre><code>1. 无法确定请求发送至目标的服务器是否是真实返回响应的那台服务器。可能是已伪装的服务器。
+2. 无法确定响应返回的客户端是否是意图接受响应的哪个客户端。可能是已伪装的客户端
+3. 无法确定正在通信的对方是否具备访问权限。
+4. 无法判断请求来自哪儿，是谁发送的。
+5. 无法拦截下无意义的请求，即DoS攻击（Denial of Service, 拒绝服务攻击）
+</code></pre>
+<p><strong>应对方法：</strong></p>
+<p>1.查明对手证书
+<img src="http://static.zybuluo.com/huis/ph395jvu85ibv5zhczzuuhy1/image_1b3f3rbrv79p9p7116b1ojcfau9.png" alt="image_1b3f3rbrv79p9p7116b1ojcfau9.png-66.6kB">
+如图：客户端查明服务端的证书合法性</p>
+<h2 id="无法证明报文完整性">无法证明报文完整性</h2>
+<p>这里说的完整性，主要指的是信息的准确度，无法证明其完整性，通常也就无法判断信息是否准确。
+<strong>问题：</strong></p>
+<pre><code>接受到的内容可能有误
+</code></pre>
+<p><strong>应对方法：</strong></p>
+<pre><code>MD5和SHA-1等散列值校验的方法或PDG（Pertty Good Privacy，完美隐私）数字签名
+</code></pre>
+<h2 id="httpshttp加密认证完整性保护">HTTPS=HTTP+加密+认证+完整性保护</h2>
+<p>HTTPS并非是一种新的协议，只是披了SSL外壳的HTTP。
+<img src="http://static.zybuluo.com/huis/xw022r7nlcvp6p5sq26azezb/image_1b3f7n2b31d4jairhm79cn112q9.png" alt="image_1b3f7n2b31d4jairhm79cn112q9.png-20.6kB"></p>
+<h2 id="加密技术">加密技术</h2>
+<h3 id="共享密钥加密">共享密钥加密</h3>
+<p>加密和解密同用一个密钥，也叫做对称密钥加密。
+<img src="http://static.zybuluo.com/huis/2969xw1wtemfegps7gl7stl4/image_1b3f862eird8jjuj2fuca2iam.png" alt="image_1b3f862eird8jjuj2fuca2iam.png-88.2kB">
+所以发送密钥就有被窃听的风险，但不发送，对方就不能解密。再说，密钥若能安全发送，那数据也能安全送达了。
+优点：处理速度快，效率高
+缺点：不安全</p>
+<h3 id="公开密钥加密">公开密钥加密</h3>
+<p>公开密钥加密使用一对非对称的密钥。一把叫做私有密钥，另一把叫做公开密钥。私有密钥不能让任何人知道，公开密钥可以随意发布公开。
+<img src="http://static.zybuluo.com/huis/y0linryc747c8261brthgrls/image_1b3re557m15uhrd61sc512dtpgl9.png" alt="image_1b3re557m15uhrd61sc512dtpgl9.png-92.9kB">
+优点：安全
+缺点：处理速度慢，效率低</p>
+<h2 id="https加密机制">HTTPS加密机制</h2>
+<p>HTTPS采用的是共享密钥加密和公开密钥加密两者并用的混合加密机制。
+<img src="http://static.zybuluo.com/huis/zw18yrdqmuiz8mz8pazd6tne/image_1b3resb6eb0s1i6p1tedae4526m.png" alt="image_1b3resb6eb0s1i6p1tedae4526m.png-128.4kB"></p>
+<h2 id="如何证明公开密钥是正确的">如何证明公开密钥是正确的</h2>
+<p>为了解决公开密钥的正确性，使用数字证书认证机构（CA，Certificate Authority）和其相关机关颁发的公开密钥证书。
+<img src="http://static.zybuluo.com/huis/dnipae34rj1flomw8nq07ers/image_1b3rguvvepc21bl21dvn1hhd19vi13.png" alt="image_1b3rguvvepc21bl21dvn1hhd19vi13.png-155.3kB"></p>
+<p>什么是数字签名？</p>
+<pre><code>数字签名，是由先对内容进行单向散列函数（MD5,SHA1），再使用私钥进行加密，只能使用公钥解密。
+</code></pre>
+<p>那数字认证机构如何安全的把公开密钥给到客户端？</p>
+<pre><code>浏览器开发商发布时，会事先再内部植入常用认证机关的公开密钥
+</code></pre>
+<h2 id="客户端证书">客户端证书</h2>
+<p>以客户端证书进行客户端证书，证明服务器正在通信的对方是预料之中的客户端。
+存在问题：证书的获取和发布</p>
+<pre><code>客户端证书需要付费购买。另外让用户自行安装证书各种麻烦。
+</code></pre>
+<p>应用：银行的网上银行类似于U盾的东西</p>
+<p>​</p>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

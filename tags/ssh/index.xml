@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/ssh/</link>
+    <description>Recent content in SSH on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitHub使用笔记--SSH提交异常</title>
+      <link>/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</guid>
+      <description>系统环境：MAC
+ ssh git push 时出现timeout的问题 $ git push ssh: connect to host github.com port 22: Connection timed out fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. 修改前测试：
+$ ssh -T git@github.com ssh: connect to host github.com port 22: Operation timed out 修改 ~/.ssh/config 中 github.com 的配置， Hostname 改为 ssh.github.com, Port 改为 443:
+Host github.com Hostname ssh.github.com Port 443 修改后测试：</description>
+    </item>
+    
+  </channel>
+</rss>

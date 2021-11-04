@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Mysql 初始化Root密码和远程登录授权</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Mysql 初始化Root密码和远程登录授权</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Mysql 初始化Root密码和远程登录授权</h2>
+        <h5>April 19, 2017</h5>
+        
+<a href="/blogtags/mysql"><kbd class="item-tag">Mysql</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><blockquote>
+<p>Mysql版本：5.7.17
+系统环境：Center OS</p>
+</blockquote>
+<h2 id="初始化root密码--centeros">初始化Root密码&ndash;CenterOS</h2>
+<h3 id="获取初始root密码">获取初始Root密码</h3>
+<p><code>grep 'temporary password' /var/log/mysqld.log</code></p>
+<h3 id="重置root密码">重置Root密码</h3>
+<p><strong>1.Stop mysql:</strong>
+<code>systemctl stop mysqld</code></p>
+<p><strong>2.Set the mySQL environment option</strong></p>
+<pre><code>systemctl set-environment MYSQLD_OPTS=&quot;--skip-grant-tables&quot;
+</code></pre><p><strong>3.Start mysql usig the options you just set</strong>
+<code>systemctl start mysqld</code>
+<strong>4.Login as root</strong>
+<code>mysql -u root</code>
+<strong>5.Update the root user password with these mysql commands</strong></p>
+<pre><code>mysql&gt; UPDATE mysql.user SET authentication_string = PASSWORD('MyNewPassword')
+    -&gt; WHERE User = 'root' AND Host = 'localhost';
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; quit
+</code></pre><p><strong>6.Stop mysql</strong>
+<code>systemctl stop mysqld</code>
+<strong>7.Unset the mySQL envitroment option so it starts normally next time</strong>
+<code>systemctl unset-environment MYSQLD_OPTS</code>
+<strong>8.Start mysql normally:</strong>
+<code>systemctl start mysqld</code>
+<strong>7.Try to login using your new password:</strong>
+<code>mysql -u root -p</code></p>
+<h2 id="开启远程登录--授权">开启远程登录&ndash;授权</h2>
+<p>语法1：授权用户访问所有数据库
+<code>GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;</code></p>
+<p>语法2：授权用户访问指定数据库
+<code>GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;</code></p>
+<p>语法3：授权用户访问指定数据库&ndash;精简
+<code>GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'%';</code></p>
+<p><strong>问题：语法1和2由于涉及到password，5.7.6以后会出现如下报错</strong>
+<code>ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</code>
+解决方法：
+<code>SET GLOBAL  validate_password_policy='LOW';</code></p>
+<p>最后记得：刷新权限
+<code>FLUSH PRIVILEGES;</code></p>
+<h2 id="授权清除方法">授权清除方法</h2>
+<p><strong>1.To list users:</strong>
+<code>select user,host from mysql.user;</code></p>
+<p><strong>2.To show privileges:</strong>
+<code>show grants for 'user'@'host';</code></p>
+<p><strong>3.To change privileges, first revoke. Such as:</strong>
+<code>revoke all privileges on *.* from 'user'@'host';</code></p>
+<p><strong>4.Then grant the appropriate privileges as desired:</strong>
+<code>grant SELECT,INSERT,UPDATE,DELETE ON </code>db<code>.* TO 'user'@'host';</code></p>
+<p><strong>5.Finally, flush:</strong>
+<code>flush privileges;</code></p>
+<p><strong>参考链接1：<a href="https://chartio.com/resources/tutorials/how-to-grant-all-privileges-on-a-database-in-mysql/">How to Grant All Privileges on a Database in MySQL</a></strong>
+<strong>参考链接2：<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql">How To Create a New User and Grant Permissions in MySQL</a></strong>
+<strong>参考链接3：<a href="http://www.cnblogs.com/cnblogsfans/archive/2009/09/21/1570942.html">Mysql初始化root密码和允许远程访问</a></strong></p>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

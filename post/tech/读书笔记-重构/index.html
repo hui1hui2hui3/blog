@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>读书笔记-《重构》</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">读书笔记-《重构》</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>读书笔记-《重构》</h2>
+        <h5>March 7, 2017</h5>
+        
+<a href="/blogtags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><kbd class="item-tag">读书笔记</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="关键点">关键点</h2>
+<ol>
+<li>重构是在不改变软件可观察行为的前提下改善其内部结构</li>
+<li>重构前，必须先要给即将修改的代码建立一组可靠的测试环</li>
+<li>重构时要小步前进</li>
+<li>重构（名词）：是对软件内部结构的一种调整，目的是不改变软件可观察行为的前提下，提高其可理解性，降低其修改成本。</li>
+<li>重构（动词）：使用一系列重构手法，在不改变软件可观察行为的前提下，调整其结构。</li>
+</ol>
+<h2 id="第一章分解并重组">第一章：分解并重组</h2>
+<ol>
+<li>找出函数内的局部变量和参数</li>
+<li>任何不会被修改的变量都可以被当成参数传入新的函数</li>
+<li>只有一个变量被修改则可以把它当做返回值</li>
+<li><strong>每次修改后，都要执行测试</strong></li>
+<li>绝大多数，函数应该放在它所使用的数据的所属对象内</li>
+<li>如果旧函数是public函数，而不想修改其他类的接口，则可以采用保留旧函数的形式</li>
+<li>临时变量可能是个问题</li>
+<li><strong>重构时不必担心系统性能问题，优化时才需要</strong></li>
+<li>最好不要再另一个对象的属性基础上运用switch语句，如果不得不使用，也应该在对象自己的数据上使用。</li>
+<li>如果函数依赖两个对象的数据，尽可能把函数划分给可能变化的数据对象内实现</li>
+<li>一个对象不能在生命周期内修改自己所属的类</li>
+<li>State或Strategy模式去除switch&hellip;case&hellip;和if&hellip;else&hellip;</li>
+</ol>
+<h2 id="第二章重构原则">第二章：重构原则</h2>
+<ol>
+<li>添加新功能时，不应该修改既有代码，只管添加新功能；重构时不能再添加新功能，只管改进程序结构，不应该添加任何测试（除非有遗漏），只有处理接口变化时才修改测试。</li>
+<li><strong>重构是随时随地进行，不应该为重构而重构（比如：划出一段时间专门专门做重构）</strong></li>
+<li><strong>事不过三，三则重构</strong></li>
+<li>不要过早发布接口</li>
+<li>如果大部分代码不能正常运作，那么此时应该是重写而不是重构</li>
+<li>如果项目已近最后期限则应避免重构</li>
+<li>编写快速软件的秘密是：首先写出可调的软件，然后调整它以求获得足够速度</li>
+<li><strong>关于性能，大部分时间耗费再小部分代码上。</strong></li>
+</ol>
+<h2 id="第三章代码的坏味道-----感觉需要读n遍才行">第三章：代码的坏味道 &mdash; 感觉需要读N遍才行</h2>
+<ol>
+<li>Duplicated Code(重复代码）
+<ol>
+<li>情况1：同一类的两个函数含有相同的表达式</li>
+<li>情况2：两个互为兄弟的子类内含相同的表达式</li>
+<li>情况3：两个毫不相关的类出现重复，则考虑将一个类的重复代码提炼到独立类中，另一个类使用新类；或函数属于第三类，另两个类引用第三个类。</li>
+</ol>
+</li>
+<li>Long Method(过长方法）
+1.函数应以其用途，而非实现手法命名
+2.循环和条件表达式尝尝是提炼的信号</li>
+<li>Large Class（过大的类）
+<ol>
+<li>选择类内彼此相关的变量，放到同一类中</li>
+</ol>
+</li>
+<li>Long Parameter List(过长参数列）</li>
+<li>Divergent Change（发散式变化）？&mdash;&mdash;-</li>
+<li>Shotgun Surgery(散弹式修改）？</li>
+<li>Feature Envy(依恋情结）？</li>
+<li>Data Clumps(数据泥团）？</li>
+<li>Primitive Obession(基本类型偏执）？</li>
+<li>Switch Statements(switch 惊悚现身）？</li>
+<li>Parallel Inheritance Hierarchies(平行继承体系）</li>
+<li>Lazy Class(冗赘类）</li>
+<li>Speculative Generality(夸夸其谈未来性）</li>
+<li>Temporary Field(令人迷惑的暂时字段）</li>
+<li>Message Chains(过度耦合的消息链）</li>
+<li>Middle Man(中间人）</li>
+<li>Inappropriate Intimacy(狎昵关系）</li>
+<li>Alternative Classes With Different Interfaces（异曲同工的类）</li>
+<li>Incomplete Library Class(不完美的库类）</li>
+<li>Data Class(纯稚的数据类）</li>
+<li>Refused Bequest（被拒绝的遗赠）</li>
+<li>Comments（过多的注释）</li>
+</ol>
+<h2 id="第四章--构筑测试体系">第四章&ndash;构筑测试体系</h2>
+<ol>
+<li>每当收到bug，先写一个单元测试暴露这个bug</li>
+<li>测试最担心出错的部分</li>
+<li>考虑可能出错的边界条件，集中火力</li>
+<li>当事情被认为应该会出错时，应该检查是否抛出了预期的异常</li>
+</ol>
+<h2 id="第五章--重构列表">第五章&ndash;重构列表</h2>
+<h2 id="第六章--重新组织函数">第六章&ndash;重新组织函数</h2>
+<p><strong>前面一页完整的讲解了如何进行重新组织函数</strong></p>
+<h3 id="extract-method提炼函数--110">Extract Method（提炼函数）&ndash;110</h3>
+<p>**概念：**你有一段代码可以被组织在一起并独立出来，将代码放进独立函数中，并让函数名称解释改函数的用途
+<strong>做法：</strong></p>
+<ol>
+<li>以函数意图命名函数（以“做什么”命名，而不是“怎么做”），如果想不错有意义名称，就别重构</li>
+<li>检查移动到目标函数的临时变量，检查原本的生命式是否在提炼代码段的外围，如果是则可以删除这些声明式</li>
+</ol>
+<p><strong>复杂情况：</strong></p>
+<ol>
+<li>提炼代码段对局部变量赋值&ndash;如果内外都使用则返回该变量</li>
+<li>返回的变量不只一个&ndash;尽量只返回一个，否则可以提炼多个方法</li>
+</ol>
+<h3 id="inline-method内联函数--117">Inline Method（内联函数）&ndash;117</h3>
+<p>**概念：**一个函数的本地和名称同样清楚易懂，在函数调用点插入函数本体，然后移除该函数
+<strong>做法：</strong></p>
+<ol>
+<li>检查多态性，如果子类继承该函数，则不能进行内联</li>
+<li>如果遇到递归调用，多返回点，内联至另一个对象中而该对象无法提供访问函数的等复杂情况，那么不应该使用改重构手法</li>
+</ol>
+<h3 id="inline-temp内联临时变量--119">Inline Temp(内联临时变量）&ndash;119</h3>
+<p><strong>概念：<strong>如果一个临时变量，只被一个</strong>简单表达式</strong>赋值一次，而它<strong>妨碍了其他重构手法</strong>，将对该变量的引用动作，替换为对它赋值的表达式自身。
+**动机：**多半是为Replace Temp With Query(120)的一部分使用
+<strong>做法：</strong></p>
+<ol>
+<li>检查临时变量赋值语句，确保等号右边表达式没有副作用</li>
+<li>如果临时变量不是final，则改为final（这可以检查这个变量是否被赋值一次）</li>
+</ol>
+<h3 id="replace-temp-with-query以查询取代临时变量--120">Replace Temp With Query(以查询取代临时变量）&ndash;120</h3>
+<p>**概念：**一个临时变量保存某一表达式的结果，将这个表达式提炼到一个独立函数中，将这个临时变量所有引用点替换为对函数的调用。新函数可以被其他函数使用。
+**动机：**往往是运用Extact Method(110)之前的重构手法
+<strong>做法：</strong></p>
+<ol>
+<li>临时变量被赋值超过一次，需要使用Split Temporary Variable(128)方式分割成多个变量</li>
+<li>声明为final（保证临时变量被赋值一次）</li>
+<li>将临时变量等号右侧部分提炼到独立函数中；先声明成private需要更多类使用时才放松保护；确保不修改任何对象内容，如果修改了，则需要Separate Query From Modifer(279)</li>
+<li>Inline Temp(119)手法</li>
+</ol>
+<hr>
+<ol>
+<li>对于循环中累加好几个值，需要对每个累加值重复一边循环，当然，循环必须很简单，才不会出问题</li>
+<li><strong>每次替换一个临时变量</strong></li>
+<li><strong>声明为final</strong></li>
+</ol>
+<h3 id="introduce-explaining-variable引入解释性变量--124">Introduce Explaining Variable(引入解释性变量）&ndash;124</h3>
+<p>**概念：**你有一个复杂表达式，将该表达式（或一部分）的结果放进一个临时变量，以此变量名称来解释表达式的用途。
+**动机：**不常用，一般使用Extract Method（110）来解释一段代码的意义</p>
+<p>什么时候使用？
+处理一个拥有大量局部变量的算法时</p>
+<h3 id="split-temporary-variable分解临时变量--128">Split Temporary Variable(分解临时变量）&ndash;128</h3>
+<p>**概念：**临时变量被赋值超过一次，它不是循环变量，也不用于收集计算结果，针对每次赋值，创造一个独立、对应的临时变量
+**动机：**如果临时变量承担多个责任，就应该被替换为多个临时变量</p>
+<h3 id="remove-assignments-to-parameters移除对参数的赋值--131">Remove Assignments to Parameters(移除对参数的赋值）&ndash;131</h3>
+<p>**概念：**代码对一个参数进行赋值，以一个临时变量取代该参数的位置。
+**动机：**针对传入一个对象并被改成指向另一个对象的情况</p>
+<h3 id="replace-method-with-method--135-object以函数对象取代函数">Replace Method with Method&ndash;135 Object(以函数对象取代函数）</h3>
+<p>**概念：**有一个大型函数，对局部变量无法Extract Method(110）,将这个函数放进单独对象，局部变量编程对象内字段，然后将大型函数分解成多个小型函数。</p>
+<h3 id="substitute-algorithm替换算法--139">Substitute Algorithm(替换算法）&ndash;139</h3>
+<p>**概念：**想要把某个算法替换为另一个更清晰的算法，将函数本体替换为另一个算法。</p>
+<h2 id="第七章--在对象之间搬移特性">第七章&ndash;在对象之间搬移特性</h2>
+<p>决定把责任放到哪儿？</p>
+<h3 id="move-method-搬移函数--142">Move Method （搬移函数）&ndash;142</h3>
+<p>**概念：**程序中，有个函数与其所驻类之外的另一个类进行更多交流。调用后者或被后者调用。再函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数或将旧函数移除。</p>
+<h3 id="move-field搬移字段--146">Move Field（搬移字段）&ndash;146</h3>
+<hr>
+<p>###关键点</p>
+<ol>
+<li>重构的意义在于：你永远不必说对不起&ndash;只要把出问题的地方修补好就行。</li>
+</ol>
+<h2 id="第八章--重新组织数据">第八章&ndash;重新组织数据</h2>
+<h3 id="self-encapsulate-field自封装字段">Self Encapsulate Field(自封装字段）</h3>
+<p>注意：小心“在构造函数中使用设值函数”的情况，一般设值函数被认为应该再对象创建后才使用。一般要不直接访问字段，要不定义一个初始化函数</p>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

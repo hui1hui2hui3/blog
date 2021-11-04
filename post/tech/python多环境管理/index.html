@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Python多环境管理</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Python多环境管理</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Python多环境管理</h2>
+        <h5>October 16, 2019</h5>
+        
+<a href="/blogtags/python"><kbd class="item-tag">Python</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="pyenv">pyenv</h2>
+<blockquote>
+<p>用于管理Python 版本
+也就是说使用使用该工具可以存在多个Python版本</p>
+</blockquote>
+<ul>
+<li>安装版本： <code>pyenv install</code></li>
+<li>查看当前使用版本： <code>pyenv version</code></li>
+<li>查看所有已安装版本：<code>pyenv versions</code>
+<ul>
+<li>其中<code>system</code>环境为系统安装版本</li>
+<li>还会显示<code>virtualenvs</code>创建的虚拟环境</li>
+</ul>
+</li>
+<li>切换版本：</li>
+<li><code>pyenv local xxx</code>
+<ul>
+<li>激活当前目录使用版本为xxx</li>
+</ul>
+</li>
+<li><code>pyenv shell xxx</code>
+<ul>
+<li>激活当前命令行使用版本为xxx</li>
+</ul>
+</li>
+<li><code>pyenv global xxx</code>
+<ul>
+<li>切换全局默认版本为xxx</li>
+</ul>
+</li>
+</ul>
+<h2 id="virtualenv">virtualenv</h2>
+<blockquote>
+<p>用于管理Python 依赖库的版本
+也就是说使用该工具可以存在一个Python版本使用某个依赖库时，可以使用不同版本的。建议搭配pyenv使用</p>
+</blockquote>
+<p><strong>注意： 该环境优先级高于pyenv</strong></p>
+<h2 id="pyenv-virtualenv">pyenv-virtualenv</h2>
+<blockquote>
+<p>是pyenv的插件，用于管理virtualenv</p>
+</blockquote>
+<ul>
+<li>创建虚机环境：<code>pyenv virtualenv &lt;version&gt; &lt;env name&gt;</code>
+<ul>
+<li>version 为pyenv 安装的python版本</li>
+<li>env name 为自定义环境名称</li>
+</ul>
+</li>
+<li>查看所有虚拟环境： <code>pyenv virtualenvs</code>
+<ul>
+<li>列表中有<code>*</code>前缀的表示当前激活环境</li>
+</ul>
+</li>
+<li>激活虚拟环境：<code>pyenv active &lt;env name&gt;</code>
+<ul>
+<li>激活后，除非关闭shell，否则无论在哪个目录均使用该版本（包括pyenv local环境）</li>
+</ul>
+</li>
+<li>离开环境：<code>pyenv deactive</code></li>
+</ul>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/">Python Selenium学习笔记</a></h4>
+    <h5>September 26, 2016</h5>
+    
+<a href="/blogtags/python"><kbd class="item-tag">Python</kbd></a>
+
+<a href="/blogtags/selenium"><kbd class="item-tag">Selenium</kbd></a>
+
+<a href="/blogtags/unittest"><kbd class="item-tag">UnitTest</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/">如何查看git提交近期的所有的改动或新增的文件-Python实现</a></h4>
+    <h5>September 22, 2016</h5>
+    
+<a href="/blogtags/git"><kbd class="item-tag">Git</kbd></a>
+
+<a href="/blogtags/python"><kbd class="item-tag">Python</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

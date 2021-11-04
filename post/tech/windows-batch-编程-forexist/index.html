@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Windows Batch 编程--For，Exist</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Windows Batch 编程--For，Exist</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Windows Batch 编程--For，Exist</h2>
+        <h5>July 3, 2017</h5>
+        
+<a href="/blogtags/batch"><kbd class="item-tag">Batch</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="例子解析实现检测分支同时新建的功能">例子解析：实现检测分支同时新建的功能</h2>
+<pre><code>@echo off
+set branch_name=origin/test
+set result=0
+
+FOR /F %%G IN ('git branch -r') DO (
+   if %%G==%branch_name% (
+	echo find branch %%G
+        set result=1
+   )
+)
+if %result%==0 (
+   echo &quot;prepare test branch&quot;
+   call git checkout -B test
+   call git push http://%stash_user%:%stash_pass%@s.kyee.com.cn/scm/iotbc/iot-server.git test -f
+) else (
+   echo &quot;another test branch exists!&quot;
+   exit 1
+)
+</code></pre><h2 id="例子解析2-实现文件检测删除和重命名文件">例子解析2： 实现文件检测，删除和重命名文件</h2>
+<pre><code>@echo off
+cd server
+if exist &quot;dist_one*.jar&quot; (
+	echo found_dist_one
+	del iot-server-snapshot.jar
+	ren dist_one*.jar iot-server-snapshot.jar
+) else (
+	echo just_run_iot
+)
+java -Dfile.encoding=utf-8 -jar iot-server-snapshot.jar 1&gt;server.log 2&gt;&amp;1
+
+</code></pre><h2 id="例子3实现for循环内赋值问题">例子3：实现for循环内赋值问题</h2>
+<h3 id="代码1正常实现方式这种你会发现无法赋值">代码1：正常实现方式,这种你会发现无法赋值</h3>
+<pre><code>@echo off
+set num=0
+for %%i in (mysql-bin.0*) do (
+	echo %%i
+	set /a num=num+1
+	echo %num%
+)
+echo %num%
+pause
+</code></pre><p>结果如下：
+<img src="http://static.zybuluo.com/huis/y6mogjuwv8u819orc120t2dy/image_1bk3t3f6g124chuq1ptao9u1v2v9.png" alt="image_1bk3t3f6g124chuq1ptao9u1v2v9.png-25.3kB">
+会发现结果for循环中的变量都是0，没有+1
+What A Hell！！！</p>
+<h3 id="代码2实现方式">代码2：实现方式</h3>
+<pre><code>@echo off
+SETLOCAL ENABLEDELAYEDEXPANSION
+set num=0
+for %%i in (mysql-bin.0*) do (
+	echo %%i
+	set /a num=num+1
+	echo !num!
+)
+echo %num%
+pause
+</code></pre><p>结果如下：
+<img src="http://static.zybuluo.com/huis/mllsbpqrf7ecjrqty5itihvf/image_1bk3t73891dbha7l1i9g1p2h1fkkm.png" alt="image_1bk3t73891dbha7l1i9g1p2h1fkkm.png-23.3kB">
+正常了，为啥累！！！仔细看会发现，方法2的代码方法1的多了一行
+<code>SETLOCAL ENABLEDELAYEDEXPANSION</code>，这个是啥意思，就是“启用延缓环境变量”，另外还有就是<code>echo !num!</code>这里用的不再是<code>echo %num%</code>注意了</p>
+<h2 id="参考链接">参考链接</h2>
+<p><a href="http://docs.30c.org/dosbat/chapter04/">Windows 批处理脚本学习教程</a>
+<a href="https://ss64.com/nt/set.html">CMD</a>
+<a href="http://steve-jansen.github.io/guides/windows-batch-scripting/index.html">Guide to Windows Batch Scripting</a>
+<a href="https://my.oschina.net/superkangning/blog/528881">windows批处理 (cmd/bat) 编程详解</a>
+<a href="https://wsgzao.github.io/post/windows-batch/">Windows批处理(cmd/bat)常用命令小结</a>
+<a href="http://netwjx.github.io/blog/2012/07/29/windows-shell-and-bat-skills/">Windows命令行和批处理技巧</a></p>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/">Windows 睡眠等待机制 timeout,waitfor,ping</a></h4>
+    <h5>October 30, 2017</h5>
+    
+<a href="/blogtags/windows"><kbd class="item-tag">Windows</kbd></a>
+
+<a href="/blogtags/batch"><kbd class="item-tag">Batch</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">Windows 批处理Batch使用手册</a></h4>
+    <h5>July 3, 2017</h5>
+    
+<a href="/blogtags/batch"><kbd class="item-tag">Batch</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

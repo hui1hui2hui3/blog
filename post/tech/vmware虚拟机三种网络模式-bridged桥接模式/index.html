@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>VMware虚拟机三种网络模式--Bridged（桥接模式）</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">VMware虚拟机三种网络模式--Bridged（桥接模式）</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>VMware虚拟机三种网络模式--Bridged（桥接模式）</h2>
+        <h5>May 4, 2018</h5>
+        
+<a href="/blogtags/vmware"><kbd class="item-tag">VMware</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>vmware为我们提供了三种网络工作模式，它们分别是：<strong>Bridged（桥接模式）、NAT（网络地址转换模式）、Host-Only（仅主机模式）</strong>。</p>
+<p>打开vmware虚拟机，我们可以在选项栏的“编辑”下的“虚拟网络编辑器”中看到VMnet0（桥接模式）、VMnet1（仅主机模式）、VMnet8（NAT模式），那么这些都是有什么作用呢？</p>
+<p>其实，我们现在看到的VMnet0表示的是用于桥接模式下的虚拟交换机；VMnet1表示的是用于仅主机模式下的虚拟交换机；VMnet8表示的是用于NAT模式下的虚拟交换机。</p>
+<p><img src="http://static.zybuluo.com/huis/z7n11lnksaan8qkhz2c1lycb/image_1bp8a2j3vrevcj21lm31rgj1vtc9.png" alt="image_1bp8a2j3vrevcj21lm31rgj1vtc9.png-64.9kB"></p>
+<p>同时，在主机上对应的有VMware Network Adapter VMnet1和VMware Network Adapter VMnet8两块虚拟网卡，它们分别作用于仅主机模式与NAT模式下。在“网络连接”中我们可以看到这两块虚拟网卡，如果将这两块卸载了，可以在vmware的“编辑”下的“虚拟网络编辑器”中点击“还原默认设置”，可重新将虚拟网卡还原。</p>
+<p><img src="http://static.zybuluo.com/huis/51drakkj9w222j752kwhewwq/image_1bp8aj4e81249s9u1ghj1ibv10vu16.png" alt="image_1bp8aj4e81249s9u1ghj1ibv10vu16.png-127.2kB"></p>
+<p>小伙伴看到这里，肯定有疑问，为什么在真机上没有VMware Network Adapter VMnet0虚拟网卡呢？那么接下来，我们就一起来看一下这是为什么。</p>
+<h2 id="一bridged桥接模式">一、Bridged（桥接模式）</h2>
+<p>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：
+<img src="http://static.zybuluo.com/huis/gb7wmj17g8is74kaqy4vwd09/image_1bp8alhtk824144mbak16eu92a1j.png" alt="image_1bp8alhtk824144mbak16eu92a1j.png-125.5kB">
+接下来，我们就来实际操作，如何设置桥接模式。</p>
+<p>首先，安装完系统之后，在开启系统之前，点击“编辑虚拟机设置”来设置网卡模式。
+<a href="http://www.linuxidc.com/upload/2016_09/160926204625484.png!%5Bimage_1bp8amn75p08ri111v11o31ulb20.png-116.8kB%5D%5B4%5D">http://www.linuxidc.com/upload/2016_09/160926204625484.png![image_1bp8amn75p08ri111v11o31ulb20.png-116.8kB][4]</a></p>
+<p>点击“网络适配器”，选择“桥接模式”，然后“确定”
+<a href="http://www.linuxidc.com/upload/2016_09/160926204625485.png!%5Bimage_1bp8ap10t1k4l181khtq1mfuuad2d.png-89.3kB%5D%5B5%5D">http://www.linuxidc.com/upload/2016_09/160926204625485.png![image_1bp8ap10t1k4l181khtq1mfuuad2d.png-89.3kB][5]</a></p>
+<p>在进入系统之前，我们先确认一下主机的ip地址、网关、DNS等信息。
+<a href="http://www.linuxidc.com/upload/2016_09/160926204625486.png!%5Bimage_1bp8aq1nb1cboap414ibqgojkf2q.png-139.3kB%5D%5B6%5D">http://www.linuxidc.com/upload/2016_09/160926204625486.png![image_1bp8aq1nb1cboap414ibqgojkf2q.png-139.3kB][6]</a></p>
+<p>然后，进入网络编辑页面
+<a href="http://www.linuxidc.com/upload/2016_09/160926204625488.png!%5Bimage_1bp8bbibs1fl5nc119v01gj61o3g37.png-88.5kB%5D%5B7%5D">http://www.linuxidc.com/upload/2016_09/160926204625488.png![image_1bp8bbibs1fl5nc119v01gj61o3g37.png-88.5kB][7]</a></p>
+<p>最后使用ping测试能否正常运行就OK了。</p>
+<p>这就是桥接模式的设置步骤，相信大家应该学会了如何去设置桥接模式了。桥接模式配置简单，但如果你的网络环境是ip资源很缺少或对ip管理比较严格的话，那桥接模式就不太适用了。如果真是这种情况的话，我们该如何解决呢？接下来，我们就来认识vmware的另一种网络模式：NAT模式。</p>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/">VMware虚拟机三种网络模式--NAT（地址转换模式）</a></h4>
+    <h5>September 5, 2017</h5>
+    
+<a href="/blogtags/vmware"><kbd class="item-tag">VMware</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

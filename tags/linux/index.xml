@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/linux/</link>
+    <description>Recent content in Linux on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux每日命令--ssh</title>
+      <link>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</link>
+      <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</guid>
+      <description>[TOC]
+ssh命令用于远程登录上Linux主机。
+常用格式：ssh [-l login_name] [-p port] [user@]hostname 更详细的可以用ssh -h查看。
+SSH config 文件 配置文件 SSH 程序可以从以下途径获取配置参数 (Ubuntu 14.04 LTS)：
+ 命令行选项 用户配置文件 (~/.ssh/config) 系统配置文件 (/etc/ssh/ssh_config)  常用配置项 下面介绍一些常用的 SSH 配置项：
+Host Host 配置项标识配置区段,主要用于ssh登录时使用。 如：
+HOST home ... ... 登录如下：
+ssh home GlobalKnownHostsFile 指定一个或多个全局认证主机缓存文件，用来缓存通过认证的远程主机的密钥，多个文件用空格分隔。默认缓存文件为：/etc/ssh/ssh_known_hosts, /etc/ssh/ssh_known_hosts2.
+HostName 指定远程主机名，可以直接使用数字IP地址。如果主机名中包含 ‘%h’ ，则实际使用时会被命令行中的主机名替换。
+IdentityFile 指定密钥认证使用的私钥文件路径。默认为 ~/.ssh/id_dsa, ~/.ssh/id_ecdsa, ~/.ssh/id_ed25519 或 ~/.ssh/id_rsa 中的一个。文件名称可以使用以下转义符：
+&#39;%d&#39; 本地用户目录 &#39;%u&#39; 本地用户名称 &#39;%l&#39; 本地主机名 &#39;%h&#39; 远程主机名 &#39;%r&#39; 远程用户名  可以指定多个密钥文件，在连接的过程中会依次尝试这些密钥文件。
+Port 指定远程主机端口号，默认为 22 。</description>
+    </item>
+    
+    <item>
+      <title>Linux每日命令--scp</title>
+      <link>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</link>
+      <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</guid>
+      <description>scp是secure copy的简写，用于在Linux下进行远程拷贝文件的命令
+命令参数： -1 强制scp命令使用协议ssh1 -2 强制scp命令使用协议ssh2 -4 强制scp命令只使用IPv4寻址 -6 强制scp命令只使用IPv6寻址 -B 使用批处理模式（传输过程中不询问传输口令或短语） -C 允许压缩。（将-C标志传递给ssh，从而打开压缩功能） -p 保留原文件的修改时间，访问时间和访问权限。 -q 不显示传输进度条。 -r 递归复制整个目录。 -v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。 -c cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。 -F ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。 -i identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。 -l limit 限定用户所能使用的带宽，以Kbit/s为单位。 -o ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式， -P port 注意是大写的P, port是指定数据传输用到的端口号 -S program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。
+例子1：上传本地目录到远程机器指定目录 scp -r /opt/soft/mongodb root@192.168.120.204:/opt/soft/scptest 例子2：从远处复制文件到本地目录 scp root@192.168.120.204:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/ </description>
+    </item>
+    
+    <item>
+      <title>Linux每日命令--du,df</title>
+      <link>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</guid>
+      <description>du du(disk usage),顾名思义,查看目录/文件占用空间大小 ##查看当前目录下的所有目录以及子目录的大小
+$ du -h 32K	./oss-upload 228K	./python/client 2.2M	./python/server 2.4M	./python 24K	./redirect 12K	./spring-boot 12K	./uitest 61M	. -h:用K、M、G的人性化形式显示 -a:显示目录和文件
+##查看当前目录及其指定深度目录的大小
+du -h --max-depth -–max-depth＝n:只深入到第n层目录，此处设置为0，即表示不深入到子目录 注意：Mac下的为-d|-depth
+$ du -h -depth nec-ops 61M	nec-ops du命令的一些常用参数: -a或-all 显示目录中个别文件的大小 -b或-bytes 显示目录或文件大小时，以byte为单位 -c或&amp;ndash;total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和 -D或&amp;ndash;dereference-args 显示指定符号连接的源文件大小 -h或&amp;ndash;human-readable 以K，M，G为单位，提高信息的可读性 -k或&amp;ndash;kilobytes 以1024 bytes为单位 -l或&amp;ndash;count-links 重复计算硬件连接的文件 -L或&amp;ndash;dereference 显示选项中所指定符号连接的源文件大小 -m或&amp;ndash;megabytes 以1MB为单位 -s或&amp;ndash;summarize 仅显示总计 -S或&amp;ndash;separate-dirs 显示个别目录的大小时，并不含其子目录的大小 -X&amp;lt;文件&amp;gt;或&amp;ndash;exclude-from=&amp;lt;文件&amp;gt; &amp;ndash;exclude=&amp;lt;目录或文件&amp;gt; 略过指定的目录或文件 &amp;ndash;max-depth=&amp;lt;目录层数&amp;gt; 超过指定层数的目录后，予以忽略
+df df 用于查看设备的空间使用率</description>
+    </item>
+    
+  </channel>
+</rss>

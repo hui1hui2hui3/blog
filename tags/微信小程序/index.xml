@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>微信小程序 on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <description>Recent content in 微信小程序 on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 15 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信开发--前端本地调试连接本地后台方法</title>
+      <link>/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</guid>
+      <description>背景 微信团队对微信小程序的控制比较严格，在小程序中发送http request只能调用通过wx.request方法，而在wx.request中，会默认对请求的url地址进行检查，必须使用https协议 &amp;amp; 是配置的后台地址之一（管理员账号进行配置），而且无法配置localhost或者IP地址，所以导致本地调试需要采用一些特殊的手段来访问本地的后台。（其实还是很简单的~和把大象放进冰箱一样，只需要三步哦~ 括弧笑）
+解决步骤 第一步 将一个外网地址指向本地的地址 这一步其实非常的简单，只要修改host文件即可。（Mac下可以使用Gas Mask辅助，修改前建议备份原本的host文件） host文件的位置？自行百度一下吧~ 修改成什么样子？举个例子，后台的地址为https://www.baidu.com，希望将这个地址解析为本地的地址127.0.0.1，只要这么写就够啦 127.0.0.1 www.baidu.com 如果有运行后台的话，假设后台监听的是8080端口，赶紧打开浏览器，输入http://www.baidu.com:8080看能不能正常访问本地的后台~  第二步 生成一个自签名证书 配置https，证书是必不可少的，还好自签名的https证书在微信小程序本地调试的时候是可用的，这里的话需要用到openssl，windows的电脑请在git bash下操作或者求助使用Mac，Linux系统的小伙伴，以下教程以Mac系统为准   brew install openssl(安装过openssl的跳过) openssl genrsa -out ssl.key 2048 openssl req -new -key ssl.key -out ssl.csr openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt openssl pkcs12 -export -in ssl.crt -inkey ssl.key -out ssl.p12 执行最后一个命令的时候回提示你输入一个密码，此处以kyee为例 执行完上述的步骤，应该会得到4个文件ssl.crt, ssl.csr, ssl.key, ssl.p12  第三步 配置后台服务器https证书 复制ssl.p12，丢到后台和application.yml一个文件夹下，然后在application.yml中输入：  然后启动之，搞定~这样前端你调用wx.request的时候url只要设置为https://www.baidu.com:8080/xxx，就可以访问你本地的后台了~  </description>
+    </item>
+    
+  </channel>
+</rss>

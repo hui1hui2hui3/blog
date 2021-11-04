@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Git 使用笔记--日志查看</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Git 使用笔记--日志查看</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Git 使用笔记--日志查看</h2>
+        <h5>November 21, 2016</h5>
+        
+<a href="/blogtags/git"><kbd class="item-tag">Git</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="oneline">Oneline</h2>
+<p><code>--oneline</code>标记把每一个提交压缩到了一行中。它默认只显示提交ID和提交信息的第一行。<code>git log --oneline</code>的输出一般是这样的：</p>
+<pre><code>0e25143 Merge branch 'feature'
+ad8621a Fix a bug in the feature
+16b36c6 Add a new feature
+23ad9ad Add the initial code base
+</code></pre><h2 id="如何查看的日志">如何查看的日志</h2>
+<h3 id="按日期">按日期</h3>
+<p>查看一周前的日志：</p>
+<pre><code>git log --after '1 week ago'
+</code></pre><p>查看昨天日志：</p>
+<pre><code>get log --after=&quot;yesterday&quot;
+</code></pre><p>查看具体时间之后的日志：</p>
+<pre><code>git log --after=&quot;2016-11-11&quot;
+</code></pre><p>查看时间段之间的日志：</p>
+<pre><code>git log --after=&quot;2016-10-1&quot; --before=&quot;2014-11-11&quot;
+</code></pre><p><strong>注意：</strong> <code>--since</code> 、<code>--until</code> 标记和<code>--after</code> 、<code>--before</code>标记分别是等价的。</p>
+<h3 id="按数量">按数量</h3>
+<p>查看之前的10个日志：</p>
+<pre><code>git log -3
+</code></pre><h3 id="按作者">按作者</h3>
+<p>查看Huis的日志：</p>
+<pre><code>git log --author=&quot;Huis&quot;
+</code></pre><h3 id="按提交信息">按提交信息</h3>
+<p>查看提交信息中有mouse的日志：</p>
+<pre><code>git log --grep=&quot;mouse&quot;
+</code></pre><h3 id="按文件">按文件</h3>
+<p>查看某个或某些文件的提交日志：</p>
+<pre><code>git log -- foo.py bar.py
+</code></pre><p>**注意：**<code>--</code>表示的是后面很多的不是分支名称，而是文件名称</p>
+<h3 id="按内容">按内容</h3>
+<p>查看文件内容中包含hello的日志：</p>
+<pre><code>git log -S &quot;hello&quot; #字符串查找
+</code></pre><p>或</p>
+<pre><code>git log -G &quot;&lt;regex&gt;&quot; #正则查找
+</code></pre><h3 id="按范围">按范围</h3>
+<p>基本语法：</p>
+<pre><code>git log &lt;since&gt;..&lt;until&gt;
+</code></pre><p>查看master分支到feature分支提交的日志，也就是feature分支新提交的日志</p>
+<pre><code>git log master..feature
+</code></pre><p>查看feature分支中没有，master分支中有的日志</p>
+<pre><code>git log feature..master
+</code></pre><h2 id="自定义格式">自定义格式</h2>
+<p>使用<code>--pretty=format:&quot;&lt;string&gt;&quot;</code>选项
+下面命令中的<code>%cn</code>、<code>%h</code> 和<code>%cd</code>这三种占位符会被分别替换为作者名字、缩略标识和提交日期。</p>
+<p>如只显示commit id</p>
+<pre><code>git log --pretty=format:&quot;%h&quot;
+</code></pre><p>结果：</p>
+<pre><code>4549004
+5e7054b
+f8dd5bc
+7e0ce0f
+036b73d
+6d7ba60
+</code></pre><h2 id="显示提交差异">显示提交差异</h2>
+<p>常用命令<code>-p</code> 和 <code>--stat</code></p>
+<p><code>--stat</code>选项显示每次提交的文件增删数量（注意：修改一行记作增加一行且删去一行）</p>
+<p>比如：下面这个提交在hello.py文件中增加了67行，删去了38行。</p>
+<pre><code>commit f2a238924e89ca1d4947662928218a06d39068c3
+Author: John &lt;john@example.com&gt;
+Date:   Fri Jun 25 17:30:28 2014 -0500
+
+    Add a new feature
+
+ hello.py | 105 ++++++++++++++++++++++++-----------------
+ 1 file changed, 67 insertion(+), 38 deletions(-)
+</code></pre><p><code>-p</code>选项显示每次提交删改的绝对数量
+比如：</p>
+<pre><code>commit 16b36c697eb2d24302f89aa22d9170dfe609855b
+Author: Mary &lt;mary@example.com&gt;
+Date:   Fri Jun 25 17:31:57 2014 -0500
+
+    Fix a bug in the feature
+
+diff --git a/hello.py b/hello.py
+index 18ca709..c673b40 100644
+--- a/hello.py
++++ b/hello.py
+@@ -13,14 +13,14 @@ B
+-print(&quot;Hello, World!&quot;)
++print(&quot;Hello, Git!&quot;)
+</code></pre><h2 id="过滤合并提交">过滤合并提交</h2>
+<p>过滤掉合并的日志</p>
+<pre><code>git log --no-merges
+</code></pre><p>只查看合并的日志</p>
+<pre><code>git log --merges
+</code></pre><h2 id="显示提交日志统计shortlog">显示提交日志统计Shortlog</h2>
+<pre><code>git shortlog
+</code></pre><p>显示结果如下：</p>
+<pre><code>Junrui Chen (5):
+      1.新版答题界面已答未答数显示     2.界面样式调整     3.答案保存逻辑调整     参考：YHJY-4574
+      Merge branch 'feature/exam-answer-fxh' of http:xxx into feature/exam-answer-fxh
+      修改考试结束界面成绩获取方式     参考：YHJY-4602
+      修改界面样式     参考：YHJY-4574
+      还原被注释的代码     参考：无
+
+chenjunrui (344):
+      合并冲突     参考：YHJY-2804
+      修改重置密码时的错误提示信息     参考：YHJY-2704
+      删除多余代码     参考：YHJY-2704
+      修改不规范的代码     参考：YHJY-2704
+      修改不规范代码     参考：YHJY-2704
+      修改线下考试的可编辑逻辑     参考：YHJY-2870
+...
+</code></pre><p>默认情况下，<code>git shortlog</code>把输出按作者名字排序，但你可以传入<code>-n</code>选项来按每个作者提交数量排序。</p>
+<h2 id="参考">参考</h2>
+<blockquote>
+<p><a href="https://github.com/geeeeeeeeek/git-recipes/wiki/5.3-Git-log%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95">Git log高级用法</a></p>
+</blockquote>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/">Git使用笔记--显示修改文件列表</a></h4>
+    <h5>November 21, 2016</h5>
+    
+<a href="/blogtags/git"><kbd class="item-tag">Git</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/">如何查看git提交近期的所有的改动或新增的文件-Python实现</a></h4>
+    <h5>September 22, 2016</h5>
+    
+<a href="/blogtags/git"><kbd class="item-tag">Git</kbd></a>
+
+<a href="/blogtags/python"><kbd class="item-tag">Python</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

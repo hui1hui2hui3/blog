@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Web安全基础</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Web安全基础</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Web安全基础</h2>
+        <h5>December 6, 2016</h5>
+        
+<a href="/blogtags/%E5%AE%89%E5%85%A8"><kbd class="item-tag">安全</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="分类">分类</h2>
+<h3 id="以服务器为目标的主动攻击">以服务器为目标的主动攻击</h3>
+<ol>
+<li>SQL注入攻击</li>
+<li>OS命令注入攻击</li>
+</ol>
+<h3 id="以服务器为目标的被动攻击">以服务器为目标的被动攻击</h3>
+<ol>
+<li>跨站脚本攻击（Cross-Site Scripting,XSS）</li>
+<li>跨站点请求伪造（Cross-Site Request Forgeries,CSRF）</li>
+</ol>
+<h2 id="跨站脚本攻击cross-site-scriptingxss">跨站脚本攻击（Cross-Site Scripting,XSS）</h2>
+<p>跨站点脚本攻击是通过存在安全漏洞的web网站注册用户的浏览器内运行非法的HTML标签或JavaScript进行的攻击，也被称为XSS攻击。
+这种漏洞(XSS)通常用于发动cookie窃取、恶意软件传播(蠕虫攻击),会话劫持,恶意重定向。在这种攻击中,攻击者将恶意JavaScript代码注入到网站页面中,这样”受害”者的浏览器就会执行攻击者编写的恶意脚本。这种漏洞容易找到，但很难修补。这就是为什么你可以在任何网站发现它的身影</p>
+<h3 id="演示demo2--post">演示Demo2&ndash;Post</h3>
+<p>如果网站存在可以输入显示为html的入口，则下面代码有可能导致脚本注入满天飞：</p>
+<pre><code>&lt;img src=&quot;http://snoopyxdy.blog.163.com/blog/err&quot; onerr=&quot;alert('xss')&quot; /&gt;
+&lt;script&gt;alert('xss')&lt;/script&gt;
+</code></pre><h3 id="演示demo3--基于dom的跨站点脚本攻击">演示Demo3&ndash;基于dom的跨站点脚本攻击</h3>
+<h3 id="需要编码和过滤的对象">需要编码和过滤的对象</h3>
+<pre><code>The URL
+HTTP referrer objects
+GET parameters from a form
+POST parameters from a form
+Window.location
+Document.referrer
+document.location
+document.URL
+document.URLUnencoded
+cookie data
+headers data
+database data
+</code></pre>
+<p>数据是输出到HTML中的那就要进行HtmlEncode，如果数据是输出到javascript代码中进行拼接的，那就要进行javascriptEncode。</p>
+<h3 id="sql注入攻击">SQL注入攻击</h3>
+<p>SQL注入（SQL Injection）是指针对Web应用使用的数据库，通过运行非法的SQL而产生的攻击。危害极大。</p>
+<h4 id="例子1">例子1</h4>
+<p>搜索名字为plhwin,正常情况如下：
+<code>http://localhost/test/userinfo.php?username=plhwin</code>,SQL执行如下：</p>
+<pre><code>SELECT uid,username FROM user WHERE username='plhwin'
+</code></pre><p>但是，如果用户在浏览器里把传入的username参数变为 <code>plhwin';SHOW TABLES-- hack</code>，也就是当URL变为 <code>http://localhost/test/userinfo.php?username=plhwin';SHOW TABLES-- hack</code> 的时候，此时我们程序实际执行的SQL语句变成了：</p>
+<pre><code>SELECT uid,username FROM user WHERE username='plhwin';SHOW TABLES-- hack'
+</code></pre><p>经过上面的SQL注入后，原本想要执行查询名字详情的SQL语句，此时还额外执行了 <code>SHOW TABLES;</code> 语句</p>
+<p>现在Mysql已经不允许使用分号一次执行多SQL语句</p>
+<h4 id="例子2">例子2</h4>
+<p>登录：</p>
+<pre><code>SELECT uid,username FROM user WHERE username='plhwin' AND password='e10adc3949ba59abbe56e057f20f883e'
+</code></pre><p>但如果输入的用户名为 <code>plhwin' AND 1=1-- hack</code>，密码随意输入，比如aaaaaa，那么SQL语句为：</p>
+<pre><code>SELECT uid,username FROM user WHERE username='plhwin' AND 1=1-- hack' AND password='0b4e7a0e5fe84ad35fb5f95b9ceeac79'
+</code></pre><p>这意味着只需要知道别人的会员名，无需知道密码就能顺利登录到系统。</p>
+<h4 id="预防方法">预防方法：</h4>
+<ol>
+<li>检查变量数据类型和格式</li>
+<li>过滤转义特殊符号</li>
+<li>绑定变量，使用预编译语句</li>
+<li>数据库信息加密</li>
+</ol>
+<h3 id="跨站点请求伪造cross-site-request-forgeriescsrf">跨站点请求伪造（Cross-Site Request Forgeries,CSRF）</h3>
+<p>跨站点请求伪造攻击是指攻击者通过设置好的陷阱，强制对已完成认证的用户进行非预期的个人信息或设定信息等状态的更新。</p>
+<h3 id="其他攻击方式">其他攻击方式</h3>
+<p>1、文件上传漏洞攻击
+2、分布式拒绝服务攻击 - DDOS
+3、URL漏洞</p>
+<h2 id="我们网站中的问题">我们网站中的问题</h2>
+<ol>
+<li>可以重复发布课程</li>
+<li>多余的email页面</li>
+<li>统计页面可以查看任意用户的学习记录</li>
+</ol>
+<h2 id="总结">总结</h2>
+<ol>
+<li>网站包含富文本编辑器的更易受到攻击，比如可以输入html，a超链接，或markdown语法等</li>
+<li>虽然现在的代码技术和浏览器等帮我们拦截掉了很多的安全攻击，但是XSS和CSRF一直存在于我们的身边，网站安全仍是我们要时刻警惕的事情。</li>
+</ol>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

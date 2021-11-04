@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Linux每日命令--scp</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Linux每日命令--scp</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Linux每日命令--scp</h2>
+        <h5>February 22, 2017</h5>
+        
+<a href="/blogtags/linux"><kbd class="item-tag">Linux</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>scp是secure copy的简写，用于在Linux下进行远程拷贝文件的命令</p>
+<h2 id="命令参数">命令参数：</h2>
+<p>-1  强制scp命令使用协议ssh1
+-2  强制scp命令使用协议ssh2
+-4  强制scp命令只使用IPv4寻址
+-6  强制scp命令只使用IPv6寻址
+-B  使用批处理模式（传输过程中不询问传输口令或短语）
+-C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）
+-p 保留原文件的修改时间，访问时间和访问权限。
+-q  不显示传输进度条。
+-r  递归复制整个目录。
+-v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。
+-c cipher  以cipher将数据传输进行加密，这个选项将直接传递给ssh。
+-F ssh_config  指定一个替代的ssh配置文件，此参数直接传递给ssh。
+-i identity_file  从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。
+-l limit  限定用户所能使用的带宽，以Kbit/s为单位。
+-o ssh_option  如果习惯于使用ssh_config(5)中的参数传递方式，
+-P port  注意是大写的P, port是指定数据传输用到的端口号
+-S program  指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</p>
+<h2 id="例子1上传本地目录到远程机器指定目录">例子1：上传本地目录到远程机器指定目录</h2>
+<pre><code>scp -r /opt/soft/mongodb root@192.168.120.204:/opt/soft/scptest
+</code></pre><h2 id="例子2从远处复制文件到本地目录">例子2：从远处复制文件到本地目录</h2>
+<pre><code>scp root@192.168.120.204:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
+</code></pre></div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/">Linux每日命令--ssh</a></h4>
+    <h5>April 12, 2017</h5>
+    
+<a href="/blogtags/linux"><kbd class="item-tag">Linux</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/">Linux每日命令--du,df</a></h4>
+    <h5>February 14, 2017</h5>
+    
+<a href="/blogtags/linux"><kbd class="item-tag">Linux</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

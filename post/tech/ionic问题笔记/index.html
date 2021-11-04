@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Ionic问题笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Ionic问题笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Ionic问题笔记</h2>
+        <h5>December 15, 2016</h5>
+        
+<a href="/blogtags/ionic"><kbd class="item-tag">Ionic</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="1-使用ion-nav-back-button和tabs时子页面的返回问题">1. 使用ion-nav-back-button和tabs时，子页面的返回问题</h2>
+<pre><code>**实现效果：** /index/page2/tab1 点击进入 /index/page2/tab2
+                这时点击返回按钮想要的是返回到 /index/page2
+                而不是/index/page2/tab1(这个是现实的问题效果），如图：
+</code></pre>
+<h3 id="解决方法1这个可能有问题">解决方法1：这个可能有问题</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">backView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">backView</span>();
+<span style="color:#a6e22e">$state</span>.<span style="color:#a6e22e">go</span>(<span style="color:#e6db74">&#39;app.patInfo.baseInfo&#39;</span>).<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span>(){
+<span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">backView</span>(<span style="color:#a6e22e">backView</span>);
+}); 
+</code></pre></div><h3 id="解决方法2重写ion-nav-back-button的click方法核心代码如下">解决方法2：重写ion-nav-back-button的click方法,核心代码如下：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">goBackSmart</span>() {
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currentView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">currentView</span>(),
+<span style="color:#a6e22e">backView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">backView</span>();
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">backView</span>) {
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">newBackView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_getBackView</span>(<span style="color:#a6e22e">currentView</span>, <span style="color:#a6e22e">backView</span>);
+<span style="color:#a6e22e">goBack</span>(<span style="color:#a6e22e">newBackView</span>.<span style="color:#a6e22e">index</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">currentView</span>.<span style="color:#a6e22e">index</span>);
+}
+}
+ 
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_getBackView</span>(<span style="color:#a6e22e">currentView</span>, <span style="color:#a6e22e">backView</span>) {
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">curP</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_getParentStateName</span>(<span style="color:#a6e22e">currentView</span>.<span style="color:#a6e22e">stateName</span>),
+<span style="color:#a6e22e">backP</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_getParentStateName</span>(<span style="color:#a6e22e">backView</span>.<span style="color:#a6e22e">stateName</span>),
+<span style="color:#a6e22e">newBackView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">backView</span>;
+ 
+<span style="color:#75715e">//判断是否是不为app的同一父类
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">curP</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">backP</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">backP</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;.&#34;</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#a6e22e">newBackView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">getViewById</span>(<span style="color:#a6e22e">newBackView</span>.<span style="color:#a6e22e">backViewId</span>);
+<span style="color:#a6e22e">curP</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">backP</span>;
+<span style="color:#a6e22e">backP</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">_getParentStateName</span>(<span style="color:#a6e22e">newBackView</span>.<span style="color:#a6e22e">stateName</span>);
+}
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newBackView</span>;
+}
+ 
+<span style="color:#75715e">//获取父类的状态名：例：app.test.test1 -&gt; app.test
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_getParentStateName</span>(<span style="color:#a6e22e">stateName</span>) {
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">stateName</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">stateName</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#e6db74">&#34;.&#34;</span>));
+}
+</code></pre></div><h2 id="2--ionhistory对象的histories堆栈中页面何时销毁">2.  $ionHistory对象的histories堆栈中页面何时销毁</h2>
+<pre><code>当页面流程走 A-&gt;B-&gt;C-&gt;D 时，历史记录为[A,B,C,D]，cursor为3（从0开始）
+     比如：当调用goback(-3)返回或调用go一级一级返回时，
+                 返回到A ,                这时历史记录为[A,B,C,D]不变，但cursor为0，
+                下面分三种情况：
+                1.这时如果调用A-&gt;B,这时历史记录为[A,B,C,D]不变，但cursor为1，
+                2.这时如果调用A-&gt;C（原本存在堆栈中的）,这时历史记录为[A,C],cursor为1，原本的B,C,D页面销毁
+                3.这时如果调用A-&gt;F（新的）, 这时历史记录为[A,F],(B,C,D)页面就会销毁掉，和A-&gt;C情况一样
+</code></pre>
+<p><strong>也就是说cursor不是堆栈的末尾时，如果这时跳转想其他不是当前的下一个页面时，就会产生新的页面，且原cursor之后的页面都会销毁</strong></p>
+<h2 id="3--statego-和-goback-返回时的具体区别--1">3.  state.go 和 goback 返回时的具体区别&ndash;1</h2>
+<pre><code>    1.跨页面数量为0时（也就是两个相邻的页面返回时），go和goback无区别，都是只改变cursor的值
+                比如： A-&gt;B-&gt;C-&gt;D ，  历史记录为[A,B,C,D],cursor为3
+                    go情况下： go(C) ，历史记录为[A,B,C,D],cursor为2
+                                            goBack情况下： goback(-1), 历史记录为[A,B,C,D],cursor为2
+    1.跨页面数量为1个以上时（最少间隔一个），
+                                    比如： A-&gt;B-&gt;C-&gt;D  ，历史记录为[A,B,C,D],cursor为3
+                    go情况下，go(B)后，这时历史记录是[A,B,C,D,B],cursor为4
+                    goBack情况下,goback(-2),这时历史记录是[A,B,C,D]不变，但cursor为1
+                附加情况：这时都在B页面，如果要跳转到G时，也就是B-&gt;G时，
+                    第一种情况下go(G): 就会变成， [A,B,C,D,B,G],cursor为5
+                    第二种情况下go(G): 就会变成，[A,B,G],cursor为2，页面C,D销毁掉了（可**参考页面何时销毁** ）
+</code></pre>
+<h2 id="4-ion-nav-bar-样式控制">4. ion-nav-bar 样式控制</h2>
+<blockquote>
+<p>在应用中我们经常会要自定义nav-bar的样式，下面说一下问题：</p>
+</blockquote>
+<h3 id="更改样式行内样式无效">更改样式：行内样式（无效）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ion-nav-bar</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;background:red&#34;</span>&gt;&lt;/<span style="color:#f92672">ion-nav-bar</span>&gt;
+</code></pre></div><h3 id="更改样式class样式有效">更改样式：class样式（有效）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">custom-class</span> {
+<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">red</span>;
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ion-nav-bar</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;custom-class&#34;</span>&gt;&lt;/<span style="color:#f92672">ion-nav-bar</span>&gt;
+</code></pre></div><h2 id="5--statego-和-goback-返回时传递参数的问题">5.  state.go 和 goback 返回时传递参数的问题</h2>
+<ol>
+<li>state.go</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">go</span>(<span style="color:#a6e22e">state</span>,<span style="color:#a6e22e">params</span>)
+</code></pre></div><ol start="2">
+<li>goback</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">backView</span>().<span style="color:#a6e22e">stateParams</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">card</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>};
+<span style="color:#a6e22e">$ionicHistory</span>.<span style="color:#a6e22e">goBack</span>();
+</code></pre></div><blockquote>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>这时不管是<strong>跨页面数量为0</strong>还是**跨页面数量为1个以上时（最少间隔一个）**都会在堆栈中产生新的view，<strong>为什么？？？？？？？</strong>
+具体原因是由于stateParams，因为它的改变导致$ionicHistory产生的card=null的页面stateID和card=true的页面stateID不一致，所以会产生一个新的View加入堆栈中，不再是之前我们分析的goBack一定不会产生新的View的问题</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>具体流程如图：</strong>
+A &ndash;params:{test:null}-&gt; B&mdash;&gt; C  ，历史记录为[A,B,C]，cursor:2</p>
+<blockquote>
+<ol>
+<li>state.go(B,{test:1}),  历史记录为[A,B,C,B]，cursor:3，这时会产生死循环问题</li>
+<li><code>$ionicHistory.backView().stateParams = {card:true}; $ionicHistory.goBack();</code>, 历史记录为[A,B,C,B]，cursor:3，这时会产生死循环问题</li>
+<li><code>state.go(B) or $ionicHistory.goBack()</code>，历史记录为[A,B,C]，cursor:1, 但需要注意这时我们C页面没有传递参数到B页面</li>
+</ol>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong>解决方法：service</strong></p>
+<blockquote>
+<ol start="4">
+<li><code>state.go(B) or $ionicHistory.goBack(); service.data={test:1}</code>, 这样才能完美解决该问题</li>
+</ol>
+</blockquote>
+</blockquote>
+<h2 id="6-页面切换方向问题">6. 页面切换方向问题</h2>
+<blockquote>
+<p>有时我们写的页面经常会发现页面切换的动画会有问题，本来要退出的结果变为进入了等等，解决方法如下：</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//进入
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$ionicViewSwitcher</span>.<span style="color:#a6e22e">nextDirection</span>(<span style="color:#e6db74">&#39;forward&#39;</span>);
+<span style="color:#a6e22e">$state</span>.<span style="color:#a6e22e">go</span>(<span style="color:#a6e22e">state</span>)
+<span style="color:#75715e">//后退
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$ionicViewSwitcher</span>.<span style="color:#a6e22e">nextDirection</span>(<span style="color:#e6db74">&#39;back&#39;</span>);
+<span style="color:#a6e22e">$state</span>.<span style="color:#a6e22e">go</span>(<span style="color:#a6e22e">state</span>)
+</code></pre></div><h2 id="7-collection-repeat">7. collection-repeat</h2>
+<h3 id="71-错误问题">7.1 错误问题</h3>
+<blockquote>
+<ol>
+<li>TypeError: Cannot set property &lsquo;webkitTransform&rsquo; of undefined</li>
+<li>TypeError: clone[0].removeAttribute is not a function</li>
+</ol>
+<blockquote>
+<p><strong>原因：同一属性上使用了ng-if指令，改为ng-show/ng-hide</strong></p>
+</blockquote>
+</blockquote>
+<h3 id="72-使用">7.2 使用</h3>
+<ol>
+<li>使用是要指定item-height和item-width,所以说这个指令适用于等宽和等高的列表进行优化，会变动的高度和宽度则不适合</li>
+<li>内部不能使用bononce或者:: 因为需要动态更新值</li>
+</ol>
+<h2 id="8-ion-infinite-scroll如何避免调用2次on-infinite">8. ion-infinite-scroll如何避免调用2次on-infinite</h2>
+<blockquote>
+<p><code>immediate-check=&quot;false&quot;</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">           <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">avoidLoadTwice</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+            <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">loadMore</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">avoidLoadTwice</span>) {
+                    <span style="color:#a6e22e">avoidLoadTwice</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+                    <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$broadcast</span>(<span style="color:#e6db74">&#39;scroll.infiniteScrollComplete&#39;</span>);
+                } <span style="color:#66d9ef">else</span> {
+                     <span style="color:#a6e22e">loadData</span>().<span style="color:#66d9ef">finally</span>(<span style="color:#a6e22e">funciton</span>(){
+                          <span style="color:#a6e22e">avoidLoadTwice</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+                           <span style="color:#a6e22e">$scope</span>.<span style="color:#a6e22e">$broadcast</span>(<span style="color:#e6db74">&#39;scroll.infiniteScrollComplete&#39;</span>);
+                    })
+                } 
+            };
+</code></pre></div></div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/">Ioinc进出栈解析</a></h4>
+    <h5>December 15, 2016</h5>
+    
+<a href="/blogtags/ionic"><kbd class="item-tag">Ionic</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

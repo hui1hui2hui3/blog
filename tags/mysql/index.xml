@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/mysql/</link>
+    <description>Recent content in Mysql on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql 初始化Root密码和远程登录授权</title>
+      <link>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</guid>
+      <description>Mysql版本：5.7.17 系统环境：Center OS
+ 初始化Root密码&amp;ndash;CenterOS 获取初始Root密码 grep &#39;temporary password&#39; /var/log/mysqld.log
+重置Root密码 1.Stop mysql: systemctl stop mysqld
+2.Set the mySQL environment option
+systemctl set-environment MYSQLD_OPTS=&amp;quot;--skip-grant-tables&amp;quot; 3.Start mysql usig the options you just set systemctl start mysqld 4.Login as root mysql -u root 5.Update the root user password with these mysql commands
+mysql&amp;gt; UPDATE mysql.user SET authentication_string = PASSWORD(&#39;MyNewPassword&#39;) -&amp;gt; WHERE User = &#39;root&#39; AND Host = &#39;localhost&#39;; mysql&amp;gt; FLUSH PRIVILEGES; mysql&amp;gt; quit 6.</description>
+    </item>
+    
+  </channel>
+</rss>

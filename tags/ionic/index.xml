@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ionic on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/ionic/</link>
+    <description>Recent content in Ionic on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 15 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/ionic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ioinc进出栈解析</title>
+      <link>/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</guid>
+      <description>$state.go 和 $ionicHistory.goback 返回时的具体区别 注明：下面两种演示情况的A,B,C,D页面均为一级页面，也就是不含有&amp;lt;ion-nav-view&amp;gt;页面。复杂页面（abstract：true)的go和goBack情况参见结论。
+1. 跨页面数量为0时（也就是两个相邻的页面返回时) Demo： 功能|结果 &amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash; 页面顺序|A-&amp;gt;B-&amp;gt;C-&amp;gt;D 历史记录|[A,B,C,D] cursor|3，表示当前处于D页面
+解析： 功能|结果 &amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash; go方法| 调用方法|go(C) 历史记录|[A,B,C,D] cursor|2，表示当前处于C页面，复杂页面时D页面会销毁
+   功能 结果     goBack方法    调用方法 goback(-1)   历史记录 [A,B,C,D]   cursor 2，表示当前处于C页面,复杂页面时D页面会销毁    结论： 当相邻的两个页面返回时: 如果返回的页面为一级页面：go和goBack无区别，都只改变cursor的值。 如果返回的页面为复杂页面：go和goBack无区别， cursor之后的页面都会销毁掉。
+2. 跨页面数量为1个以上时（最少间隔一个） Demo: 功能|结果 &amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash; 页面顺序|A-&amp;gt;B-&amp;gt;C-&amp;gt;D 历史记录|[A,B,C,D] cursor|3，此时也为D
+解析： 功能|结果 &amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash; go方法| 调用方法|go(B) 历史记录|[A,B,C,D,B] cursor|4，此时页面为B
+   功能 结果     goBack方法    调用方法 goback(-2)   历史记录 [A,B,C,D]   cursor 1，页面同样为B    附加情况：此时处于B页面，如果要跳转到G时，也就是B-&amp;gt;G时 第一种情况下： 功能|结果 &amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash; 调用方法|go(G) 历史记录|[A,B,C,D,B,G] cursor|5</description>
+    </item>
+    
+    <item>
+      <title>Ionic问题笔记</title>
+      <link>/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</guid>
+      <description>1. 使用ion-nav-back-button和tabs时，子页面的返回问题 **实现效果：** /index/page2/tab1 点击进入 /index/page2/tab2 这时点击返回按钮想要的是返回到 /index/page2 而不是/index/page2/tab1(这个是现实的问题效果），如图：  解决方法1：这个可能有问题 var backView = $ionicHistory.backView(); $state.go(&amp;#39;app.patInfo.baseInfo&amp;#39;).then(function(){ $ionicHistory.backView(backView); }); 解决方法2：重写ion-nav-back-button的click方法,核心代码如下： function goBackSmart() { var currentView = $ionicHistory.currentView(), backView = $ionicHistory.backView(); if (backView) { var newBackView = _getBackView(currentView, backView); goBack(newBackView.index - currentView.index); } } function _getBackView(currentView, backView) { var curP = _getParentStateName(currentView.stateName), backP = _getParentStateName(backView.stateName), newBackView = backView; //判断是否是不为app的同一父类 while (curP == backP &amp;amp;&amp;amp; backP.split(&amp;#34;.&amp;#34;).length &amp;gt; 1) { newBackView = $ionicHistory.getViewById(newBackView.backViewId); curP = backP; backP = _getParentStateName(newBackView.</description>
+    </item>
+    
+  </channel>
+</rss>

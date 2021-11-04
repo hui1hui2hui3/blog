@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/shell/</link>
+    <description>Recent content in Shell on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shell 编程入门笔记--运算</title>
+      <link>/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Wed, 11 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</guid>
+      <description>1. 计算字符串或文件中字符出现的次数   echo $str | grep -o &amp;quot;字符串&amp;quot; | wc -l 查找字符串中字符出现次数 grep -o &#39;字符串&#39; file |wc -l 查找文件中字符出现次数   下面是查找字符串中字符e出现次数的例子：
+str=&amp;#34;im a test str&amp;#34; count=`echo $str | grep -o &amp;#34;e&amp;#34; | wc -l` #这里顺便一提的是如何把执行的命令赋值给变量 echo $count #1 2. 数字运算   let val++ let运算   count=1 let count++ echo $count #2 3. 命令执行的结果赋值给变量 val=`python test.py 2&amp;gt;&amp;amp;1` echo $val 这个可以顺便说一下2&amp;gt;&amp;amp;1的意思 比如echo log &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 解释： /dev/null: 表示空设备文件 &amp;gt;: 代表重定向 1: 表示stout标准输出，系统默认值为1，所以&amp;gt;/dev/null表示1&amp;gt;/dev/null 2: 表示sterr标准错误 &amp;amp;: 表示等同的意思，2&amp;gt;&amp;amp;1表示2的输出重定向等同于1</description>
+    </item>
+    
+  </channel>
+</rss>

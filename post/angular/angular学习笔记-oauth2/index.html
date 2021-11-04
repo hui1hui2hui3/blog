@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title></title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#"></a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2></h2>
+        <h5>January 1, 0001</h5>
+        
+
+    </div>
+
+    <div align="start" class="content"><h1 id="angular学习笔记--oauth2">Angular学习笔记&ndash;Oauth2</h1>
+<p>标签（空格分隔）： Angular Oauth2</p>
+<hr>
+<p>为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是<code>application/x-www-form-urlencoded</code>格式的，而Angular的$http默认的处理方式是<code>application/json</code>,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：</p>
+<h2 id="方式1-自定义请求处理转化json为keyvaluekeyvalue的形式">方式1-自定义请求处理，转化JSON为key=value&amp;key=value的形式：</h2>
+<pre><code>$http({
+    method: 'POST',
+    url: url,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    transformRequest: function(obj) {
+        var str = [];
+        for(var p in obj)
+        str.push(encodeURIComponent(p) + &quot;=&quot; + encodeURIComponent(obj[p]));
+        return str.join(&quot;&amp;&quot;);
+    },
+    data: {username: $scope.userName, password: $scope.password}
+}).success(function () {});
+</code></pre><h2 id="方式2-使用encodeuricomponent直接拼接">方式2-使用encodeURIComponent直接拼接</h2>
+<pre><code>$http.post(loginUrl, &quot;userName=&quot; + encodeURIComponent(email) +
+                     &quot;&amp;password=&quot; + encodeURIComponent(password) +
+                     &quot;&amp;grant_type=password&quot;
+).success(function (data) {
+</code></pre><h2 id="方式3-使用httpparamserializerjqlike或httpparamserializer">方式3-使用<code>$httpParamSerializerJQLike</code>或<code>$httpParamSerializer</code></h2>
+<p><code>$httpParamSerializerJQLike</code> - a serializer inspired by jQuery's .param() (recommended)
+<code>$httpParamSerializer</code> - a serializer used by Angular itself for GET requests</p>
+<pre><code>$http({
+  url: 'some/api/endpoint',
+  method: 'POST',
+  data: $httpParamSerializerJQLike($scope.appForm.data), // Make sure to inject the service you choose to the controller
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded' // Note the appropriate header
+  }
+}).success(function(response) { /* do something here */ });
+</code></pre><h3 id="httpparamserializerjqlike-和-httpparamserializer-区别"><code>$httpParamSerializerJQLike</code> 和 <code>$httpParamSerializer</code> 区别</h3>
+<p><strong>Array:</strong></p>
+<pre><code>{sites:['google', 'Facebook']} // Object with array property
+
+sites[]=google&amp;sites[]=facebook // Result with $httpParamSerializerJQLike
+
+sites=google&amp;sites=facebook // Result with $httpParamSerializer
+</code></pre><p><strong>Object</strong></p>
+<pre><code>{address: {city: 'LA', country: 'USA'}} // Object with object property
+
+address[city]=LA&amp;address[country]=USA // Result with $httpParamSerializerJQLike
+
+address={&quot;city&quot;: &quot;LA&quot;, country: &quot;USA&quot;} // Result with $httpParamSerializer
+</code></pre><h2 id="方式4-使用jquery的param方法">方式4-使用Jquery的param方法</h2>
+<pre><code>$http({
+    method: 'POST',
+    url: url,
+    data: $.param({fkey: &quot;key&quot;}),
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+})
+</code></pre></div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jmeter on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/jmeter/</link>
+    <description>Recent content in Jmeter on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/jmeter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jmeter学习笔记--无GUI模式运行详解</title>
+      <link>/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</guid>
+      <description>普通命令 jmeter -n -t test.jmx -l test.jtl
+ 备注：这种方式的运行，最好把脚本中的监听器全部删掉或禁用，防止影响性能
+ 参数大全 -h, --help print usage information and exit #打印帮助信息　-v, --version print the version information and exit #打印版本信息 -p, --propfile {argument} the jmeter property file to use #运行时指定property文件，默认是使用JMETER_HOME/bin目录下的jmeter.properties，如果用户自定义有其它的配置，在这里加上 #用法如下： -p user.properties -q, --addprop {argument} additional property file(s) #其它配置文件，如JVM参数等等 -t, --testfile {argument} the jmeter test(.jmx) file to run #要运行的jmeter脚本 -j, --jmeterlogfile {argument} the jmeter log file #指定记录jmeter log的文件，默认为jmeter.log -l, --logfile {argument} the file to log samples to #记录采样器Log的文件 -n, --nongui run JMeter in nongui mode #以nongui模式运行jmeter -s, --server run the JMeter server #运行JMeter server -H, --proxyHost {argument} Set a proxy server for JMeter to use #代理服务器地址 -P, --proxyPort {argument} Set proxy server port for JMeter to use #代理服务器端口 -u, --username {argument} Set username for proxy server that JMeter is to use #代理服务器的用户名 -a, --password {argument} Set password for proxy server that JMeter is to use #代理服务器用户名对应的密码 -J, --jmeterproperty {argument}={value} Define additional JMeter properties #定义额外的Jmeter属性 -G, --globalproperty (argument)[=(value)] Define Global properties (sent to servers) e.</description>
+    </item>
+    
+  </channel>
+</rss>

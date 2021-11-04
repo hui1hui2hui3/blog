@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/git/</link>
+    <description>Recent content in Git on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 21 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 使用笔记--日志查看</title>
+      <link>/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</guid>
+      <description>Oneline --oneline标记把每一个提交压缩到了一行中。它默认只显示提交ID和提交信息的第一行。git log --oneline的输出一般是这样的：
+0e25143 Merge branch &#39;feature&#39; ad8621a Fix a bug in the feature 16b36c6 Add a new feature 23ad9ad Add the initial code base 如何查看的日志 按日期 查看一周前的日志：
+git log --after &#39;1 week ago&#39; 查看昨天日志：
+get log --after=&amp;quot;yesterday&amp;quot; 查看具体时间之后的日志：
+git log --after=&amp;quot;2016-11-11&amp;quot; 查看时间段之间的日志：
+git log --after=&amp;quot;2016-10-1&amp;quot; --before=&amp;quot;2014-11-11&amp;quot; 注意： --since 、--until 标记和--after 、--before标记分别是等价的。
+按数量 查看之前的10个日志：
+git log -3 按作者 查看Huis的日志：
+git log --author=&amp;quot;Huis&amp;quot; 按提交信息 查看提交信息中有mouse的日志：
+git log --grep=&amp;quot;mouse&amp;quot; 按文件 查看某个或某些文件的提交日志：</description>
+    </item>
+    
+    <item>
+      <title>Git使用笔记--显示修改文件列表</title>
+      <link>/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</guid>
+      <description>显示文件的关键选项 --name-only 这个只显示文件名 --name-status 这个显示文件名和修改状态（比如：M/A/D） 两个文件的使用方式相同，只是结果不同
+使用log显示文件修改列表 name-only git log --name-only --oneline --no-merges 结果如下：
+src/styles/print/_paperPrint.scss 036b73d 修复案例题批阅时自动定位到输入框 参考：YHJY-6000 src/views/common/kyQuestion.html 6d7ba60 添加试题时只能选择联动的父类和其子类，却不能选择单独的子类文件夹 参考:YHJY-5398 src/scripts/common/utils/angular-tree-control.js c875b55 创建试卷，第二部分添加试题，然后将第二部分整体删除后，再添加第二部分，试题没清空 参考:YHJY-6079 src/scripts/paper/create/controller/paperCreateController.js name-status git log --name-status --oneline --no-merges 结果：
+9a28ce2 修复案例题转码问题 M src/scripts/questions/controllers/caseQuestionController.js 5e7054b 修复试题转码失败不能继续更新试题问题,修 修复转码中不让播放视频问题 修复选项子题资源名称不提示 M src/scripts/questions/controllers/askQuestionController.js M src/scripts/questions/controllers/caseQuestionController.js M src/scripts/questions/controllers/fillBlankQuestionController.js M src/scripts/questions/services/uploadImageService.js M src/views/questions/caseQuestion.html f8dd5bc 改进打印试卷打印答案时的界面 参考：YHJY-6077 M src/styles/print/_paperPrint.scss 使用diff显示文件列表 name-status git diff --name-status hash1 hash2 或
+git diff --name-status branch1 branch2 结果如下：</description>
+    </item>
+    
+    <item>
+      <title>如何查看git提交近期的所有的改动或新增的文件-Python实现</title>
+      <link>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</link>
+      <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</guid>
+      <description>环境要求：
+ pip install matplotlib用于生成图表   代码如下：
+# coding=utf-8 import commands import matplotlib.pyplot as plt import re import numpy def find_all_files(target): table = {} files = re.findall(r&amp;#34;[M|A|D][^u].*?\.\w*&amp;#34;, target) for file in files: real_files = file.split(&amp;#39;/&amp;#39;) real_file = real_files[len(real_files) - 1] real_file = real_file.split(&amp;#39;\t&amp;#39;) if len(real_file) &amp;gt; 1: real_file = real_file[len(real_file) - 1] else: real_file = real_file[0] if real_file in table.keys(): table[real_file] += 1 else: table[real_file] = 1 return table def get_words_graphic(wordlist): keylist = wordlist.</description>
+    </item>
+    
+  </channel>
+</rss>

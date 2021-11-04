@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Batch on Rabbit&amp;Carrot</title>
+    <link>/blog/tags/batch/</link>
+    <description>Recent content in Batch on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 30 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 睡眠等待机制 timeout,waitfor,ping</title>
+      <link>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</guid>
+      <description>[TOC]
+尝试实现window batch脚本中等待机制，即不在命令行输出等待倒计时，直接等待到时间结束  Timeout 语法： TIMEOUT [/T] timeout [/NOBREAK]
+描述: 这个工具接受超时参数，等候一段指定的时间(秒)或等按任意键。它还接受 一个参数，忽视按键。  参数列表: /T timeout 指定等候的秒数。有效范围从 -1 到 99999 秒。 /NOBREAK 忽略按键并等待指定的时间。 /? 显示此帮助消息。  注意: 超时值 -1 表示无限期地等待按键。
+普通示例: TIMEOUT /? TIMEOUT /T 10 TIMEOUT /T 300 /NOBREAK TIMEOUT /T -1  高级实例： timeout /t 10 /nobreak &amp;gt; NUL 实际等待时间：10s
+Jenkins运行结果： 错误: 不支持输入重新定向，立即退出此进程。
+Waitfor WaitFor 有两种运行方式:
+语法 1: 发送信号 WAITFOR [/S system [/U user [/P [password]]]] /SI signal  语法 2: 等候信号 WAITFOR [/T timeout] signal  描述: 此工具在系统上发送或等待信号。当没有指定 /S 时，信号会被广播到一个 域的所有系统上。如果指定了/S，信号只发送到指定的系统上。  参数列表: /S system 指定远程系统以便发送信号。 /U [domain\]user 指定用户上下文，命令在此上下文中执行。 /P [password] 指定给定用户上下文的密码。 /SI 把信号发送到网络上正在等待的机器。 /T timeout 等待信号的秒数。有效范围是 1 - 99999。默认值 是永远等待信号。 signal 等待或发送的信号名称。 /?</description>
+    </item>
+    
+    <item>
+      <title>Windows Batch 编程--For，Exist</title>
+      <link>/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</link>
+      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</guid>
+      <description>例子解析：实现检测分支同时新建的功能 @echo off set branch_name=origin/test set result=0 FOR /F %%G IN (&#39;git branch -r&#39;) DO ( if %%G==%branch_name% ( echo find branch %%G set result=1 ) ) if %result%==0 ( echo &amp;quot;prepare test branch&amp;quot; call git checkout -B test call git push http://%stash_user%:%stash_pass%@s.kyee.com.cn/scm/iotbc/iot-server.git test -f ) else ( echo &amp;quot;another test branch exists!&amp;quot; exit 1 ) 例子解析2： 实现文件检测，删除和重命名文件 @echo off cd server if exist &amp;quot;dist_one*.jar&amp;quot; ( echo found_dist_one del iot-server-snapshot.jar ren dist_one*.</description>
+    </item>
+    
+    <item>
+      <title>Windows 批处理Batch使用手册</title>
+      <link>/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
+      <description>[TOC]
+Batch   Batch &amp;ndash; 批处理； Batch file &amp;ndash; 批处理文件；
+  DOS 批处理；
+  由 DOS 或者 windows 内嵌命令解释器（例如：cmd.exe）解释执行；
+  类似 Unix 中的 shell 脚本；
+  在批处理中不仅可以使用系统本身提供的命令，还能使用已安装的第三方提供的工具或软件；
+  一般情况：每条命令占一行；当然也可以将多条命令用特定符号（&amp;amp; &amp;amp;&amp;amp; | ||）分隔后写到同一行；
+  系统在解释运行批处理程序时，首先扫描整个批处理程序，然后从第一行代码开始向下逐句执行所有的命令，直至程序结尾或遇见 exit 命令或出错意外退出。
+  基础批处理命令  echo rem pause call start goto set  链接：批处理常用命令总结 - 批处理命令简介
+批处理常用符号简介  回显屏蔽 @ 重定向1 &amp;gt; 与 &amp;gt;&amp;gt; 重定向2 &amp;lt; 管道符号 | 转义符 ^ 逻辑命令符 &amp;amp; &amp;amp;&amp;amp; ||  链接：批处理常用命令总结 - 批处理符号简介</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>微信开发--前端本地调试连接本地后台方法</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">微信开发--前端本地调试连接本地后台方法</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>微信开发--前端本地调试连接本地后台方法</h2>
+        <h5>November 15, 2016</h5>
+        
+<a href="/blogtags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F"><kbd class="item-tag">微信小程序</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="背景">背景</h2>
+<p>微信团队对微信小程序的控制比较严格，在小程序中发送http request只能调用通过wx.request方法，而在wx.request中，会默认对请求的url地址进行检查，必须使用https协议 &amp; 是配置的后台地址之一（管理员账号进行配置），而且无法配置localhost或者IP地址，所以导致本地调试需要采用一些特殊的手段来访问本地的后台。（其实还是很简单的~和把大象放进冰箱一样，只需要三步哦~ 括弧笑）</p>
+<h2 id="解决步骤">解决步骤</h2>
+<h3 id="第一步-将一个外网地址指向本地的地址">第一步 将一个外网地址指向本地的地址</h3>
+<pre><code>这一步其实非常的简单，只要修改host文件即可。（Mac下可以使用Gas Mask辅助，修改前建议备份原本的host文件）
+host文件的位置？自行百度一下吧~
+修改成什么样子？举个例子，后台的地址为https://www.baidu.com，希望将这个地址解析为本地的地址127.0.0.1，只要这么写就够啦
+127.0.0.1 www.baidu.com
+如果有运行后台的话，假设后台监听的是8080端口，赶紧打开浏览器，输入http://www.baidu.com:8080看能不能正常访问本地的后台~
+</code></pre>
+<h3 id="第二步-生成一个自签名证书">第二步 生成一个自签名证书</h3>
+<pre><code>配置https，证书是必不可少的，还好自签名的https证书在微信小程序本地调试的时候是可用的，这里的话需要用到openssl，windows的电脑请在git bash下操作或者求助使用Mac，Linux系统的小伙伴，以下教程以Mac系统为准
+</code></pre>
+<pre><code>    brew install openssl(安装过openssl的跳过)
+    openssl genrsa -out ssl.key 2048
+    openssl req -new -key ssl.key -out ssl.csr
+    openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt
+    openssl pkcs12 -export -in ssl.crt -inkey ssl.key -out ssl.p12
+</code></pre><pre><code>执行最后一个命令的时候回提示你输入一个密码，此处以kyee为例         
+执行完上述的步骤，应该会得到4个文件ssl.crt, ssl.csr, ssl.key, ssl.p12
+</code></pre>
+<h3 id="第三步-配置后台服务器https证书">第三步 配置后台服务器https证书</h3>
+<pre><code>复制ssl.p12，丢到后台和application.yml一个文件夹下，然后在application.yml中输入：
+</code></pre>
+<p><img src="/image/image-20211104181357156.png" alt="image-20211104181357156"></p>
+<pre><code>然后启动之，搞定~这样前端你调用wx.request的时候url只要设置为https://www.baidu.com:8080/xxx，就可以访问你本地的后台了~
+</code></pre>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

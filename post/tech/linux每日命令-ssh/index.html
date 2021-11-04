@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Linux每日命令--ssh</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Linux每日命令--ssh</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Linux每日命令--ssh</h2>
+        <h5>April 12, 2017</h5>
+        
+<a href="/blogtags/linux"><kbd class="item-tag">Linux</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>[TOC]</p>
+<p>ssh命令用于远程登录上Linux主机。</p>
+<p>常用格式：<code>ssh [-l login_name] [-p port] [user@]hostname</code>
+更详细的可以用<code>ssh -h</code>查看。</p>
+<h2 id="ssh-config-文件">SSH config 文件</h2>
+<h3 id="配置文件">配置文件</h3>
+<p>SSH 程序可以从以下途径获取配置参数 (Ubuntu 14.04 LTS)：</p>
+<ul>
+<li>命令行选项</li>
+<li>用户配置文件 (~/.ssh/config)</li>
+<li>系统配置文件 (/etc/ssh/ssh_config)</li>
+</ul>
+<h3 id="常用配置项">常用配置项</h3>
+<p>下面介绍一些常用的 SSH 配置项：</p>
+<h4 id="host">Host</h4>
+<p>Host 配置项标识配置区段,主要用于ssh登录时使用。
+如：</p>
+<pre><code>HOST home
+    ...
+    ...
+</code></pre><p>登录如下：</p>
+<pre><code>ssh home
+</code></pre><h4 id="globalknownhostsfile"><strong>GlobalKnownHostsFile</strong></h4>
+<p>指定一个或多个全局认证主机缓存文件，用来缓存通过认证的远程主机的密钥，多个文件用空格分隔。默认缓存文件为：/etc/ssh/ssh_known_hosts, /etc/ssh/ssh_known_hosts2.</p>
+<h4 id="hostname"><strong>HostName</strong></h4>
+<p>指定远程主机名，可以直接使用数字IP地址。如果主机名中包含 ‘%h’ ，则实际使用时会被命令行中的主机名替换。</p>
+<h4 id="identityfile"><strong>IdentityFile</strong></h4>
+<p>指定密钥认证使用的私钥文件路径。默认为 ~/.ssh/id_dsa, ~/.ssh/id_ecdsa, ~/.ssh/id_ed25519 或 ~/.ssh/id_rsa 中的一个。文件名称可以使用以下转义符：</p>
+<pre><code>'%d' 本地用户目录
+'%u' 本地用户名称
+'%l' 本地主机名
+'%h' 远程主机名
+'%r' 远程用户名
+</code></pre>
+<p>可以指定多个密钥文件，在连接的过程中会依次尝试这些密钥文件。</p>
+<h4 id="port"><strong>Port</strong></h4>
+<p>指定远程主机端口号，默认为 22 。</p>
+<h4 id="user"><strong>User</strong></h4>
+<p>指定登录用户名。</p>
+<h4 id="userknownhostsfile"><strong>UserKnownHostsFile</strong></h4>
+<p>指定一个或多个用户认证主机缓存文件，用来缓存通过认证的远程主机的密钥，多个文件用空格分隔。默认缓存文件为： ~/.ssh/known_hosts, ~/.ssh/known_hosts2.</p>
+<p>还有更多参数的介绍，可以参看用户手册：</p>
+<p><code>$ man ssh config</code></p>
+<h3 id="示例">示例</h3>
+<p>以下连接为例：</p>
+<pre><code>SSH 服务器(Host)： ssh.test.com
+端口号(Port)： 2200
+账户(User)： user
+密钥文件(IdentityFile)： ~/.ssh/id_rsa_test
+</code></pre>
+<p>####密码认证登录方式为：</p>
+<pre><code>$ ssh -p 2200 -i ~/.ssh/id_rsa_test user@ssh.test.com
+user@ssh.test.com's password:
+</code></pre><p>####密钥认证登录方式：</p>
+<pre><code>$ ssh-copy-id -i ~/.ssh/id_rsa_test user@ssh.test.com
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+user@ssh.test.com's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &quot;ssh 'user@ssh.test.com'&quot;
+and check to make sure that only the key(s) you wanted were added.
+
+$ ssh user@ssh.test.com
+</code></pre><p>####使用配置文件方式</p>
+<p>有如下配置文件：</p>
+<pre><code>$ vim ~/.ssh/config
+Host sshtest
+    HostName ssh.test.com
+    User user
+    Port 2200
+    IdentityFile ~/.ssh/id_rsa_test
+
+Host ssttest2
+    HostName ssh.test2.com
+    User user2
+    Port 2345
+    IdentityFile ~/.ssh/id_rsa_test2
+</code></pre><p>使用配置文件登录：</p>
+<pre><code>$ ssh sshtest
+</code></pre><h2 id="ssh无密码登录--实例mac版">SSH无密码登录&ndash;实例MAC版</h2>
+<p><strong>示例：</strong></p>
+<pre><code>SSH 服务器(Host)： ssh.test.com
+端口号(Port)： 2200
+账户(User)： user
+密钥文件(IdentityFile)： ~/.ssh/id_rsa_test
+密码：123456
+</code></pre>
+<p>想要是实现的效果：<code>ssh ssh.test.com</code> 即可登录进入指定的服务器</p>
+<h3 id="第一步实现ssh配置文件登录"><strong>第一步：实现ssh配置文件登录</strong></h3>
+<p>修改或新增配置文件<code>~/.ssh/config</code></p>
+<pre><code>Host ssh.test.com
+    User user
+    Post 2200
+</code></pre><p>尝试登录<code>ssh ssh.test.com</code>，<strong>仍需要输入密码</strong></p>
+<h3 id="第二步ssh-keygen生成ssh-key">第二步：ssh-keygen生成ssh key</h3>
+<p>生成方式：<code>ssh-keygen -f id_rsa_test -C user</code>
+输入登录ssh的帐号的密码: <code>123456</code>
+生成的密钥位于: <code>~/.ssh/</code>下</p>
+<h3 id="第三步ssh-copy-id把public-key放到ssh服务器上">第三步：ssh-copy-id把public key放到ssh服务器上</h3>
+<p>方法：<code>ssh-copy-id -i id_rsa_test.pub user@ssh.test.com</code>
+输入密码：<code>123456</code>
+可以去ssh服务器验证：<code>cat ~/.ssh/authorized_keys</code>查看应该会多了public key内容</p>
+<h3 id="第四步修改ssh配置文件配置">第四步：修改ssh配置文件配置</h3>
+<p>添加私钥到配置文件中</p>
+<pre><code>Host ssh.test.com
+    User user
+    Post 2200
+    IdentityFile ~/.ssh/id_rsa_test
+</code></pre><h3 id="第五步重启终端">第五步：重启终端</h3>
+<p>尝试<code>ssh ssh.test.com</code>登录成功</p>
+<h2 id="常见错误">常见错误</h2>
+<h3 id="warning-remote-host-identification-has-changed">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</h3>
+<p>执行<code>ssh iot@1.1.1.1</code> 时出现标题的错误信息。
+原因是由于之前生成ssh-keygen，但是目标机器重装过，导致之前的key不可用，所以出现警告如下图：
+<img src="http://static.zybuluo.com/huis/11hhtqbb04sh8jrel3fycwej/image_1bdgc49861vjf6gej031i73u3i9.png" alt="image_1bdgc49861vjf6gej031i73u3i9.png-128.1kB"></p>
+<p><strong>解决方法：<code>ssh-keygen -R host</code></strong></p>
+<h2 id="参考链接">参考链接</h2>
+<ul>
+<li><a href="http://daemon369.github.io/ssh/2015/03/21/using-ssh-config-file">使用 SSH config 文件</a></li>
+<li><a href="https://segmentfault.com/a/1190000000585526">如何优雅地连接ssh</a></li>
+<li><a href="https://segmentfault.com/q/1010000002445731">linux中ssh的config怎么配置可以省略输入密码？</a></li>
+</ul>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/">Linux每日命令--scp</a></h4>
+    <h5>February 22, 2017</h5>
+    
+<a href="/blogtags/linux"><kbd class="item-tag">Linux</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/">Linux每日命令--du,df</a></h4>
+    <h5>February 14, 2017</h5>
+    
+<a href="/blogtags/linux"><kbd class="item-tag">Linux</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

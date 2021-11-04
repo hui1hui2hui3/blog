@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Jmeter学习笔记--无GUI模式运行详解</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Jmeter学习笔记--无GUI模式运行详解</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Jmeter学习笔记--无GUI模式运行详解</h2>
+        <h5>October 14, 2019</h5>
+        
+<a href="/blogtags/jmeter"><kbd class="item-tag">Jmeter</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><h2 id="普通命令">普通命令</h2>
+<p><code>jmeter -n -t test.jmx -l test.jtl</code></p>
+<blockquote>
+<p>备注：这种方式的运行，最好把脚本中的监听器全部删掉或禁用，防止影响性能</p>
+</blockquote>
+<h2 id="参数大全">参数大全</h2>
+<pre><code>-h, --help
+                print usage information and exit
+　　　　　　　　　#打印帮助信息　
+        -v, --version
+                print the version information and exit
+　　　　　　　　　 #打印版本信息
+        -p, --propfile {argument}
+                the jmeter property file to use
+　　　　　　　　　 #运行时指定property文件，默认是使用JMETER_HOME/bin目录下的jmeter.properties，如果用户自定义有其它的配置，在这里加上
+　　　　　　　　　 #用法如下： -p user.properties
+        -q, --addprop {argument}
+                additional property file(s)
+　　　　　　　　　 #其它配置文件，如JVM参数等等
+        -t, --testfile {argument}
+                the jmeter test(.jmx) file to run
+　　　　　　　　  #要运行的jmeter脚本
+        -j, --jmeterlogfile {argument}
+                the jmeter log file
+　　　　　　　　  #指定记录jmeter log的文件，默认为jmeter.log
+        -l, --logfile {argument}
+                the file to log samples to
+　　　　　　　　  #记录采样器Log的文件
+        -n, --nongui
+                run JMeter in nongui mode
+　　　　　　　　  #以nongui模式运行jmeter
+        -s, --server
+                run the JMeter server
+　　　　　　　　  #运行JMeter server
+        -H, --proxyHost {argument}
+                Set a proxy server for JMeter to use
+　　　　　　　　  #代理服务器地址
+        -P, --proxyPort {argument}
+                Set proxy server port for JMeter to use
+　　　　　　　　  #代理服务器端口
+        -u, --username {argument}
+                Set username for proxy server that JMeter is to use
+　　　　　　　　  #代理服务器的用户名
+        -a, --password {argument}
+                Set password for proxy server that JMeter is to use
+　　　　　　　　  #代理服务器用户名对应的密码
+        -J, --jmeterproperty {argument}={value}
+                Define additional JMeter properties
+　　　　　　　　  #定义额外的Jmeter属性
+        -G, --globalproperty (argument)[=(value)]
+                Define Global properties (sent to servers)
+                e.g. -Gport=123
+                 or -Gglobal.properties
+　　　　　　　　  #定义发送给server的全局属性
+　　　　　　　　　#如：-Gport=123 或者-Gglobal.properties（指定监听server的端口）
+        -D, --systemproperty {argument}={value}
+                Define additional System properties
+　　　　　　　　  #定义系统属性
+        -S, --systemPropertyFile {filename}
+                a property file to be added as System properties
+　　　　　　　　　#通过指定的property文件定义系统属性
+        -L, --loglevel {argument}={value}
+                Define loglevel: [category=]level 
+                e.g. jorphan=INFO or jmeter.util=DEBUG
+　　　　　　　　  #定义日志等级
+        -r, --runremote (non-GUI only)
+                Start remote servers (as defined by the jmeter property remote_hosts)
+　　　　　　　　  #启动远程server（在jmeter property中定义好的remote_hosts），公在non-gui模式下此参数才生效
+        -R, --remotestart  server1,... (non-GUI only)
+                Start these remote servers (overrides remote_hosts)
+　　　　　　　　  #启动远程server（如果使用此参数，将会忽略jmeter property中定义的remote_hosts）
+        -d, --homedir {argument}
+                the jmeter home directory to use
+                #Jmeter运行的主目录
+        -X, --remoteexit
+                Exit the remote servers at end of test (non-GUI)
+　　　　　　　　  #测试结束时，退出（在non-gui模式下）
+</code></pre><h2 id="运行并生成报告">运行并生成报告</h2>
+<p><code>jmeter -n -t test.jmx -l test.jtl -e -o ./reportFolder</code></p>
+<blockquote>
+<p>备注：-o 生成报告的目录必须不存在</p>
+</blockquote>
+<h2 id="日志转报告">日志转报告</h2>
+<p><code>jmeter -g result.jtl -o ./resultReport</code></p>
+<blockquote>
+<p>把生成的日志转化为报告</p>
+</blockquote>
+<h2 id="限制流量运行模拟手机2g3g4g网络">限制流量运行，模拟手机2G，3G，4G网络</h2>
+<pre><code>jmeter -n -t test.jmx -l test.jtl -Jhttpclient.socket.http.cps=21888 -Jhttpclient.socket.https.cps=21888
+</code></pre><p><strong>21888表示:  171*1024/8
+171表示:    171Kbit/s(下行带宽）=21.375KB/s（下行速度）</strong></p>
+<blockquote>
+<p>备注：8Kbit/s = 1KB/s</p>
+</blockquote>
+<p>所以CPS计算公式为：
+$CPS=模拟速度*1024$</p>
+<p>下面给出常用的网络cps值：
+网络 | Cps值
+&mdash;&mdash;|&mdash;&mdash;-
+GPRS | 21888
+3g | 2688000
+4g | 19200000
+wifi(802.11a/g) | 6912000
+adsl | 1024000
+100m | 12800000
+Gigabit | 128000000</p>
+<h2 id="命令行控制脚本中的可变变量">命令行控制脚本中的可变变量</h2>
+<pre><code>jmeter -n -t rls_exam.jmx -l test.jtl -Jexamcode=675867 -Jlaunchtime=300 -Jlazytime=5 -Jthreadsnum=2 -Jramptime=10
+</code></pre><ul>
+<li><code>-Jexamcode</code> : 表示脚本中需要examcode变量，脚本中写法是<code>${__P(examcode,)}</code></li>
+<li><code>-Jthreadsnum</code>: 表示脚本中的线程数变量，可以有默认值，比如<code>${__P(threadsnum,1)}</code>表示默认为1</li>
+</ul>
+<p>示例截图：
+<img src="http://static.zybuluo.com/huis/nbpg1o943zlbeh4a8yg0rplk/image_1avt8ctqra841m6a1d41lrv1il8g.png" alt="image_1avt8ctqra841m6a1d41lrv1il8g.png-145.1kB"></p>
+<p>思考问题：</p>
+<ol>
+<li>如何控制是否开启循环次数</li>
+</ol>
+<blockquote>
+<p>-1 表示无线循环</p>
+</blockquote>
+<ol start="2">
+<li>如何控制是否开启调度器</li>
+</ol>
+<h2 id="out-of-memery">Out Of Memery</h2>
+<p>默认的JVM配置是<code>-Xms512m -Xmx512m</code>，所以如果超过150个线程执行时有可能会内存溢出，下面是配置JVM方法：</p>
+<pre><code>JVM_ARGS=&quot;-Xms1024m -Xmx1024m&quot; jmeter -t test.jmx [etc.]
+</code></pre><h2 id="参考">参考</h2>
+<blockquote>
+<p><a href="http://www.jianshu.com/p/c9f9a06df5cb">JMeter-自动生成测试报告</a>
+<a href="http://www.cnblogs.com/landhu/p/5969632.html">在jmeter测试中模拟不同的带宽环境</a></p>
+</blockquote>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

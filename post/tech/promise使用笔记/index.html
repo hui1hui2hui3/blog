@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>Promise使用笔记</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Promise使用笔记</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Promise使用笔记</h2>
+        <h5>October 14, 2016</h5>
+        
+<a href="/blogtags/nodejs"><kbd class="item-tag">NodeJs</kbd></a>
+
+<a href="/blogtags/promise"><kbd class="item-tag">Promise</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><blockquote>
+<p>环境描述：nodejs
+Promise模块：<a href="https://www.npmjs.com/package/q">q</a></p>
+</blockquote>
+<h2 id="1-多层异步promise的实现">1. 多层异步Promise的实现</h2>
+<p><strong>需求：获取一个目录下指定文件（多个）的数据集合</strong>
+从错误思路到正确思路进行分析, 解析错误思路是为了知己知彼，为了不在写出这种错误的代码，而且错误的思路中不是全部都错误的，是在某个分界点才开始错误的，所以这个<em>分界点</em>是个关键，需要多加注意</p>
+<h3 id="11-错误思路">1.1 错误思路</h3>
+<p>先直接上完整代码</p>
+<pre><code>var jsonParser = function(basePath) {
+    var deferred = q.defer();
+    var resultData = [];
+    try {
+        fs.readdir(basePath, function(err, files) {
+            if (err) {
+                console.error(err);
+                deferred.reject(err);
+            }
+            if (files.length &lt; 1) {
+                deferred.resolve(resultData);
+            }
+            for (var i = 0, n = files.length; i &lt; n; i++) {
+                var file = files[i];
+                var fileExtIndex = file.indexOf(&quot;.json&quot;);
+                if (fileExtIndex &gt; -1) {
+                    fs.readFile(path.join(basePath, file), function(err, data) {
+                        if (err) {
+                            console.error(err);
+                            deferred.reject(err);
+                        }
+                        try {
+                            var jsonData = JSON.parse(data);
+                            resultData[resultData.length] = jsonData;
+                            if (i &gt;= n - 1) {
+                                deferred.resolve(resultData);
+                            }
+                        } catch (e) {
+                            console.log(e);
+                            deferred.reject(e);
+                        }
+                    })
+                }
+            }
+        });
+    } catch (e) {
+        deferred.reject(e)
+    }
+    return deferred.promise;
+}
+</code></pre><ul>
+<li>一步一步解析错误思路1：
+定义一个promise对象返回（<strong>正确</strong>）</li>
+</ul>
+<pre><code>var deferred = q.defer();
+return deferred.promse;
+</code></pre><ul>
+<li>一步一步解析错误思路2：
+<code>fs.readdir</code>是个异步的操作，同时可能会出现异常，所以使用<code>try...catch...</code>异常捕捉，失败则直接<code>reject</code>（<strong>正确</strong>）</li>
+</ul>
+<pre><code>try {
+    fs.readdir(basePath, function(err, files) {})
+} catch (e) {
+    deferred.reject(e)
+}
+</code></pre><ul>
+<li>一步一步解析错误思路3：
+由于读取文件夹会有错误返回，则直接<code>reject</code>，或者文件夹下为空，则<code>resolve</code>空数组（<strong>正确</strong>）</li>
+</ul>
+<pre><code>if (err) {
+    console.error(err);
+    deferred.reject(err);
+}
+if (files.length &lt; 1) {
+    deferred.resolve(resultData);
+}
+</code></pre><ul>
+<li>一步一步解析错误思路4：
+这一步对文件列表进行遍历读取，咋一看是没问题的（<strong>无</strong>）</li>
+</ul>
+<pre><code>for (var i = 0, n = files.length; i &lt; n; i++) {
+    fs.readFile(path.join(basePath, file), function(err, data) {}
+}
+</code></pre><ul>
+<li>一步一步解析错误思路5：
+读取文件时会有错误，所以直接<code>reject</code>，细想会发现，如果读取某个文件时错误会导致这个方法直接结束掉了，其他读取成功的文件也结束了，但是目前思路还有些不清，但就在这段区域来说是对的，在往下分析（<strong>正确</strong>）</li>
+</ul>
+<pre><code>if (err) {
+    deferred.reject(err);
+}
+</code></pre><ul>
+<li>一步一步解析错误思路6：
+对读取成功的数据进行解析，解析可能存在异常所以<code>reject</code>（<strong>正确</strong>）</li>
+</ul>
+<pre><code>try {
+    var jsonData = JSON.parse(data);
+    ...
+} catch (e) {
+    deferred.reject(e);
+}
+</code></pre><ul>
+<li>一步一步解析错误思路7：
+判断是否是最后一个文件<code>resolve</code>最终的结果，明显有问题，这里是异步操作的结果中，也就是外围的<code>for</code>循环此时已经循环完毕，i一定是等于n了，这个判断毫无用处，对于多个文件的读取可能刚读完一个文件就结束了，另外，如果写成正常思路的 <code>i==n-1</code>反而会导致死循环，引起数据永远无法返回的问题（<strong>错误</strong>）</li>
+</ul>
+<pre><code>resultData[resultData.length] = jsonData;
+if (i &gt;= n - 1) { // i == n-1
+    deferred.resolve(resultData);
+}
+</code></pre><p>下面是回过头去在想想不对劲的地方和代码根本没法写的地方</p>
+<ul>
+<li>回头分析错误思路1：
+我想要在读取文件时对文件类型进行筛选，会发现有的文件会进if，有的会进else，else中是<code>resolve</code>还是不呢，如果<code>resolve</code>那可能会导致第一个文件就不符直接结束了，如果没有<code>resolve</code>那假设没有文件是符合的，仍然会导致永远无法返回数据的问题，怎么写？</li>
+</ul>
+<pre><code>var fileExtIndex = file.indexOf(&quot;.json&quot;);
+if (fileExtIndex &gt; -1) {
+    //readfile
+} else {
+    
+}
+</code></pre><ul>
+<li>回头分析错误思路2：
+读取文件时可能会报错，那是不是应该<code>try...catch...</code>，那到底写不写<code>reject</code>呢？</li>
+</ul>
+<pre><code>fs.readFile(path.join(basePath, file), function(err, data) {}
+</code></pre><ul>
+<li>回头分析错误思路3：
+对文件循环进行读取，假设<code>for</code>循环结束后没有<code>resolve</code>或<code>reject</code>咋办？代码如何写？</li>
+</ul>
+<pre><code>for (var i = 0, n = files.length; i &lt; n; i++) {
+    fs.readFile(path.join(basePath, file), function(err, data) {}
+}
+</code></pre><p><strong>总结：通过上面的分析会发现根本的问题就是出现在循环处理<code>fs.readFile</code>这个异步方法,另外可能还有有其他想法就是，打算一个一个文件的进行读取，这个好知道啥时候读到最后的文件（可能可以实现，但是仍然不可取）</strong></p>
+<h3 id="12-正确思路">1.2 正确思路</h3>
+<p>同理，先上完整代码</p>
+<pre><code>function readFiles(basePath, files) {
+    var promises = [];
+    for (var i = 0, n = files.length; i &lt; n; i++) {
+        var file = files[i];
+        if (file.indexOf(&quot;.json&quot;) &gt; -1) { //必须是.json的扩展文件
+            promises.push(q.Promise(function(resolve, reject, notify) {
+                fs.readFile(path.join(basePath, file), function(err, data) {
+                    if (err) {
+                        reject(err);
+                    }
+                    try {
+                        resolve(JSON.parse(data));
+                    } catch (e) {
+                        reject(e);
+                    }
+                })
+            }));
+        }
+    }
+    return q.all(promises);
+}
+
+//获取目录下面所有文件，并解析为json格式的数组
+var jsonParser = function(basePath) {
+    var deferred = q.defer();
+    try {
+        fs.readdir(basePath, function(err, files) {
+            if (err) {
+                deferred.reject(err);
+            }
+            if (files.length &lt; 1) {
+                deferred.resolve([]);
+            }
+            readFiles(basePath, files).then(function(data) {
+                deferred.resolve(data)
+            }, function(error) {
+                deferred.reject(data)
+            })
+        });
+    } catch (e) {
+        deferred.reject(e)
+    }
+    return deferred.promise;
+}
+</code></pre><p>会发现重大改变的地方就是我们分析的第4步开始改变的</p>
+<pre><code>readFiles(basePath, files).then(function(data) {
+    deferred.resolve(data)
+}, function(error) {
+    deferred.reject(data)
+})
+</code></pre><p>这个会发现很爽，我不管结果如何，我就是监听then的结果，进行<code>resolve</code>或者<code>reject</code>
+<strong>核心代码：</strong></p>
+<pre><code>function readFiles(basePath, files) {
+    var promises = [];
+    for (var i = 0, n = files.length; i &lt; n; i++) {
+        var file = files[i];
+        if (file.indexOf(&quot;.json&quot;) &gt; -1) { //必须是.json的扩展文件
+            promises.push(q.Promise(function(resolve, reject, notify) {
+                fs.readFile(path.join(basePath, file), function(err, data) {
+                    if (err) {
+                        reject(err);
+                    }
+                    try {
+                        resolve(JSON.parse(data));
+                    } catch (e) {
+                        reject(e);
+                    }
+                })
+            }));
+        }
+    }
+    return q.all(promises);
+}
+</code></pre><p><strong>分析：这不是单纯的进行的代码的封装，重点是返回的<code>q.all(promises)</code>，代码中把所有的<code>fs.readFile</code>异步处理封装成Promise对象，用<code>q.all()</code>等待机制，等待所有的文件读取好以后统一进行返回，会发现这个更加严谨，对个各个角度的都有响应的<code>resolve</code>或<code>reject</code>，而不会导致卡死问题</strong></p>
+</div>
+
+    
+    
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

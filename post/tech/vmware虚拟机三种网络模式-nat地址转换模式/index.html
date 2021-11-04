@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="never">
+﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+        <title>VMware虚拟机三种网络模式--NAT（地址转换模式）</title>
+        
+        <style>
+
+    html body {
+        font-family: '', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: purple;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.62.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+		
+            <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">VMware虚拟机三种网络模式--NAT（地址转换模式）</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/blog/">Home</a></li>
+                            
+                                <li><a href="/blog/post/">Posts</a></li>
+                            
+                                <li><a href="/blog/tags/">Tags</a></li>
+                            
+                                <li><a href="/blog/about/">About</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/hui1hui2hui3/"><i class="fab fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>VMware虚拟机三种网络模式--NAT（地址转换模式）</h2>
+        <h5>September 5, 2017</h5>
+        
+<a href="/blogtags/vmware"><kbd class="item-tag">VMware</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content"><p>刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示：
+<a href="http://www.linuxidc.com/upload/2016_09/160926204664451.png!%5Bimage_1bp8bod7519j79jp1iu51fd81r5c9.png-117.4kB%5D%5B1%5D">http://www.linuxidc.com/upload/2016_09/160926204664451.png![image_1bp8bod7519j79jp1iu51fd81r5c9.png-117.4kB][1]</a></p>
+<p>在NAT模式中，主机网卡直接与虚拟NAT设备相连，然后虚拟NAT设备与虚拟DHCP服务器一起连接在虚拟交换机VMnet8上，这样就实现了虚拟机联网。那么我们会觉得很奇怪，为什么需要虚拟网卡VMware Network Adapter VMnet8呢？原来我们的VMware Network Adapter VMnet8虚拟网卡主要是为了实现主机与虚拟机之间的通信。在之后的设置步骤中，我们可以加以验证。</p>
+<p>首先，设置虚拟机中NAT模式的选项，打开vmware，点击“编辑”下的“虚拟网络编辑器”，设置NAT参数及DHCP参数。</p>
+<p><a href="http://www.linuxidc.com/upload/2016_09/160926204664452.png!%5Bimage_1bp8bp68n157310gckgu185a1oggm.png-67.6kB%5D%5B2%5D">http://www.linuxidc.com/upload/2016_09/160926204664452.png![image_1bp8bp68n157310gckgu185a1oggm.png-67.6kB][2]</a>
+<a href="http://www.linuxidc.com/upload/2016_09/160926204664453.png!%5Bimage_1bp8bpgv11ju4lp63rt1rdfhf213.png-47.9kB%5D%5B3%5D">http://www.linuxidc.com/upload/2016_09/160926204664453.png![image_1bp8bpgv11ju4lp63rt1rdfhf213.png-47.9kB][3]</a>
+<a href="http://www.linuxidc.com/upload/2016_09/160926204664454.png!%5Bimage_1bp8bppt8ipg133f36fgcl1rsb1g.png-37.8kB%5D%5B4%5D">http://www.linuxidc.com/upload/2016_09/160926204664454.png![image_1bp8bppt8ipg133f36fgcl1rsb1g.png-37.8kB][4]</a></p>
+<p>将虚拟机的网络连接模式修改成NAT模式，点击“编辑虚拟机设置”。
+<a href="http://www.linuxidc.com/upload/2016_09/160926204664455.png!%5Bimage_1bp8bqoc4jb240mlu9ghgf1t.png-116.8kB%5D%5B5%5D">http://www.linuxidc.com/upload/2016_09/160926204664455.png![image_1bp8bqoc4jb240mlu9ghgf1t.png-116.8kB][5]</a></p>
+<p>点击“网络适配器”，选择“NAT模式”
+<a href="http://www.linuxidc.com/upload/2016_09/160926204664456.png!%5Bimage_1bp8br8ml1ed41q5o1i4f1jf515012a.png-73.2kB%5D%5B6%5D">http://www.linuxidc.com/upload/2016_09/160926204664456.png![image_1bp8br8ml1ed41q5o1i4f1jf515012a.png-73.2kB][6]</a></p>
+<p>然后，编辑网络IP地址：
+<a href="http://www.linuxidc.com/upload/2016_09/160926204664458.png!%5Bimage_1bp8brtgo1jv03s71jpi1vheiph2n.png-93.6kB%5D%5B7%5D">http://www.linuxidc.com/upload/2016_09/160926204664458.png![image_1bp8brtgo1jv03s71jpi1vheiph2n.png-93.6kB][7]</a></p>
+<p>之前，我们说过VMware Network Adapter VMnet8虚拟网卡的作用，那我们现在就来测试一下。
+<a href="http://www.linuxidc.com/upload/2016_09/1609262046644510.png!%5Bimage_1bp8bt4r61vl51kmodab1q5910tk34.png-121.8kB%5D%5B8%5D">http://www.linuxidc.com/upload/2016_09/1609262046644510.png![image_1bp8bt4r61vl51kmodab1q5910tk34.png-121.8kB][8]</a></p>
+<p><a href="http://www.linuxidc.com/upload/2016_09/1609262046644511.png!%5Bimage_1bp8btetku769gk1teq144j156d3h.png-106kB%5D%5B9%5D">http://www.linuxidc.com/upload/2016_09/1609262046644511.png![image_1bp8btetku769gk1teq144j156d3h.png-106kB][9]</a>
+如此看来，虚拟机能联通外网，确实不是通过VMware Network Adapter VMnet8虚拟网卡，那么为什么要有这块虚拟网卡呢？</p>
+<p>之前我们就说VMware Network Adapter VMnet8的作用是主机与虚拟机之间的通信，接下来，我们就用远程连接工具来测试一下。</p>
+<p><a href="http://www.linuxidc.com/upload/2016_09/1609262046644512.png!%5Bimage_1bp8bu2mu1sv7ol815qam7g5v3u.png-124.7kB%5D%5B10%5D">http://www.linuxidc.com/upload/2016_09/1609262046644512.png![image_1bp8bu2mu1sv7ol815qam7g5v3u.png-124.7kB][10]</a></p>
+<p>然后，将VMware Network Adapter VMnet8启用之后，发现远程工具可以连接上虚拟机了。</p>
+<p>那么，这就是NAT模式，利用虚拟的NAT设备以及虚拟DHCP服务器来使虚拟机连接外网，而VMware Network Adapter VMnet8虚拟网卡是用来与虚拟机通信的。</p>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">VMware虚拟机三种网络模式--Bridged（桥接模式）</a></h4>
+    <h5>May 4, 2018</h5>
+    
+<a href="/blogtags/vmware"><kbd class="item-tag">VMware</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+	
+	
+		<div id="waline"></div>
+		<script>
+			Waline({
+			  el: '#waline',
+			  serverURL: 'https://myblog-waline-5cpzcds7x-hui1hui2hui3-gmailcom.vercel.app',
+			});
+		 </script>
+	
+	
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

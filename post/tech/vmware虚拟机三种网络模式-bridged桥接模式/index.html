@@ -143,7 +143,7 @@
 <p>同时，在主机上对应的有VMware Network Adapter VMnet1和VMware Network Adapter VMnet8两块虚拟网卡，它们分别作用于仅主机模式与NAT模式下。在“网络连接”中我们可以看到这两块虚拟网卡，如果将这两块卸载了，可以在vmware的“编辑”下的“虚拟网络编辑器”中点击“还原默认设置”，可重新将虚拟网卡还原。</p>
 <p><img src="http://static.zybuluo.com/huis/51drakkj9w222j752kwhewwq/image_1bp8aj4e81249s9u1ghj1ibv10vu16.png" alt="image_1bp8aj4e81249s9u1ghj1ibv10vu16.png-127.2kB"></p>
 <p>小伙伴看到这里，肯定有疑问，为什么在真机上没有VMware Network Adapter VMnet0虚拟网卡呢？那么接下来，我们就一起来看一下这是为什么。</p>
-<h2 id="一bridged桥接模式">一、Bridged（桥接模式）</h2>
+<h2 id="bridged桥接模式">Bridged（桥接模式）</h2>
 <p>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：
 <img src="http://static.zybuluo.com/huis/gb7wmj17g8is74kaqy4vwd09/image_1bp8alhtk824144mbak16eu92a1j.png" alt="image_1bp8alhtk824144mbak16eu92a1j.png-125.5kB">
 接下来，我们就来实际操作，如何设置桥接模式。</p>

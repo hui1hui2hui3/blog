@@ -151,19 +151,10 @@ Waitfor WaitFor 有两种运行方式:
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</guid>
-      <description>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示： http://www.linuxidc.com/upload/2016_09/160926204874121.png![image_1bp8c2n2u7l9qu9159rno1gbs9.png-108.6kB][1]
-通过上图，我们可以发现，如果要使得虚拟机能联网，我们可以将主机网卡共享给VMware Network Adapter VMnet1网卡，从而达到虚拟机联网的目的。接下来，我们就来测试一下。
+      <description>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示： 通过上图，我们可以发现，如果要使得虚拟机能联网，我们可以将主机网卡共享给VMware Network Adapter VMnet1网卡，从而达到虚拟机联网的目的。接下来，我们就来测试一下。
 首先设置“虚拟网络编辑器”，可以设置DHCP的起始范围。
-http://www.linuxidc.com/upload/2016_09/160926204874122.png![image_1bp8c3baeq5krpv8uv1i6qefom.png-89.5kB][2]
 设置虚拟机为Host-Only模式。
-http://www.linuxidc.com/upload/2016_09/160926204874123.png![image_1bp8c3r8pv0m1h081l00152s8eq13.png-77.3kB][3]
-设置网络IP： http://www.linuxidc.com/upload/2016_09/160926204874124.png![image_1bp8c4q4jtc415r6m4mfgrafo1g.png-93.1kB][4]
-利用远程工具测试能否与主机通信。 http://www.linuxidc.com/upload/2016_09/160926204874125.png![image_1bp8c5bd6jtfn849d47gf3md1t.png-103.1kB][5]
-主机与虚拟机之间可以通信，现在设置虚拟机联通外网。 http://www.linuxidc.com/upload/2016_09/160926204874126.png![image_1bp8c5nmn15i811fs1qgd12mvb542a.png-195.2kB][6]
-我们可以看到上图有一个提示，强制将VMware Network Adapter VMnet1的ip设置成192.168.137.1，那么接下来，我们就要将虚拟机的DHCP的子网和起始地址进行修改，点击“虚拟网络编辑器” http://www.linuxidc.com/upload/2016_09/160926204874127.png![image_1bp8c690u1lc910091uoavjqbq2n.png-86.2kB][7]
-重新配置网卡，将VMware Network Adapter VMnet1虚拟网卡作为虚拟机的路由。 http://www.linuxidc.com/upload/2016_09/160926204874128.png![image_1bp8c6ot9h31oo95lerg27c734.png-89.6kB][8]
-然后通过 远程工具测试能否联通外网以及与主机通信。 http://www.linuxidc.com/upload/2016_09/160926204874129.png![image_1bp8c7c3pkeq1rsj100s1tfg1dmc3h.png-141.8kB][9]
-测试结果证明可以使得虚拟机连接外网。</description>
+设置网络IP： 利用远程工具测试能否与主机通信。 主机与虚拟机之间可以通信，现在设置虚拟机联通外网。 我们可以看到上图有一个提示，强制将VMware Network Adapter VMnet1的ip设置成192.168.137.1，那么接下来，我们就要将虚拟机的DHCP的子网和起始地址进行修改，点击“虚拟网络编辑器” 重新配置网卡，将VMware Network Adapter VMnet1虚拟网卡作为虚拟机的路由。 然后通过 远程工具测试能否联通外网以及与主机通信。 测试结果证明可以使得虚拟机连接外网。</description>
     </item>
     
     <item>
@@ -172,17 +163,10 @@ http://www.linuxidc.com/upload/2016_09/160926204874123.png![image_1bp8c3r8pv0m1h
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</guid>
-      <description>刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示： http://www.linuxidc.com/upload/2016_09/160926204664451.png![image_1bp8bod7519j79jp1iu51fd81r5c9.png-117.4kB][1]
-在NAT模式中，主机网卡直接与虚拟NAT设备相连，然后虚拟NAT设备与虚拟DHCP服务器一起连接在虚拟交换机VMnet8上，这样就实现了虚拟机联网。那么我们会觉得很奇怪，为什么需要虚拟网卡VMware Network Adapter VMnet8呢？原来我们的VMware Network Adapter VMnet8虚拟网卡主要是为了实现主机与虚拟机之间的通信。在之后的设置步骤中，我们可以加以验证。
+      <description>刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示： 在NAT模式中，主机网卡直接与虚拟NAT设备相连，然后虚拟NAT设备与虚拟DHCP服务器一起连接在虚拟交换机VMnet8上，这样就实现了虚拟机联网。那么我们会觉得很奇怪，为什么需要虚拟网卡VMware Network Adapter VMnet8呢？原来我们的VMware Network Adapter VMnet8虚拟网卡主要是为了实现主机与虚拟机之间的通信。在之后的设置步骤中，我们可以加以验证。
 首先，设置虚拟机中NAT模式的选项，打开vmware，点击“编辑”下的“虚拟网络编辑器”，设置NAT参数及DHCP参数。
-http://www.linuxidc.com/upload/2016_09/160926204664452.png![image_1bp8bp68n157310gckgu185a1oggm.png-67.6kB][2] http://www.linuxidc.com/upload/2016_09/160926204664453.png![image_1bp8bpgv11ju4lp63rt1rdfhf213.png-47.9kB][3] http://www.linuxidc.com/upload/2016_09/160926204664454.png![image_1bp8bppt8ipg133f36fgcl1rsb1g.png-37.8kB][4]
-将虚拟机的网络连接模式修改成NAT模式，点击“编辑虚拟机设置”。 http://www.linuxidc.com/upload/2016_09/160926204664455.png![image_1bp8bqoc4jb240mlu9ghgf1t.png-116.8kB][5]
-点击“网络适配器”，选择“NAT模式” http://www.linuxidc.com/upload/2016_09/160926204664456.png![image_1bp8br8ml1ed41q5o1i4f1jf515012a.png-73.2kB][6]
-然后，编辑网络IP地址： http://www.linuxidc.com/upload/2016_09/160926204664458.png![image_1bp8brtgo1jv03s71jpi1vheiph2n.png-93.6kB][7]
-之前，我们说过VMware Network Adapter VMnet8虚拟网卡的作用，那我们现在就来测试一下。 http://www.linuxidc.com/upload/2016_09/1609262046644510.png![image_1bp8bt4r61vl51kmodab1q5910tk34.png-121.8kB][8]
-http://www.linuxidc.com/upload/2016_09/1609262046644511.png![image_1bp8btetku769gk1teq144j156d3h.png-106kB][9] 如此看来，虚拟机能联通外网，确实不是通过VMware Network Adapter VMnet8虚拟网卡，那么为什么要有这块虚拟网卡呢？
+将虚拟机的网络连接模式修改成NAT模式，点击“编辑虚拟机设置”。 点击“网络适配器”，选择“NAT模式” 然后，编辑网络IP地址： 之前，我们说过VMware Network Adapter VMnet8虚拟网卡的作用，那我们现在就来测试一下。 如此看来，虚拟机能联通外网，确实不是通过VMware Network Adapter VMnet8虚拟网卡，那么为什么要有这块虚拟网卡呢？
 之前我们就说VMware Network Adapter VMnet8的作用是主机与虚拟机之间的通信，接下来，我们就用远程连接工具来测试一下。
-http://www.linuxidc.com/upload/2016_09/1609262046644512.png![image_1bp8bu2mu1sv7ol815qam7g5v3u.png-124.7kB][10]
 然后，将VMware Network Adapter VMnet8启用之后，发现远程工具可以连接上虚拟机了。
 那么，这就是NAT模式，利用虚拟的NAT设备以及虚拟DHCP服务器来使虚拟机连接外网，而VMware Network Adapter VMnet8虚拟网卡是用来与虚拟机通信的。</description>
     </item>

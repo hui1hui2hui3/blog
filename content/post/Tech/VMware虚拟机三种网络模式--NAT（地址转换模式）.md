@@ -42,12 +42,12 @@ draft: false
 
 
 [1]: /blog/image/image_1bp8bod7519j79jp1iu51fd81r5c9.png
-[2]: http://static.zybuluo.com/huis/od7srtq5i44nbr844naqdtzh/image_1bp8bp68n157310gckgu185a1oggm.png
-[3]: http://static.zybuluo.com/huis/75z2m87rlamiccxzo17c7qq3/image_1bp8bpgv11ju4lp63rt1rdfhf213.png
-[4]: http://static.zybuluo.com/huis/rhu2raft9jwn30cuazlrebad/image_1bp8bppt8ipg133f36fgcl1rsb1g.png
-[5]: http://static.zybuluo.com/huis/61d4visggha4kjurqwlrhd37/image_1bp8bqoc4jb240mlu9ghgf1t.png
-[6]: http://static.zybuluo.com/huis/rlfibzkp15o6xvgj87gnkbn8/image_1bp8br8ml1ed41q5o1i4f1jf515012a.png
-[7]: http://static.zybuluo.com/huis/5h4mq63cncfflv1cme37nwng/image_1bp8brtgo1jv03s71jpi1vheiph2n.png
-[8]: http://static.zybuluo.com/huis/sdxu3v2mg7sov8pf6rq63krt/image_1bp8bt4r61vl51kmodab1q5910tk34.png
-[9]: http://static.zybuluo.com/huis/e8n8wsshybgbwahrw2jvzci2/image_1bp8btetku769gk1teq144j156d3h.png
-[10]: http://static.zybuluo.com/huis/dv4h5b5sjixrxzpwkj73qns5/image_1bp8bu2mu1sv7ol815qam7g5v3u.png
+[2]: /blog/image/image_1bp8bp68n157310gckgu185a1oggm.png
+[3]: /blog/image/image_1bp8bpgv11ju4lp63rt1rdfhf213.png
+[4]: /blog/image/image_1bp8bppt8ipg133f36fgcl1rsb1g.png
+[5]: /blog/image/image_1bp8bqoc4jb240mlu9ghgf1t.png
+[6]: /blog/image/image_1bp8br8ml1ed41q5o1i4f1jf515012a.png
+[7]: /blog/image/image_1bp8brtgo1jv03s71jpi1vheiph2n.png
+[8]: /blog/image/image_1bp8bt4r61vl51kmodab1q5910tk34.png
+[9]: /blog/image/image_1bp8btetku769gk1teq144j156d3h.png
+[10]: /blog/image/image_1bp8bu2mu1sv7ol815qam7g5v3u.png

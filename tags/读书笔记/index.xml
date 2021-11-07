@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>读书笔记 on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 读书笔记 on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Mar 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>读书笔记-《重构》</title>
-      <link>/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</link>
       <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</guid>
       <description>关键点  重构是在不改变软件可观察行为的前提下改善其内部结构 重构前，必须先要给即将修改的代码建立一组可靠的测试环 重构时要小步前进 重构（名词）：是对软件内部结构的一种调整，目的是不改变软件可观察行为的前提下，提高其可理解性，降低其修改成本。 重构（动词）：使用一系列重构手法，在不改变软件可观察行为的前提下，调整其结构。  第一章：分解并重组  找出函数内的局部变量和参数 任何不会被修改的变量都可以被当成参数传入新的函数 只有一个变量被修改则可以把它当做返回值 每次修改后，都要执行测试 绝大多数，函数应该放在它所使用的数据的所属对象内 如果旧函数是public函数，而不想修改其他类的接口，则可以采用保留旧函数的形式 临时变量可能是个问题 重构时不必担心系统性能问题，优化时才需要 最好不要再另一个对象的属性基础上运用switch语句，如果不得不使用，也应该在对象自己的数据上使用。 如果函数依赖两个对象的数据，尽可能把函数划分给可能变化的数据对象内实现 一个对象不能在生命周期内修改自己所属的类 State或Strategy模式去除switch&amp;hellip;case&amp;hellip;和if&amp;hellip;else&amp;hellip;  第二章：重构原则  添加新功能时，不应该修改既有代码，只管添加新功能；重构时不能再添加新功能，只管改进程序结构，不应该添加任何测试（除非有遗漏），只有处理接口变化时才修改测试。 重构是随时随地进行，不应该为重构而重构（比如：划出一段时间专门专门做重构） 事不过三，三则重构 不要过早发布接口 如果大部分代码不能正常运作，那么此时应该是重写而不是重构 如果项目已近最后期限则应避免重构 编写快速软件的秘密是：首先写出可调的软件，然后调整它以求获得足够速度 关于性能，大部分时间耗费再小部分代码上。  第三章：代码的坏味道 &amp;mdash; 感觉需要读N遍才行  Duplicated Code(重复代码）  情况1：同一类的两个函数含有相同的表达式 情况2：两个互为兄弟的子类内含相同的表达式 情况3：两个毫不相关的类出现重复，则考虑将一个类的重复代码提炼到独立类中，另一个类使用新类；或函数属于第三类，另两个类引用第三个类。   Long Method(过长方法） 1.函数应以其用途，而非实现手法命名 2.循环和条件表达式尝尝是提炼的信号 Large Class（过大的类）  选择类内彼此相关的变量，放到同一类中   Long Parameter List(过长参数列） Divergent Change（发散式变化）？&amp;mdash;&amp;mdash;- Shotgun Surgery(散弹式修改）？ Feature Envy(依恋情结）？ Data Clumps(数据泥团）？ Primitive Obession(基本类型偏执）？ Switch Statements(switch 惊悚现身）？ Parallel Inheritance Hierarchies(平行继承体系） Lazy Class(冗赘类） Speculative Generality(夸夸其谈未来性） Temporary Field(令人迷惑的暂时字段） Message Chains(过度耦合的消息链） Middle Man(中间人） Inappropriate Intimacy(狎昵关系） Alternative Classes With Different Interfaces（异曲同工的类） Incomplete Library Class(不完美的库类） Data Class(纯稚的数据类） Refused Bequest（被拒绝的遗赠） Comments（过多的注释）  第四章&amp;ndash;构筑测试体系  每当收到bug，先写一个单元测试暴露这个bug 测试最担心出错的部分 考虑可能出错的边界条件，集中火力 当事情被认为应该会出错时，应该检查是否抛出了预期的异常  第五章&amp;ndash;重构列表 第六章&amp;ndash;重新组织函数 前面一页完整的讲解了如何进行重新组织函数</description>
     </item>
     

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zsh on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/zsh/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/zsh/</link>
     <description>Recent content in Zsh on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 02 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>如何在 Zsh 中使用 tab 键来补全 docker 和 docker-compose 命令</title>
-      <link>/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>Zsh Zsh 是一个兼容 bash 的更加强大的 shell.
 方法概括  下载补全脚本  mkdir -p ~/.zsh/completion curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/zsh/_docker &amp;gt; ~/.zsh/completion/_docker curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose &amp;gt; ~/.zsh/completion/_docker-compose 配置 ~/.zshrc, 主要添加或修改下面两行  fpath=(~/.zsh/completion $fpath) autoload -Uz compinit &amp;amp;&amp;amp; compinit -u 重新打开shell  参考链接  官方Command-line completion  </description>
     </item>
     
     <item>
       <title>Zsh 使用笔记 -- Mac下的快捷键</title>
-      <link>/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>   功能 快捷键     ⌘ + Click 可以打开文件，文件夹和链接   ⌘ + n 新建窗口   ⌘ + t 新建标签页   ⌘ + w 关闭当前页   ⌘ + 数字 &amp;amp; ⌘ + 方向键 切换标签页   ⌥⌘ + 数字 切换窗口   ⌘ + enter 切换全屏   ⌘ + d 左右分屏   ⇧⌘ + d 上下分屏   ⌘ + ; 自动补全历史记录   ⇧⌘ + h 自动补全剪贴板历史   ⌥⌘ + e 查找所有来定位某个标签页   ⌘ + r &amp;amp; ⌃ + l 清屏   ⌘ + / 显示光标位置   ⌥⌘ + b 历史回放   ⌘ + f 查找，然后用 tab 和 ⇧ + tab 可以向右和向左补全，补全之后的内容会被自动复制， 还可以用 ⌥ + enter 将查找结果输入终端   选中即复制，鼠标中键粘贴    ⌃ + u 清空当前行   ⌃ + a 移动到行首   ⌃ + e 移动到行尾   ⌃ + f 向前移动   ⌃ + b 向后移动   ⌃ + p 上一条命令   ⌃ + n 下一条命令   ⌃ + r 搜索历史命令   ⌃ + y 召回最近用命令删除的文字   ⌃ + h 删除光标之前的字符   ⌃ + d 删除光标所指的字符   ⌃ + w 删除光标之前的单词   ⌃ + k 删除从光标到行尾的内容   ⌃ + t 交换光标和之前的字符    </description>
     </item>
     

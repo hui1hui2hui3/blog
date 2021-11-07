@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Promise on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/promise/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/promise/</link>
     <description>Recent content in Promise on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 14 Oct 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/promise/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/promise/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Promise使用笔记</title>
-      <link>/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 14 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>环境描述：nodejs Promise模块：q
  1. 多层异步Promise的实现 需求：获取一个目录下指定文件（多个）的数据集合 从错误思路到正确思路进行分析, 解析错误思路是为了知己知彼，为了不在写出这种错误的代码，而且错误的思路中不是全部都错误的，是在某个分界点才开始错误的，所以这个分界点是个关键，需要多加注意
 1.1 错误思路 先直接上完整代码

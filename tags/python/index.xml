@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/python/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/python/</link>
     <description>Recent content in Python on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python多环境管理</title>
-      <link>/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</link>
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</guid>
       <description>pyenv  用于管理Python 版本 也就是说使用使用该工具可以存在多个Python版本
   安装版本： pyenv install 查看当前使用版本： pyenv version 查看所有已安装版本：pyenv versions  其中system环境为系统安装版本 还会显示virtualenvs创建的虚拟环境   切换版本： pyenv local xxx  激活当前目录使用版本为xxx   pyenv shell xxx  激活当前命令行使用版本为xxx   pyenv global xxx  切换全局默认版本为xxx    virtualenv  用于管理Python 依赖库的版本 也就是说使用该工具可以存在一个Python版本使用某个依赖库时，可以使用不同版本的。建议搭配pyenv使用
  注意： 该环境优先级高于pyenv
@@ -26,20 +26,20 @@ pyenv-virtualenv  是pyenv的插件，用于管理virtualenv
     
     <item>
       <title>Python Selenium学习笔记</title>
-      <link>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Mon, 26 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
       <description>如何运行单元测试时只运行一个浏览器，而不是每个TestCase都打开一个浏览器 具体实现方法：
 class BaseUnitTest(unittest.TestCase): # --实例属性区-- &amp;quot;&amp;quot;&amp;quot;是否开启TestCase级别的单驱动模式,默认False 开启时, 一个TestCase只会打开一个浏览器,也就是method之间是公用浏览器, 而不是每个测试Method都打开一个浏览器 &amp;quot;&amp;quot;&amp;quot; SINGLE_DRIVER = False # --类方法区-- @classmethod def setUpClass(cls): cls.driver = None @classmethod def tearDownClass(cls): if cls.SINGLE_DRIVER: BaseUnitTest.__quit_driver(cls.driver) # --静态方法区-- @staticmethod def __new_driver(): driver = browser(env.BROWSER, env.DRIVER_PATH) driver.maximize_window() return driver @staticmethod def __quit_driver(driver): if env.BROWSER.upper() == &#39;PHANTOMJS&#39;: # 这里是为了能够真正的退出 driver.service.process.send_signal(signal.SIGTERM) driver.quit() def setUp(self): if self.SINGLE_DRIVER: if self.__class__.driver is None: self.driver = BaseUnitTest.__new_driver() self.__class__.SINGLE_DRIVER = self.SINGLE_DRIVER self.__class__.driver = self.driver else: self.driver = self.</description>
     </item>
     
     <item>
       <title>如何查看git提交近期的所有的改动或新增的文件-Python实现</title>
-      <link>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</link>
       <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</guid>
       <description>环境要求：
  pip install matplotlib用于生成图表   代码如下：
 # coding=utf-8 import commands import matplotlib.pyplot as plt import re import numpy def find_all_files(target): table = {} files = re.findall(r&amp;#34;[M|A|D][^u].*?\.\w*&amp;#34;, target) for file in files: real_files = file.split(&amp;#39;/&amp;#39;) real_file = real_files[len(real_files) - 1] real_file = real_file.split(&amp;#39;\t&amp;#39;) if len(real_file) &amp;gt; 1: real_file = real_file[len(real_file) - 1] else: real_file = real_file[0] if real_file in table.keys(): table[real_file] += 1 else: table[real_file] = 1 return table def get_words_graphic(wordlist): keylist = wordlist.</description>

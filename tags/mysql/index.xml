@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/mysql/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/mysql/</link>
     <description>Recent content in Mysql on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mysql 初始化Root密码和远程登录授权</title>
-      <link>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</link>
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</guid>
       <description>Mysql版本：5.7.17 系统环境：Center OS
  初始化Root密码&amp;ndash;CenterOS 获取初始Root密码 grep &#39;temporary password&#39; /var/log/mysqld.log
 重置Root密码 1.Stop mysql: systemctl stop mysqld

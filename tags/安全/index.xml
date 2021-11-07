@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>安全 on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/%E5%AE%89%E5%85%A8/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/%E5%AE%89%E5%85%A8/</link>
     <description>Recent content in 安全 on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web安全基础</title>
-      <link>/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</guid>
       <description>分类 以服务器为目标的主动攻击  SQL注入攻击 OS命令注入攻击  以服务器为目标的被动攻击  跨站脚本攻击（Cross-Site Scripting,XSS） 跨站点请求伪造（Cross-Site Request Forgeries,CSRF）  跨站脚本攻击（Cross-Site Scripting,XSS） 跨站点脚本攻击是通过存在安全漏洞的web网站注册用户的浏览器内运行非法的HTML标签或JavaScript进行的攻击，也被称为XSS攻击。 这种漏洞(XSS)通常用于发动cookie窃取、恶意软件传播(蠕虫攻击),会话劫持,恶意重定向。在这种攻击中,攻击者将恶意JavaScript代码注入到网站页面中,这样”受害”者的浏览器就会执行攻击者编写的恶意脚本。这种漏洞容易找到，但很难修补。这就是为什么你可以在任何网站发现它的身影
 演示Demo2&amp;ndash;Post 如果网站存在可以输入显示为html的入口，则下面代码有可能导致脚本注入满天飞：
 &amp;lt;img src=&amp;quot;http://snoopyxdy.blog.163.com/blog/err&amp;quot; onerr=&amp;quot;alert(&#39;xss&#39;)&amp;quot; /&amp;gt; &amp;lt;script&amp;gt;alert(&#39;xss&#39;)&amp;lt;/script&amp;gt; 演示Demo3&amp;ndash;基于dom的跨站点脚本攻击 需要编码和过滤的对象 The URL HTTP referrer objects GET parameters from a form POST parameters from a form Window.location Document.referrer document.location document.URL document.URLUnencoded cookie data headers data database data  数据是输出到HTML中的那就要进行HtmlEncode，如果数据是输出到javascript代码中进行拼接的，那就要进行javascriptEncode。

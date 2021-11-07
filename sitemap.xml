@@ -3,550 +3,550 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/example/project1/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/project1/</loc>
   </url>
   
   <url>
-    <loc>/blog/example/project2/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/project2/</loc>
   </url>
   
   <url>
-    <loc>/blog/example/project3/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/project3/</loc>
   </url>
   
   <url>
-    <loc>/blog/example/project4/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/project4/</loc>
   </url>
   
   <url>
-    <loc>/blog/post/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/%E7%90%86%E8%B4%A2/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/%E7%90%86%E8%B4%A2/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/python/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/python/</loc>
     <lastmod>2019-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2019-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/jmeter/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/jmeter/</loc>
     <lastmod>2019-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2019-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/vmware/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/vmware/</loc>
     <lastmod>2018-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/jvm/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/jvm/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/batch/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/batch/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/windows/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/windows/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</loc>
     <lastmod>2017-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2017-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2017-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</loc>
     <lastmod>2017-07-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</loc>
     <lastmod>2017-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2017-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/ffmepg/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/ffmepg/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/mysql/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/mysql/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</loc>
     <lastmod>2017-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/linux/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/linux/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</loc>
     <lastmod>2017-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</loc>
     <lastmod>2017-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</loc>
     <lastmod>2017-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/shell/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/shell/</loc>
     <lastmod>2017-01-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</loc>
     <lastmod>2017-01-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/regex/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/regex/</loc>
     <lastmod>2016-12-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2016-12-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2016-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/ionic/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/ionic/</loc>
     <lastmod>2016-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2016-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/https/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/https/</loc>
     <lastmod>2016-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</loc>
     <lastmod>2016-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2016-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2016-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/zsh/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/zsh/</loc>
     <lastmod>2016-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2016-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2016-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/git/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/git/</loc>
     <lastmod>2016-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</loc>
     <lastmod>2016-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</loc>
     <lastmod>2016-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2016-11-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2016-11-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/github/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/github/</loc>
     <lastmod>2016-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</loc>
     <lastmod>2016-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/ssh/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/ssh/</loc>
     <lastmod>2016-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/nodejs/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/nodejs/</loc>
     <lastmod>2016-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/promise/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/promise/</loc>
     <lastmod>2016-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2016-10-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
     <lastmod>2016-09-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/selenium/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/selenium/</loc>
     <lastmod>2016-09-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/unittest/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/unittest/</loc>
     <lastmod>2016-09-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</loc>
     <lastmod>2016-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/guide/animation/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/guide/animation/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/angular1.4/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/angular1.4/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-form/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-form/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-input/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-input/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/inputtype/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/inputtype/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-bind-htmlsce/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-bind-htmlsce/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-change/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-change/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-checked/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-checked/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-class/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-class/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/guide/studyguide/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/guide/studyguide/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-csp/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-csp/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-options/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-options/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-repeat/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-repeat/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-show/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-show/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ngbindtemplate/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ngbindtemplate/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/type/ngmodelngmodelcontroller/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/type/ngmodelngmodelcontroller/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ngmodelngmodeloptions/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ngmodelngmodeloptions/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/ng-model/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/ng-model/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-pluralize/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-pluralize/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/ng-cloak/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-cloak/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/type/rootscope-scope/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/type/rootscope-scope/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/directive/select/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/directive/select/</loc>
     <lastmod>2016-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/example/goisforlovers/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/development/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/example/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/example/hugoisforlovers/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/go/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/go/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/golang/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/hugo/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/template/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/template/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/themes/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/jekyll/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/example/migrate-from-jekyll/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/example/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/static-site-generator/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/static-site-generator/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/bootstrap/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/bootstrap/</loc>
   </url>
   
   <url>
-    <loc>/blog/categories/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/categories/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/css/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/css/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/highlight-js/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/highlight-js/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/html/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/html/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/js/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/js/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/responsive/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/responsive/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/syntax-highlighting/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/tags/syntax-highlighting/</loc>
   </url>
   
   <url>
-    <loc>/blog/about/</loc>
+    <loc>https://hui1hui2hui3.github.io/blog/about/</loc>
   </url>
   
 </urlset>

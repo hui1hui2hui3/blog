@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> VMware on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/vmware/</link>
-    <description>Recent content in  VMware on Rabbit&amp;Carrot</description>
+    <title>VMware on Rabbit&amp;Carrot</title>
+    <link>https://hui1hui2hui3.github.io/blog/tags/vmware/</link>
+    <description>Recent content in VMware on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 04 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VMware虚拟机三种网络模式--Bridged（桥接模式）</title>
-      <link>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
       <description>vmware为我们提供了三种网络工作模式，它们分别是：Bridged（桥接模式）、NAT（网络地址转换模式）、Host-Only（仅主机模式）。
 打开vmware虚拟机，我们可以在选项栏的“编辑”下的“虚拟网络编辑器”中看到VMnet0（桥接模式）、VMnet1（仅主机模式）、VMnet8（NAT模式），那么这些都是有什么作用呢？
 其实，我们现在看到的VMnet0表示的是用于桥接模式下的虚拟交换机；VMnet1表示的是用于仅主机模式下的虚拟交换机；VMnet8表示的是用于NAT模式下的虚拟交换机。
@@ -29,10 +29,10 @@ Bridged（桥接模式） 什么是桥接模式？桥接模式就是将主机网
     
     <item>
       <title>VMware虚拟机三种网络模式--Host-Only（仅主机模式）</title>
-      <link>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</guid>
       <description>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示： 通过上图，我们可以发现，如果要使得虚拟机能联网，我们可以将主机网卡共享给VMware Network Adapter VMnet1网卡，从而达到虚拟机联网的目的。接下来，我们就来测试一下。
 首先设置“虚拟网络编辑器”，可以设置DHCP的起始范围。
 设置虚拟机为Host-Only模式。
@@ -41,10 +41,10 @@ Bridged（桥接模式） 什么是桥接模式？桥接模式就是将主机网
     
     <item>
       <title>VMware虚拟机三种网络模式--NAT（地址转换模式）</title>
-      <link>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</guid>
       <description>刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示： 在NAT模式中，主机网卡直接与虚拟NAT设备相连，然后虚拟NAT设备与虚拟DHCP服务器一起连接在虚拟交换机VMnet8上，这样就实现了虚拟机联网。那么我们会觉得很奇怪，为什么需要虚拟网卡VMware Network Adapter VMnet8呢？原来我们的VMware Network Adapter VMnet8虚拟网卡主要是为了实现主机与虚拟机之间的通信。在之后的设置步骤中，我们可以加以验证。
 首先，设置虚拟机中NAT模式的选项，打开vmware，点击“编辑”下的“虚拟网络编辑器”，设置NAT参数及DHCP参数。
 将虚拟机的网络连接模式修改成NAT模式，点击“编辑虚拟机设置”。 点击“网络适配器”，选择“NAT模式” 然后，编辑网络IP地址： 之前，我们说过VMware Network Adapter VMnet8虚拟网卡的作用，那我们现在就来测试一下。 如此看来，虚拟机能联通外网，确实不是通过VMware Network Adapter VMnet8虚拟网卡，那么为什么要有这块虚拟网卡呢？

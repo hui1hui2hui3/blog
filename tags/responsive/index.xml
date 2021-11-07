@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>responsive on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/responsive/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/responsive/</link>
     <description>Recent content in responsive on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="/blog/tags/responsive/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/responsive/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project 3</title>
-      <link>/blog/example/project3/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/project3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/project3/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/project3/</guid>
       <description></description>
     </item>
     

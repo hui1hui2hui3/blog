@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/windows/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/windows/</link>
     <description>Recent content in Windows on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 30 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 睡眠等待机制 timeout,waitfor,ping</title>
-      <link>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</link>
       <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</guid>
       <description>[TOC]
 尝试实现window batch脚本中等待机制，即不在命令行输出等待倒计时，直接等待到时间结束  Timeout 语法： TIMEOUT [/T] timeout [/NOBREAK]
 描述: 这个工具接受超时参数，等候一段指定的时间(秒)或等按任意键。它还接受 一个参数，忽视按键。  参数列表: /T timeout 指定等候的秒数。有效范围从 -1 到 99999 秒。 /NOBREAK 忽略按键并等待指定的时间。 /? 显示此帮助消息。  注意: 超时值 -1 表示无限期地等待按键。
@@ -28,10 +28,10 @@ Waitfor WaitFor 有两种运行方式:
     
     <item>
       <title>Windows 远程命令行控制--PsExec</title>
-      <link>/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</link>
       <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</guid>
       <description>下载地址 PsExec 下载地址
 用法 两台windows都安装psexec即可！并都添加到系统PATH
 psexec \\remote-desktop-name -u name -p pass cmd 高级示例 @echo off set iot_server_pid=0 set username=%1 set password=%2 set winname=%3 for /f &amp;quot;tokens=2,5 delims=- &amp;quot; %%a in (&#39;psexec \\%winname% -u %username% -p %password% -s netstat -ano ^| findstr &amp;quot;8080&amp;quot;&#39;) do ( if %%b NEQ 0 set iot_server_pid=%%b ) echo --------find pid:----------- echo %iot_server_pid% if %iot_server_pid% NEQ 0 ( psexec \\%winname% -u %username% -p %password% -s taskkill /F /PID %iot_server_pid% echo -----start wait---- ping 127.</description>
@@ -39,10 +39,10 @@ psexec \\remote-desktop-name -u name -p pass cmd 高级示例 @echo off set iot_
     
     <item>
       <title>Windows 查询进程和杀进程--taskkill,tasklist,tskill</title>
-      <link>/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</guid>
       <description>tasklist 功能： 命令用来显示运行在本地或远程计算机上的所有进程，可以监控用户的操作。
 命令格式： Tasklist [/S system [/U username [/P [password]]]] [/M [module] | /SVC | /V] [/FI filter] [/FO format] [/NH] 参数列表:  /S system 指定连接到的远程系统。 /U [domain\]user 指定应该在哪个用户上下文执行这个命令。 /P [password] 为提供的用户上下文指定密码。如果省略，则 提示输入。 /M [module] 列出当前使用所给 exe/dll 名称的所有任务。 如果没有指定模块名称，显示所有加载的模块。 /SVC 显示每个进程中主持的服务。 /V 显示详述任务信息。 /FI filter 显示一系列符合筛选器指定的标准的任务。 /FO format 指定输出格式。 有效值: &amp;quot;TABLE&amp;quot;、&amp;quot;LIST&amp;quot;、&amp;quot;CSV&amp;quot;。 /NH 指定列标题不应该在输出中显示。 只对 &amp;quot;TABLE&amp;quot; 和 &amp;quot;CSV&amp;quot; 格式有效。 /? 显示帮助消息。  筛选器: 筛选器名 有效操作符 有效值 ----------- --------------- -------------------------- STATUS eq, ne RUNNING | NOT RESPONDING | UNKNOWN IMAGENAME eq, ne 映像名称 PID eq, ne, gt, lt, ge, le PID 值 SESSION eq, ne, gt, lt, ge, le 会话编号 SESSIONNAME eq, ne 会话名 CPUTIME eq, ne, gt, lt, ge, le CPU 时间，格式为 hh:mm:ss。 hh - 时， mm - 分，ss - 秒 MEMUSAGE eq, ne, gt, lt, ge, le 内存使用量，单位为 KB USERNAME eq, ne 用户名，格式为 [domain\]user SERVICES eq, ne 服务名称 WINDOWTITLE eq, ne 窗口标题 MODULES eq, ne DLL 名称  说明: 当查询远程机器时，不支持 &amp;ldquo;WINDOWTITLE&amp;rdquo; 和 &amp;ldquo;STATUS&amp;rdquo; 筛选器。</description>
     </item>

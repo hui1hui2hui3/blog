@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ffmepg on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/ffmepg/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/ffmepg/</link>
     <description>Recent content in ffmepg on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/ffmepg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/ffmepg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FFMepg使用笔记</title>
-      <link>/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>基本使用语法 ffmepg -i &amp;lt;file&amp;gt; -vcodec h264 -f &amp;lt;type&amp;gt; &amp;lt;output&amp;gt; 简单命令如下：
 ffmpeg -i out.ogv -vcodec h264 out.mp4 ffmpeg -i out.ogv -vcodec mpeg4 out.mp4 ffmpeg -i out.ogv -vcodec libxvid out.mp4 ffmpeg -i out.mp4 -vcodec wmv1 out.wmv ffmpeg -i out.mp4 -vcodec wmv2 out.wmv ffmpeg -i out.ogv -s 640x480 -vcodec h264 out.mp4  主要参数： -i: 设定输入流 -f: 设定输出格式 -ss: 开始时间
 视频参数： -b 设定视频流量，默认为200Kbit/s -r 设定帧速率，默认为25 -s 设定画面的宽与高 -aspect 设定画面的比例 -vn 不处理视频 -vcodec 设定视频编解码器，未设定时则使用与输入流相同的编解码器, h264 最佳</description>

@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rabbit&amp;Carrot</title>
-    <link>/blog/</link>
+    <link>https://hui1hui2hui3.github.io/blog/</link>
     <description>Recent content on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project 1</title>
-      <link>/blog/example/project1/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/project1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/project1/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/project1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 2</title>
-      <link>/blog/example/project2/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/project2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/project2/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/project2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 3</title>
-      <link>/blog/example/project3/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/project3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/project3/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/project3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project 4</title>
-      <link>/blog/example/project4/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/project4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/project4/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/project4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>失眠后的深思：我是谁？</title>
-      <link>/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/%E5%A4%B1%E7%9C%A0%E5%90%8E%E7%9A%84%E6%B7%B1%E6%80%9D%E6%88%91%E6%98%AF%E8%B0%81/</guid>
       <description>我是谁？我有精神分裂吗？
 失眠，大部分人或多或少都有经历过。失眠时，大家一般都会在床上翻来覆去，尝试各种小妙招来让自己睡着，但我的这次失眠却让我陷入了沉思，让我变得不认识我自己了。
 01 失眠的开始 我不是一个沾床就睡的人，但却很少失眠。这次失眠时，我出差南京加班到凌晨 1 点半，拖着疲惫的身体回到酒店，稍稍洗漱后就躺在酒店的床上，摆了一个很舒服的姿势，像这样，
@@ -81,10 +81,10 @@
     
     <item>
       <title>用小钱去理财能赚到钱吗</title>
-      <link>/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/%E7%94%A8%E5%B0%8F%E9%92%B1%E5%8E%BB%E7%90%86%E8%B4%A2%E8%83%BD%E8%B5%9A%E5%88%B0%E9%92%B1%E5%90%97/</guid>
       <description>现在理财风气盛行，大部分人手头有些余钱就会拿去理财，都想通过理财来扩充自己的财产甚至实现财富自由。但很少有人对理财进行深入了解，以下 2 种现象囊括了大部分人：
   不懂理财知识，懵懵懂懂直接去理财；
   只懂一点点就以为懂了，以为能赚钱了；
@@ -110,10 +110,10 @@
     
     <item>
       <title>Python多环境管理</title>
-      <link>/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</link>
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</guid>
       <description>pyenv  用于管理Python 版本 也就是说使用使用该工具可以存在多个Python版本
   安装版本： pyenv install 查看当前使用版本： pyenv version 查看所有已安装版本：pyenv versions  其中system环境为系统安装版本 还会显示virtualenvs创建的虚拟环境   切换版本： pyenv local xxx  激活当前目录使用版本为xxx   pyenv shell xxx  激活当前命令行使用版本为xxx   pyenv global xxx  切换全局默认版本为xxx    virtualenv  用于管理Python 依赖库的版本 也就是说使用该工具可以存在一个Python版本使用某个依赖库时，可以使用不同版本的。建议搭配pyenv使用
  注意： 该环境优先级高于pyenv
@@ -123,10 +123,10 @@ pyenv-virtualenv  是pyenv的插件，用于管理virtualenv
     
     <item>
       <title>Jmeter学习笔记--无GUI模式运行详解</title>
-      <link>/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Mon, 14 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/jmeter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%97%A0gui%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C%E8%AF%A6%E8%A7%A3/</guid>
       <description>普通命令 jmeter -n -t test.jmx -l test.jtl
  备注：这种方式的运行，最好把脚本中的监听器全部删掉或禁用，防止影响性能
  参数大全 -h, --help print usage information and exit #打印帮助信息　-v, --version print the version information and exit #打印版本信息 -p, --propfile {argument} the jmeter property file to use #运行时指定property文件，默认是使用JMETER_HOME/bin目录下的jmeter.properties，如果用户自定义有其它的配置，在这里加上 #用法如下： -p user.properties -q, --addprop {argument} additional property file(s) #其它配置文件，如JVM参数等等 -t, --testfile {argument} the jmeter test(.jmx) file to run #要运行的jmeter脚本 -j, --jmeterlogfile {argument} the jmeter log file #指定记录jmeter log的文件，默认为jmeter.log -l, --logfile {argument} the file to log samples to #记录采样器Log的文件 -n, --nongui run JMeter in nongui mode #以nongui模式运行jmeter -s, --server run the JMeter server #运行JMeter server -H, --proxyHost {argument} Set a proxy server for JMeter to use #代理服务器地址 -P, --proxyPort {argument} Set proxy server port for JMeter to use #代理服务器端口 -u, --username {argument} Set username for proxy server that JMeter is to use #代理服务器的用户名 -a, --password {argument} Set password for proxy server that JMeter is to use #代理服务器用户名对应的密码 -J, --jmeterproperty {argument}={value} Define additional JMeter properties #定义额外的Jmeter属性 -G, --globalproperty (argument)[=(value)] Define Global properties (sent to servers) e.</description>
@@ -134,10 +134,10 @@ pyenv-virtualenv  是pyenv的插件，用于管理virtualenv
     
     <item>
       <title>VMware虚拟机三种网络模式--Bridged（桥接模式）</title>
-      <link>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-bridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
       <description>vmware为我们提供了三种网络工作模式，它们分别是：Bridged（桥接模式）、NAT（网络地址转换模式）、Host-Only（仅主机模式）。
 打开vmware虚拟机，我们可以在选项栏的“编辑”下的“虚拟网络编辑器”中看到VMnet0（桥接模式）、VMnet1（仅主机模式）、VMnet8（NAT模式），那么这些都是有什么作用呢？
 其实，我们现在看到的VMnet0表示的是用于桥接模式下的虚拟交换机；VMnet1表示的是用于仅主机模式下的虚拟交换机；VMnet8表示的是用于NAT模式下的虚拟交换机。
@@ -150,10 +150,10 @@ Bridged（桥接模式） 什么是桥接模式？桥接模式就是将主机网
     
     <item>
       <title>JVM调优笔记-JVM调优攻略</title>
-      <link>/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</guid>
       <description>在Java虚拟机的参数中，有3种表示方法（出自：http://www.cnblogs.com/wenfeng762/archive/2011/08/14/2137810.html），用ps -ef |grep “java”命令，可以得到当前Java进程的所有启动参数和配置参数：
  标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容； 非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，且不保证向后兼容； 非Stable参数（-XX），此类参数各个jvm实现会有所不同，将来可能会随时取消，需要慎重使用（但是，这些参数往往是非常有用的）；  （额外的，-DpropertyName=“value”的形式定义了一些全局属性值，下面有介绍。） 本文只重点介绍一些重要和常用的参数，如果想了解全部参数，可以参考下面的文章： 《Java HotSpot VM Options》 《JVM启动参数大全》
 标准参数 其实标准参数是用过Java的人都最熟悉的，就是你在运行java命令时后面加上的参数，如java -version, java -jar 等，输入命令java -help或java -?就能获得当前机器所有java的标准参数列表。
@@ -168,10 +168,10 @@ Bridged（桥接模式） 什么是桥接模式？桥接模式就是将主机网
     
     <item>
       <title>Windows 睡眠等待机制 timeout,waitfor,ping</title>
-      <link>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</link>
       <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E7%9D%A1%E7%9C%A0%E7%AD%89%E5%BE%85%E6%9C%BA%E5%88%B6-timeoutwaitforping/</guid>
       <description>[TOC]
 尝试实现window batch脚本中等待机制，即不在命令行输出等待倒计时，直接等待到时间结束  Timeout 语法： TIMEOUT [/T] timeout [/NOBREAK]
 描述: 这个工具接受超时参数，等候一段指定的时间(秒)或等按任意键。它还接受 一个参数，忽视按键。  参数列表: /T timeout 指定等候的秒数。有效范围从 -1 到 99999 秒。 /NOBREAK 忽略按键并等待指定的时间。 /? 显示此帮助消息。  注意: 超时值 -1 表示无限期地等待按键。
@@ -183,10 +183,10 @@ Waitfor WaitFor 有两种运行方式:
     
     <item>
       <title>VMware虚拟机三种网络模式--Host-Only（仅主机模式）</title>
-      <link>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-host-only%E4%BB%85%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F/</guid>
       <description>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。其网络结构如下图所示： 通过上图，我们可以发现，如果要使得虚拟机能联网，我们可以将主机网卡共享给VMware Network Adapter VMnet1网卡，从而达到虚拟机联网的目的。接下来，我们就来测试一下。
 首先设置“虚拟网络编辑器”，可以设置DHCP的起始范围。
 设置虚拟机为Host-Only模式。
@@ -195,10 +195,10 @@ Waitfor WaitFor 有两种运行方式:
     
     <item>
       <title>VMware虚拟机三种网络模式--NAT（地址转换模式）</title>
-      <link>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/vmware%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F-nat%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F/</guid>
       <description>刚刚我们说到，如果你的网络ip资源紧缺，但是你又希望你的虚拟机能够联网，这时候NAT模式是最好的选择。NAT模式借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。其网络结构如下图所示： 在NAT模式中，主机网卡直接与虚拟NAT设备相连，然后虚拟NAT设备与虚拟DHCP服务器一起连接在虚拟交换机VMnet8上，这样就实现了虚拟机联网。那么我们会觉得很奇怪，为什么需要虚拟网卡VMware Network Adapter VMnet8呢？原来我们的VMware Network Adapter VMnet8虚拟网卡主要是为了实现主机与虚拟机之间的通信。在之后的设置步骤中，我们可以加以验证。
 首先，设置虚拟机中NAT模式的选项，打开vmware，点击“编辑”下的“虚拟网络编辑器”，设置NAT参数及DHCP参数。
 将虚拟机的网络连接模式修改成NAT模式，点击“编辑虚拟机设置”。 点击“网络适配器”，选择“NAT模式” 然后，编辑网络IP地址： 之前，我们说过VMware Network Adapter VMnet8虚拟网卡的作用，那我们现在就来测试一下。 如此看来，虚拟机能联通外网，确实不是通过VMware Network Adapter VMnet8虚拟网卡，那么为什么要有这块虚拟网卡呢？
@@ -209,10 +209,10 @@ Waitfor WaitFor 有两种运行方式:
     
     <item>
       <title>Windows 远程命令行控制--PsExec</title>
-      <link>/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</link>
       <pubDate>Wed, 19 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6-psexec/</guid>
       <description>下载地址 PsExec 下载地址
 用法 两台windows都安装psexec即可！并都添加到系统PATH
 psexec \\remote-desktop-name -u name -p pass cmd 高级示例 @echo off set iot_server_pid=0 set username=%1 set password=%2 set winname=%3 for /f &amp;quot;tokens=2,5 delims=- &amp;quot; %%a in (&#39;psexec \\%winname% -u %username% -p %password% -s netstat -ano ^| findstr &amp;quot;8080&amp;quot;&#39;) do ( if %%b NEQ 0 set iot_server_pid=%%b ) echo --------find pid:----------- echo %iot_server_pid% if %iot_server_pid% NEQ 0 ( psexec \\%winname% -u %username% -p %password% -s taskkill /F /PID %iot_server_pid% echo -----start wait---- ping 127.</description>
@@ -220,19 +220,19 @@ psexec \\remote-desktop-name -u name -p pass cmd 高级示例 @echo off set iot_
     
     <item>
       <title>Windows Batch 编程--For，Exist</title>
-      <link>/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</link>
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-batch-%E7%BC%96%E7%A8%8B-forexist/</guid>
       <description>例子解析：实现检测分支同时新建的功能 @echo off set branch_name=origin/test set result=0 FOR /F %%G IN (&#39;git branch -r&#39;) DO ( if %%G==%branch_name% ( echo find branch %%G set result=1 ) ) if %result%==0 ( echo &amp;quot;prepare test branch&amp;quot; call git checkout -B test call git push http://%stash_user%:%stash_pass%@s.kyee.com.cn/scm/iotbc/iot-server.git test -f ) else ( echo &amp;quot;another test branch exists!&amp;quot; exit 1 ) 例子解析2： 实现文件检测，删除和重命名文件 @echo off cd server if exist &amp;quot;dist_one*.jar&amp;quot; ( echo found_dist_one del iot-server-snapshot.jar ren dist_one*.</description>
     </item>
     
     <item>
       <title>Windows 批处理Batch使用手册</title>
-      <link>/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
       <pubDate>Mon, 03 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%89%B9%E5%A4%84%E7%90%86cmd_bat%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
       <description>[TOC]
 Batch   Batch &amp;ndash; 批处理； Batch file &amp;ndash; 批处理文件；
   DOS 批处理；
@@ -247,10 +247,10 @@ Batch   Batch &amp;ndash; 批处理； Batch file &amp;ndash; 批处理文件；
     
     <item>
       <title>FFMepg使用笔记</title>
-      <link>/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/ffmepg%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>基本使用语法 ffmepg -i &amp;lt;file&amp;gt; -vcodec h264 -f &amp;lt;type&amp;gt; &amp;lt;output&amp;gt; 简单命令如下：
 ffmpeg -i out.ogv -vcodec h264 out.mp4 ffmpeg -i out.ogv -vcodec mpeg4 out.mp4 ffmpeg -i out.ogv -vcodec libxvid out.mp4 ffmpeg -i out.mp4 -vcodec wmv1 out.wmv ffmpeg -i out.mp4 -vcodec wmv2 out.wmv ffmpeg -i out.ogv -s 640x480 -vcodec h264 out.mp4  主要参数： -i: 设定输入流 -f: 设定输出格式 -ss: 开始时间
 视频参数： -b 设定视频流量，默认为200Kbit/s -r 设定帧速率，默认为25 -s 设定画面的宽与高 -aspect 设定画面的比例 -vn 不处理视频 -vcodec 设定视频编解码器，未设定时则使用与输入流相同的编解码器, h264 最佳</description>
@@ -258,20 +258,20 @@ ffmpeg -i out.ogv -vcodec h264 out.mp4 ffmpeg -i out.ogv -vcodec mpeg4 out.mp4 f
     
     <item>
       <title>Windows 查询进程和杀进程--taskkill,tasklist,tskill</title>
-      <link>/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/windows-%E6%9F%A5%E8%AF%A2%E6%9D%80%E8%BF%9B%E7%A8%8B-taskkilltasklisttskill/</guid>
       <description>tasklist 功能： 命令用来显示运行在本地或远程计算机上的所有进程，可以监控用户的操作。
 命令格式： Tasklist [/S system [/U username [/P [password]]]] [/M [module] | /SVC | /V] [/FI filter] [/FO format] [/NH] 参数列表:  /S system 指定连接到的远程系统。 /U [domain\]user 指定应该在哪个用户上下文执行这个命令。 /P [password] 为提供的用户上下文指定密码。如果省略，则 提示输入。 /M [module] 列出当前使用所给 exe/dll 名称的所有任务。 如果没有指定模块名称，显示所有加载的模块。 /SVC 显示每个进程中主持的服务。 /V 显示详述任务信息。 /FI filter 显示一系列符合筛选器指定的标准的任务。 /FO format 指定输出格式。 有效值: &amp;quot;TABLE&amp;quot;、&amp;quot;LIST&amp;quot;、&amp;quot;CSV&amp;quot;。 /NH 指定列标题不应该在输出中显示。 只对 &amp;quot;TABLE&amp;quot; 和 &amp;quot;CSV&amp;quot; 格式有效。 /? 显示帮助消息。  筛选器: 筛选器名 有效操作符 有效值 ----------- --------------- -------------------------- STATUS eq, ne RUNNING | NOT RESPONDING | UNKNOWN IMAGENAME eq, ne 映像名称 PID eq, ne, gt, lt, ge, le PID 值 SESSION eq, ne, gt, lt, ge, le 会话编号 SESSIONNAME eq, ne 会话名 CPUTIME eq, ne, gt, lt, ge, le CPU 时间，格式为 hh:mm:ss。 hh - 时， mm - 分，ss - 秒 MEMUSAGE eq, ne, gt, lt, ge, le 内存使用量，单位为 KB USERNAME eq, ne 用户名，格式为 [domain\]user SERVICES eq, ne 服务名称 WINDOWTITLE eq, ne 窗口标题 MODULES eq, ne DLL 名称  说明: 当查询远程机器时，不支持 &amp;ldquo;WINDOWTITLE&amp;rdquo; 和 &amp;ldquo;STATUS&amp;rdquo; 筛选器。</description>
     </item>
     
     <item>
       <title>Mysql 初始化Root密码和远程登录授权</title>
-      <link>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</link>
       <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/mysql-%E5%88%9D%E5%A7%8B%E5%8C%96root%E5%AF%86%E7%A0%81%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83/</guid>
       <description>Mysql版本：5.7.17 系统环境：Center OS
  初始化Root密码&amp;ndash;CenterOS 获取初始Root密码 grep &#39;temporary password&#39; /var/log/mysqld.log
 重置Root密码 1.Stop mysql: systemctl stop mysqld
@@ -282,10 +282,10 @@ mysql&amp;gt; UPDATE mysql.user SET authentication_string = PASSWORD(&#39;MyNewP
     
     <item>
       <title>Linux每日命令--ssh</title>
-      <link>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</link>
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-ssh/</guid>
       <description>[TOC]
 ssh命令用于远程登录上Linux主机。
 常用格式：ssh [-l login_name] [-p port] [user@]hostname 更详细的可以用ssh -h查看。
@@ -302,19 +302,19 @@ Port 指定远程主机端口号，默认为 22 。</description>
     
     <item>
       <title>读书笔记-《重构》</title>
-      <link>/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</link>
       <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E9%87%8D%E6%9E%84/</guid>
       <description>关键点  重构是在不改变软件可观察行为的前提下改善其内部结构 重构前，必须先要给即将修改的代码建立一组可靠的测试环 重构时要小步前进 重构（名词）：是对软件内部结构的一种调整，目的是不改变软件可观察行为的前提下，提高其可理解性，降低其修改成本。 重构（动词）：使用一系列重构手法，在不改变软件可观察行为的前提下，调整其结构。  第一章：分解并重组  找出函数内的局部变量和参数 任何不会被修改的变量都可以被当成参数传入新的函数 只有一个变量被修改则可以把它当做返回值 每次修改后，都要执行测试 绝大多数，函数应该放在它所使用的数据的所属对象内 如果旧函数是public函数，而不想修改其他类的接口，则可以采用保留旧函数的形式 临时变量可能是个问题 重构时不必担心系统性能问题，优化时才需要 最好不要再另一个对象的属性基础上运用switch语句，如果不得不使用，也应该在对象自己的数据上使用。 如果函数依赖两个对象的数据，尽可能把函数划分给可能变化的数据对象内实现 一个对象不能在生命周期内修改自己所属的类 State或Strategy模式去除switch&amp;hellip;case&amp;hellip;和if&amp;hellip;else&amp;hellip;  第二章：重构原则  添加新功能时，不应该修改既有代码，只管添加新功能；重构时不能再添加新功能，只管改进程序结构，不应该添加任何测试（除非有遗漏），只有处理接口变化时才修改测试。 重构是随时随地进行，不应该为重构而重构（比如：划出一段时间专门专门做重构） 事不过三，三则重构 不要过早发布接口 如果大部分代码不能正常运作，那么此时应该是重写而不是重构 如果项目已近最后期限则应避免重构 编写快速软件的秘密是：首先写出可调的软件，然后调整它以求获得足够速度 关于性能，大部分时间耗费再小部分代码上。  第三章：代码的坏味道 &amp;mdash; 感觉需要读N遍才行  Duplicated Code(重复代码）  情况1：同一类的两个函数含有相同的表达式 情况2：两个互为兄弟的子类内含相同的表达式 情况3：两个毫不相关的类出现重复，则考虑将一个类的重复代码提炼到独立类中，另一个类使用新类；或函数属于第三类，另两个类引用第三个类。   Long Method(过长方法） 1.函数应以其用途，而非实现手法命名 2.循环和条件表达式尝尝是提炼的信号 Large Class（过大的类）  选择类内彼此相关的变量，放到同一类中   Long Parameter List(过长参数列） Divergent Change（发散式变化）？&amp;mdash;&amp;mdash;- Shotgun Surgery(散弹式修改）？ Feature Envy(依恋情结）？ Data Clumps(数据泥团）？ Primitive Obession(基本类型偏执）？ Switch Statements(switch 惊悚现身）？ Parallel Inheritance Hierarchies(平行继承体系） Lazy Class(冗赘类） Speculative Generality(夸夸其谈未来性） Temporary Field(令人迷惑的暂时字段） Message Chains(过度耦合的消息链） Middle Man(中间人） Inappropriate Intimacy(狎昵关系） Alternative Classes With Different Interfaces（异曲同工的类） Incomplete Library Class(不完美的库类） Data Class(纯稚的数据类） Refused Bequest（被拒绝的遗赠） Comments（过多的注释）  第四章&amp;ndash;构筑测试体系  每当收到bug，先写一个单元测试暴露这个bug 测试最担心出错的部分 考虑可能出错的边界条件，集中火力 当事情被认为应该会出错时，应该检查是否抛出了预期的异常  第五章&amp;ndash;重构列表 第六章&amp;ndash;重新组织函数 前面一页完整的讲解了如何进行重新组织函数</description>
     </item>
     
     <item>
       <title>Linux每日命令--scp</title>
-      <link>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</link>
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-scp/</guid>
       <description>scp是secure copy的简写，用于在Linux下进行远程拷贝文件的命令
 命令参数： -1 强制scp命令使用协议ssh1 -2 强制scp命令使用协议ssh2 -4 强制scp命令只使用IPv4寻址 -6 强制scp命令只使用IPv6寻址 -B 使用批处理模式（传输过程中不询问传输口令或短语） -C 允许压缩。（将-C标志传递给ssh，从而打开压缩功能） -p 保留原文件的修改时间，访问时间和访问权限。 -q 不显示传输进度条。 -r 递归复制整个目录。 -v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。 -c cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。 -F ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。 -i identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。 -l limit 限定用户所能使用的带宽，以Kbit/s为单位。 -o ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式， -P port 注意是大写的P, port是指定数据传输用到的端口号 -S program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。
 例子1：上传本地目录到远程机器指定目录 scp -r /opt/soft/mongodb root@192.168.120.204:/opt/soft/scptest 例子2：从远处复制文件到本地目录 scp root@192.168.120.204:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/ </description>
@@ -322,10 +322,10 @@ Port 指定远程主机端口号，默认为 22 。</description>
     
     <item>
       <title>Linux每日命令--du,df</title>
-      <link>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</link>
       <pubDate>Tue, 14 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/linux%E6%AF%8F%E6%97%A5%E5%91%BD%E4%BB%A4-dudf/</guid>
       <description>du du(disk usage),顾名思义,查看目录/文件占用空间大小 ##查看当前目录下的所有目录以及子目录的大小
 $ du -h 32K	./oss-upload 228K	./python/client 2.2M	./python/server 2.4M	./python 24K	./redirect 12K	./spring-boot 12K	./uitest 61M	. -h:用K、M、G的人性化形式显示 -a:显示目录和文件
 ##查看当前目录及其指定深度目录的大小
@@ -336,29 +336,29 @@ df df 用于查看设备的空间使用率</description>
     
     <item>
       <title>Shell 编程入门笔记--运算</title>
-      <link>/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</link>
       <pubDate>Wed, 11 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/shell-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01-%E8%BF%90%E7%AE%97/</guid>
       <description>1. 计算字符串或文件中字符出现的次数   echo $str | grep -o &amp;quot;字符串&amp;quot; | wc -l 查找字符串中字符出现次数 grep -o &#39;字符串&#39; file |wc -l 查找文件中字符出现次数   下面是查找字符串中字符e出现次数的例子：
 str=&amp;#34;im a test str&amp;#34; count=`echo $str | grep -o &amp;#34;e&amp;#34; | wc -l` #这里顺便一提的是如何把执行的命令赋值给变量 echo $count #1 2. 数字运算   let val++ let运算   count=1 let count++ echo $count #2 3. 命令执行的结果赋值给变量 val=`python test.py 2&amp;gt;&amp;amp;1` echo $val 这个可以顺便说一下2&amp;gt;&amp;amp;1的意思 比如echo log &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 解释： /dev/null: 表示空设备文件 &amp;gt;: 代表重定向 1: 表示stout标准输出，系统默认值为1，所以&amp;gt;/dev/null表示1&amp;gt;/dev/null 2: 表示sterr标准错误 &amp;amp;: 表示等同的意思，2&amp;gt;&amp;amp;1表示2的输出重定向等同于1</description>
     </item>
     
     <item>
       <title>正则表达式入门</title>
-      <link>/blog/post/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 25 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</guid>
       <description>表1.常用的元字符    代码 说明     . 匹配除换行符以外的任意字符   \w 匹配字母或数字或下划线或汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束    表2.常用的限定符    代码/语法 说明     |重复零次或更多次   |重复一次或更多次 ?	|重复零次或一次 {n}	|重复n次 {n,}	|重复n次或更多次 {n,m}	|重复n到m次  表3.常用的反义代码    代码/语法 说明     \W 匹配任意不是字母，数字，下划线，汉字的字符   \S 匹配任意不是空白符的字符   \D 匹配任意非数字的字符   \B 匹配不是单词开头或结束的位置   [^x] 匹配除了x以外的任意字符   [^aeiou] 匹配除了aeiou这几个字母以外的任意字符    表4.</description>
     </item>
     
     <item>
       <title>Ioinc进出栈解析</title>
-      <link>/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/ioinc%E8%BF%9B%E5%87%BA%E6%A0%88%E8%A7%A3%E6%9E%90/</guid>
       <description>$state.go 和 $ionicHistory.goback 返回时的具体区别 注明：下面两种演示情况的A,B,C,D页面均为一级页面，也就是不含有&amp;lt;ion-nav-view&amp;gt;页面。复杂页面（abstract：true)的go和goBack情况参见结论。
 1. 跨页面数量为0时（也就是两个相邻的页面返回时) Demo： 功能|结果 &amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash; 页面顺序|A-&amp;gt;B-&amp;gt;C-&amp;gt;D 历史记录|[A,B,C,D] cursor|3，表示当前处于D页面
 解析： 功能|结果 &amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash; go方法| 调用方法|go(C) 历史记录|[A,B,C,D] cursor|2，表示当前处于C页面，复杂页面时D页面会销毁
@@ -370,19 +370,19 @@ str=&amp;#34;im a test str&amp;#34; count=`echo $str | grep -o &amp;#34;e&amp;#3
     
     <item>
       <title>Ionic问题笔记</title>
-      <link>/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/ionic%E9%97%AE%E9%A2%98%E7%AC%94%E8%AE%B0/</guid>
       <description>1. 使用ion-nav-back-button和tabs时，子页面的返回问题 **实现效果：** /index/page2/tab1 点击进入 /index/page2/tab2 这时点击返回按钮想要的是返回到 /index/page2 而不是/index/page2/tab1(这个是现实的问题效果），如图：  解决方法1：这个可能有问题 var backView = $ionicHistory.backView(); $state.go(&amp;#39;app.patInfo.baseInfo&amp;#39;).then(function(){ $ionicHistory.backView(backView); }); 解决方法2：重写ion-nav-back-button的click方法,核心代码如下： function goBackSmart() { var currentView = $ionicHistory.currentView(), backView = $ionicHistory.backView(); if (backView) { var newBackView = _getBackView(currentView, backView); goBack(newBackView.index - currentView.index); } } function _getBackView(currentView, backView) { var curP = _getParentStateName(currentView.stateName), backP = _getParentStateName(backView.stateName), newBackView = backView; //判断是否是不为app的同一父类 while (curP == backP &amp;amp;&amp;amp; backP.split(&amp;#34;.&amp;#34;).length &amp;gt; 1) { newBackView = $ionicHistory.getViewById(newBackView.backViewId); curP = backP; backP = _getParentStateName(newBackView.</description>
     </item>
     
     <item>
       <title>HTTPS讲解</title>
-      <link>/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</link>
       <pubDate>Tue, 13 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</guid>
       <description>HTTP缺点  通信使用的是明文，内容可能会被窃听 不验证通信方的身份，有可能遭遇伪装 无法证明报文的完整性，有可能已遭篡改  通信使用的是明文 问题：
 内容被窃听  应对方法：
 1.通信加密
@@ -400,10 +400,10 @@ HTTPS加密机制 HTTPS采用的是共享密钥加密和公开密钥加密两者
     
     <item>
       <title>Web安全基础</title>
-      <link>/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/web%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80/</guid>
       <description>分类 以服务器为目标的主动攻击  SQL注入攻击 OS命令注入攻击  以服务器为目标的被动攻击  跨站脚本攻击（Cross-Site Scripting,XSS） 跨站点请求伪造（Cross-Site Request Forgeries,CSRF）  跨站脚本攻击（Cross-Site Scripting,XSS） 跨站点脚本攻击是通过存在安全漏洞的web网站注册用户的浏览器内运行非法的HTML标签或JavaScript进行的攻击，也被称为XSS攻击。 这种漏洞(XSS)通常用于发动cookie窃取、恶意软件传播(蠕虫攻击),会话劫持,恶意重定向。在这种攻击中,攻击者将恶意JavaScript代码注入到网站页面中,这样”受害”者的浏览器就会执行攻击者编写的恶意脚本。这种漏洞容易找到，但很难修补。这就是为什么你可以在任何网站发现它的身影
 演示Demo2&amp;ndash;Post 如果网站存在可以输入显示为html的入口，则下面代码有可能导致脚本注入满天飞：
 &amp;lt;img src=&amp;quot;http://snoopyxdy.blog.163.com/blog/err&amp;quot; onerr=&amp;quot;alert(&#39;xss&#39;)&amp;quot; /&amp;gt; &amp;lt;script&amp;gt;alert(&#39;xss&#39;)&amp;lt;/script&amp;gt; 演示Demo3&amp;ndash;基于dom的跨站点脚本攻击 需要编码和过滤的对象 The URL HTTP referrer objects GET parameters from a form POST parameters from a form Window.location Document.referrer document.location document.URL document.URLUnencoded cookie data headers data database data  数据是输出到HTML中的那就要进行HtmlEncode，如果数据是输出到javascript代码中进行拼接的，那就要进行javascriptEncode。
@@ -414,29 +414,29 @@ SELECT uid,username FROM user WHERE username=&#39;plhwin&#39; 但是，如果用
     
     <item>
       <title>如何在 Zsh 中使用 tab 键来补全 docker 和 docker-compose 命令</title>
-      <link>/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/docker%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-zsh%E4%B8%AD%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>Zsh Zsh 是一个兼容 bash 的更加强大的 shell.
 方法概括  下载补全脚本  mkdir -p ~/.zsh/completion curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/zsh/_docker &amp;gt; ~/.zsh/completion/_docker curl -L https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose &amp;gt; ~/.zsh/completion/_docker-compose 配置 ~/.zshrc, 主要添加或修改下面两行  fpath=(~/.zsh/completion $fpath) autoload -Uz compinit &amp;amp;&amp;amp; compinit -u 重新打开shell  参考链接  官方Command-line completion  </description>
     </item>
     
     <item>
       <title>Zsh 使用笔记 -- Mac下的快捷键</title>
-      <link>/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/zsh-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>   功能 快捷键     ⌘ + Click 可以打开文件，文件夹和链接   ⌘ + n 新建窗口   ⌘ + t 新建标签页   ⌘ + w 关闭当前页   ⌘ + 数字 &amp;amp; ⌘ + 方向键 切换标签页   ⌥⌘ + 数字 切换窗口   ⌘ + enter 切换全屏   ⌘ + d 左右分屏   ⇧⌘ + d 上下分屏   ⌘ + ; 自动补全历史记录   ⇧⌘ + h 自动补全剪贴板历史   ⌥⌘ + e 查找所有来定位某个标签页   ⌘ + r &amp;amp; ⌃ + l 清屏   ⌘ + / 显示光标位置   ⌥⌘ + b 历史回放   ⌘ + f 查找，然后用 tab 和 ⇧ + tab 可以向右和向左补全，补全之后的内容会被自动复制， 还可以用 ⌥ + enter 将查找结果输入终端   选中即复制，鼠标中键粘贴    ⌃ + u 清空当前行   ⌃ + a 移动到行首   ⌃ + e 移动到行尾   ⌃ + f 向前移动   ⌃ + b 向后移动   ⌃ + p 上一条命令   ⌃ + n 下一条命令   ⌃ + r 搜索历史命令   ⌃ + y 召回最近用命令删除的文字   ⌃ + h 删除光标之前的字符   ⌃ + d 删除光标所指的字符   ⌃ + w 删除光标之前的单词   ⌃ + k 删除从光标到行尾的内容   ⌃ + t 交换光标和之前的字符    </description>
     </item>
     
     <item>
       <title>Git 使用笔记--日志查看</title>
-      <link>/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</link>
       <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/git-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%97%A5%E5%BF%97%E6%9F%A5%E7%9C%8B/</guid>
       <description>Oneline --oneline标记把每一个提交压缩到了一行中。它默认只显示提交ID和提交信息的第一行。git log --oneline的输出一般是这样的：
 0e25143 Merge branch &#39;feature&#39; ad8621a Fix a bug in the feature 16b36c6 Add a new feature 23ad9ad Add the initial code base 如何查看的日志 按日期 查看一周前的日志：
 git log --after &#39;1 week ago&#39; 查看昨天日志：
@@ -451,10 +451,10 @@ git log --grep=&amp;quot;mouse&amp;quot; 按文件 查看某个或某些文件�
     
     <item>
       <title>Git使用笔记--显示修改文件列表</title>
-      <link>/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</link>
       <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/git%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-%E6%98%BE%E7%A4%BA%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8/</guid>
       <description>显示文件的关键选项 --name-only 这个只显示文件名 --name-status 这个显示文件名和修改状态（比如：M/A/D） 两个文件的使用方式相同，只是结果不同
 使用log显示文件修改列表 name-only git log --name-only --oneline --no-merges 结果如下：
 src/styles/print/_paperPrint.scss 036b73d 修复案例题批阅时自动定位到输入框 参考：YHJY-6000 src/views/common/kyQuestion.html 6d7ba60 添加试题时只能选择联动的父类和其子类，却不能选择单独的子类文件夹 参考:YHJY-5398 src/scripts/common/utils/angular-tree-control.js c875b55 创建试卷，第二部分添加试题，然后将第二部分整体删除后，再添加第二部分，试题没清空 参考:YHJY-6079 src/scripts/paper/create/controller/paperCreateController.js name-status git log --name-status --oneline --no-merges 结果：
@@ -464,20 +464,20 @@ git diff --name-status branch1 branch2 结果如下：</description>
     
     <item>
       <title>微信开发--前端本地调试连接本地后台方法</title>
-      <link>/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</link>
       <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91-%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%BF%9E%E6%8E%A5%E6%9C%AC%E5%9C%B0%E5%90%8E%E5%8F%B0%E6%96%B9%E6%B3%95/</guid>
       <description>背景 微信团队对微信小程序的控制比较严格，在小程序中发送http request只能调用通过wx.request方法，而在wx.request中，会默认对请求的url地址进行检查，必须使用https协议 &amp;amp; 是配置的后台地址之一（管理员账号进行配置），而且无法配置localhost或者IP地址，所以导致本地调试需要采用一些特殊的手段来访问本地的后台。（其实还是很简单的~和把大象放进冰箱一样，只需要三步哦~ 括弧笑）
 解决步骤 第一步 将一个外网地址指向本地的地址 这一步其实非常的简单，只要修改host文件即可。（Mac下可以使用Gas Mask辅助，修改前建议备份原本的host文件） host文件的位置？自行百度一下吧~ 修改成什么样子？举个例子，后台的地址为https://www.baidu.com，希望将这个地址解析为本地的地址127.0.0.1，只要这么写就够啦 127.0.0.1 www.baidu.com 如果有运行后台的话，假设后台监听的是8080端口，赶紧打开浏览器，输入http://www.baidu.com:8080看能不能正常访问本地的后台~  第二步 生成一个自签名证书 配置https，证书是必不可少的，还好自签名的https证书在微信小程序本地调试的时候是可用的，这里的话需要用到openssl，windows的电脑请在git bash下操作或者求助使用Mac，Linux系统的小伙伴，以下教程以Mac系统为准   brew install openssl(安装过openssl的跳过) openssl genrsa -out ssl.key 2048 openssl req -new -key ssl.key -out ssl.csr openssl x509 -req -in ssl.csr -signkey ssl.key -out ssl.crt openssl pkcs12 -export -in ssl.crt -inkey ssl.key -out ssl.p12 执行最后一个命令的时候回提示你输入一个密码，此处以kyee为例 执行完上述的步骤，应该会得到4个文件ssl.crt, ssl.csr, ssl.key, ssl.p12  第三步 配置后台服务器https证书 复制ssl.p12，丢到后台和application.yml一个文件夹下，然后在application.yml中输入：  然后启动之，搞定~这样前端你调用wx.request的时候url只要设置为https://www.baidu.com:8080/xxx，就可以访问你本地的后台了~  </description>
     </item>
     
     <item>
       <title>GitHub使用笔记--SSH提交异常</title>
-      <link>/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</link>
       <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/github%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0-ssh%E6%8F%90%E4%BA%A4%E5%BC%82%E5%B8%B8/</guid>
       <description>系统环境：MAC
  ssh git push 时出现timeout的问题 $ git push ssh: connect to host github.com port 22: Connection timed out fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. 修改前测试：
 $ ssh -T git@github.com ssh: connect to host github.com port 22: Operation timed out 修改 ~/.ssh/config 中 github.com 的配置， Hostname 改为 ssh.github.com, Port 改为 443:
@@ -486,10 +486,10 @@ Host github.com Hostname ssh.github.com Port 443 修改后测试：</description
     
     <item>
       <title>Promise使用笔记</title>
-      <link>/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 14 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/promise%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>环境描述：nodejs Promise模块：q
  1. 多层异步Promise的实现 需求：获取一个目录下指定文件（多个）的数据集合 从错误思路到正确思路进行分析, 解析错误思路是为了知己知彼，为了不在写出这种错误的代码，而且错误的思路中不是全部都错误的，是在某个分界点才开始错误的，所以这个分界点是个关键，需要多加注意
 1.1 错误思路 先直接上完整代码
@@ -498,20 +498,20 @@ var jsonParser = function(basePath) { var deferred = q.defer(); var resultData =
     
     <item>
       <title>Python Selenium学习笔记</title>
-      <link>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Mon, 26 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
       <description>如何运行单元测试时只运行一个浏览器，而不是每个TestCase都打开一个浏览器 具体实现方法：
 class BaseUnitTest(unittest.TestCase): # --实例属性区-- &amp;quot;&amp;quot;&amp;quot;是否开启TestCase级别的单驱动模式,默认False 开启时, 一个TestCase只会打开一个浏览器,也就是method之间是公用浏览器, 而不是每个测试Method都打开一个浏览器 &amp;quot;&amp;quot;&amp;quot; SINGLE_DRIVER = False # --类方法区-- @classmethod def setUpClass(cls): cls.driver = None @classmethod def tearDownClass(cls): if cls.SINGLE_DRIVER: BaseUnitTest.__quit_driver(cls.driver) # --静态方法区-- @staticmethod def __new_driver(): driver = browser(env.BROWSER, env.DRIVER_PATH) driver.maximize_window() return driver @staticmethod def __quit_driver(driver): if env.BROWSER.upper() == &#39;PHANTOMJS&#39;: # 这里是为了能够真正的退出 driver.service.process.send_signal(signal.SIGTERM) driver.quit() def setUp(self): if self.SINGLE_DRIVER: if self.__class__.driver is None: self.driver = BaseUnitTest.__new_driver() self.__class__.SINGLE_DRIVER = self.SINGLE_DRIVER self.__class__.driver = self.driver else: self.driver = self.</description>
     </item>
     
     <item>
       <title>如何查看git提交近期的所有的改动或新增的文件-Python实现</title>
-      <link>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</link>
       <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%92%8C%E7%BB%9F%E8%AE%A1/</guid>
       <description>环境要求：
  pip install matplotlib用于生成图表   代码如下：
 # coding=utf-8 import commands import matplotlib.pyplot as plt import re import numpy def find_all_files(target): table = {} files = re.findall(r&amp;#34;[M|A|D][^u].*?\.\w*&amp;#34;, target) for file in files: real_files = file.split(&amp;#39;/&amp;#39;) real_file = real_files[len(real_files) - 1] real_file = real_file.split(&amp;#39;\t&amp;#39;) if len(real_file) &amp;gt; 1: real_file = real_file[len(real_file) - 1] else: real_file = real_file[0] if real_file in table.keys(): table[real_file] += 1 else: table[real_file] = 1 return table def get_words_graphic(wordlist): keylist = wordlist.</description>
@@ -519,10 +519,10 @@ class BaseUnitTest(unittest.TestCase): # --实例属性区-- &amp;quot;&amp;quot
     
     <item>
       <title>Angular animation学习笔记</title>
-      <link>/blog/post/angular/guide/animation/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/guide/animation/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/guide/animation/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/guide/animation/</guid>
       <description>[TOC]
 Angular animation 总结  参考文章
  AngularJS中实现动画效果有两大种方式
@@ -531,10 +531,10 @@ Angular animation 总结  参考文章
     
     <item>
       <title>Form(ng-form) 学习笔记</title>
-      <link>/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/formng-form-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>#Form(ng-form) 学习笔记 [TOC]
 ##1. CSS classes
  详情参见Form API
@@ -545,10 +545,10 @@ Angular animation 总结  参考文章
     
     <item>
       <title>Form(ng-form) 学习笔记</title>
-      <link>/blog/post/angular/directive/ng-form/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-form/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-form/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-form/</guid>
       <description>#Form(ng-form) 学习笔记 [TOC]
 ##1. CSS classes
  详情参见Form API
@@ -559,10 +559,10 @@ Angular animation 总结  参考文章
     
     <item>
       <title>Input(ng-input) 学习笔记</title>
-      <link>/blog/post/angular/directive/ng-input/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-input/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-input/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-input/</guid>
       <description>#Input(ng-input) 学习笔记
  参考链接：Input API
   **注意事项: **
@@ -572,20 +572,20 @@ Angular animation 总结  参考文章
     
     <item>
       <title>Input[type] 系列学习笔记</title>
-      <link>/blog/post/angular/directive/inputtype/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/inputtype/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/inputtype/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/inputtype/</guid>
       <description>#Input[type] 系列学习笔记 [TOC]
 input[checkbox] 额外属性 Arguments：    Param Type Details     ngTrueValue(optional) expression The value to which the expression should be set when selected.   ngFalseValue(optional) expression The value to which the expression should be set when not selected.    完整代码 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;inputCheckBox&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;ng-input[checkbox]&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;#34;../bower_components/angular/angular.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; angular.module(&amp;#39;inputCheckBox&amp;#39;, []) .controller(&amp;#39;CheckBoxController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.check = { test1: true, test2: &amp;#39;HEHE&amp;#39; } }]) &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body ng-controller=&amp;#34;CheckBoxController&amp;#34;&amp;gt; &amp;lt;form name=&amp;#34;checkboxForm&amp;#34;&amp;gt; &amp;lt;label&amp;gt; Value1: &amp;lt;input type=&amp;#34;checkbox&amp;#34; name=&amp;#34;check1&amp;#34; ng-model=&amp;#34;check.</description>
     </item>
     
     <item>
       <title>ng-bind-html &amp; $sce学习笔记</title>
-      <link>/blog/post/angular/directive/ng-bind-htmlsce/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-bind-htmlsce/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-bind-htmlsce/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-bind-htmlsce/</guid>
       <description>#ng-bind-html &amp;amp; $sce学习笔记
  注意事项： 用该指令bind内容时，必须依赖ngSanitize模块，同时调用$sce.trustAsHtml等方法，否则会出现 Attempting to use an unsafe value in a safe context. 异常
  ng-bind-html源码 注意： 可以发现内部是调用的$sce.getTrustedHtml 方法
@@ -595,20 +595,20 @@ var ngBindHtmlDirective = [&amp;#39;$sce&amp;#39;, function($sce) { return funct
     
     <item>
       <title>ng-change学习笔记</title>
-      <link>/blog/post/angular/directive/ng-change/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-change/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-change/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-change/</guid>
       <description>ng-change学习笔记  注意事项1： 当值改变时，ng-change绑定的expression会立即执行，而不像on-change事件（需要用户离开Form元素或点击回车） 注意事项2： 不会触发ng-change的情况有以下几种：
   如果通过$parsers返回的值没有改变，则不会触发（if the value returned from the $parsers transformation pipeline has not changed）   如果当前input处于invalid状态，model的值为null，则不会触发（if the input has continued to be invalid since the model will stay null） 如果model的值是通过编程的方式进行改变的而不是改变input value，则不会触发(if the model is changed programmatically and not by a change to the input value)   官方Code &amp;lt;script&amp;gt; angular.module(&amp;#39;changeExample&amp;#39;, []) .controller(&amp;#39;ExampleController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.counter = 0; $scope.change = function() { $scope.counter++; }; }]); &amp;lt;/script&amp;gt; &amp;lt;div ng-controller=&amp;#34;ExampleController&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; ng-model=&amp;#34;confirmed&amp;#34; ng-change=&amp;#34;change()&amp;#34; id=&amp;#34;ng-change-example1&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;checkbox&amp;#34; ng-model=&amp;#34;confirmed&amp;#34; id=&amp;#34;ng-change-example2&amp;#34; /&amp;gt; &amp;lt;label for=&amp;#34;ng-change-example2&amp;#34;&amp;gt;Confirmed&amp;lt;/label&amp;gt;&amp;lt;br /&amp;gt; &amp;lt;tt&amp;gt;debug = {{confirmed}}&amp;lt;/tt&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;tt&amp;gt;counter = {{counter}}&amp;lt;/tt&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;/div&amp;gt;  Written with StackEdit.</description>
     </item>
     
     <item>
       <title>ng-checked学习笔记</title>
-      <link>/blog/post/angular/directive/ng-checked/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-checked/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-checked/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-checked/</guid>
       <description>ng-checked学习笔记  注意事项： 该指令不能与ngModel同时使用，否则可能会出现意外的行为。
  官方Code &amp;lt;label&amp;gt;Check me to check both: &amp;lt;input type=&amp;#34;checkbox&amp;#34; ng-model=&amp;#34;master&amp;#34;&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br/&amp;gt; &amp;lt;input id=&amp;#34;checkSlave&amp;#34; type=&amp;#34;checkbox&amp;#34; ng-checked=&amp;#34;master&amp;#34; aria-label=&amp;#34;Slave input&amp;#34;&amp;gt;  Written with StackEdit.
  </description>
@@ -616,10 +616,10 @@ var ngBindHtmlDirective = [&amp;#39;$sce&amp;#39;, function($sce) { return funct
     
     <item>
       <title>ng-class学习笔记</title>
-      <link>/blog/post/angular/directive/ng-class/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-class/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-class/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-class/</guid>
       <description>ng-class学习笔记 [TOC]
  解析表达式expression的5种方式：
   String Syntax 如果expression是string，则用1个或多个空格风格class names（If the expression evaluates to a string, the string should be one or more space-delimited class names.）, 比如：ng-class=&amp;quot;expression&amp;rdquo;   Map Syntax 如果expression是object, 则key-value形式的对应关系，如果value为true,则应用key作为class类名, 比如（{&amp;lsquo;red&amp;rsquo;: isImportant,&amp;lsquo;bold&amp;rsquo;:isBold}） Array Syntax 如果expression是array, 则数组的元素可以是类型1的string或类型2的object, 可以混用, 比如：[expression1,expression2] Expression Syntax 方式： expression ? &amp;lsquo;class1&amp;rsquo; : &amp;lsquo;class2&amp;rsquo; Select Map Syntax 方式比如： {true: &amp;lsquo;has-error&amp;rsquo;,false:&amp;lsquo;has-normal&amp;rsquo;}[isError], 注意这里的Map形式和第二种的Map相反, 另外需要注意的是isError必须===true 或者 false，不能是undefined | null，否则无法显示样式   参考链接：How to use ng-class
@@ -628,10 +628,10 @@ Animations    name details     add happens just before the class is applied to t
     
     <item>
       <title>ng-controller学习笔记</title>
-      <link>/blog/post/angular/guide/studyguide/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/guide/studyguide/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/guide/studyguide/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/guide/studyguide/</guid>
       <description>[TOC]
 1. ng-controller学习笔记 1.1 理解Controller  可做的事情
   初始化$state状态 给$state 添加行为和方法   不可做的事情
@@ -642,58 +642,58 @@ Animations    name details     add happens just before the class is applied to t
     
     <item>
       <title>ng-csp学习笔记</title>
-      <link>/blog/post/angular/directive/ng-csp/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-csp/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-csp/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-csp/</guid>
       <description>ng-csp学习笔记 Affect Rules    Name Descriptions     unsafe-eval this rule forbids apps to use eval or Function(string) generated functions (among other things). Angular makes use of this in the $parse service to provide a 30% increase in the speed of evaluating Angular expressions.   unsafe-inline this rule forbids apps from inject custom styles into the document. Angular makes use of this to include some CSS rules (e.</description>
     </item>
     
     <item>
       <title>ng-options学习笔记</title>
-      <link>/blog/post/angular/directive/ng-options/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-options/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-options/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-options/</guid>
       <description>ng-options学习笔记  重点1： ng-model的比较的是引用，不是值，所以当比较内容是数组或对象就会容易出现不相等，导致选项中出现空白选项 重点2： Do not use select as and track by in the same expression. They are not designed to work together.
  ngOptions   array data sources    label for value in array select as label for value in array label group by group for value in array label disable when disable for value in array label group by group for value in array track by trackexpr label disable when disable for value in array track by trackexpr label for value in array | orderBy:orderexpr track by trackexpr (for including a filter with track by)      object data sources    label for (key , value) in object select as label for (key , value) in object label group by group for (key, value) in object label disable when disable for (key, value) in object select as label group by group for (key, value) in object select as label disable when disable for (key, value) in object     单词解释</description>
     </item>
     
     <item>
       <title>ng-repeat 学习笔记</title>
-      <link>/blog/post/angular/directive/ng-repeat/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-repeat/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-repeat/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-repeat/</guid>
       <description>ng-repeat 学习笔记  重点1： ng-repeat的每一个子项都会产生一个scope 重点2： ng-repeat虽然可以使用Object,如：ng-repeat=&amp;quot;(key, value) in myObj&amp;quot; 但这不是推荐的方式，推荐的是Array, 参考链接**toArrayFilter**
  properties    Variable Type Details     $index number iterator offset of the repeated element (0..length-1)   $first boolean true if the repeated element is first in the iterator.   $middle boolean true if the repeated element is between the first and last in the iterator.   $last boolean true if the repeated element is last in the iterator.</description>
     </item>
     
     <item>
       <title>ng-show学习笔记</title>
-      <link>/blog/post/angular/directive/ng-show/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-show/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-show/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-show/</guid>
       <description>ng-show学习笔记 Overriding .ng-hide .ng-hide:not(.ng-hide-animate) { /* this is just another form of hiding an element */ display: block!important; position: absolute; top: -9999px; left: -9999px; } Animations 完整例子 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;showModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;ng-show&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt; .animate-show { line-height: 20px; opacity: 1; padding: 10px; border: 1px solid black; background: white; } .animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove.ng-hide-remove-active { -webkit-transition: all linear 0.5s; transition: all linear 0.5s; } .animate-show.ng-hide { line-height: 0; opacity: 0; padding: 0 10px; } .</description>
     </item>
     
     <item>
       <title>ngBindTemplate学习笔记</title>
-      <link>/blog/post/angular/directive/ngbindtemplate/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ngbindtemplate/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ngbindtemplate/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ngbindtemplate/</guid>
       <description>ngBindTemplate学习笔记 官方Code &amp;lt;script&amp;gt; angular.module(&amp;#39;bindExample&amp;#39;, []) .controller(&amp;#39;ExampleController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { $scope.salutation = &amp;#39;Hello&amp;#39;; $scope.name = &amp;#39;World&amp;#39;; }]); &amp;lt;/script&amp;gt; &amp;lt;div ng-controller=&amp;#34;ExampleController&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Salutation: &amp;lt;input type=&amp;#34;text&amp;#34; ng-model=&amp;#34;salutation&amp;#34;&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt; &amp;lt;label&amp;gt;Name: &amp;lt;input type=&amp;#34;text&amp;#34; ng-model=&amp;#34;name&amp;#34;&amp;gt;&amp;lt;/label&amp;gt;&amp;lt;br&amp;gt; &amp;lt;pre ng-bind-template=&amp;#34;{{salutation}} {{name}}!&amp;#34;&amp;gt;&amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;  Written with StackEdit.
  </description>
     </item>
     
     <item>
       <title>ngModel-ngModelController学习笔记</title>
-      <link>/blog/post/angular/type/ngmodelngmodelcontroller/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/type/ngmodelngmodelcontroller/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/type/ngmodelngmodelcontroller/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/type/ngmodelngmodelcontroller/</guid>
       <description>ngModel-ngModelController学习笔记 [TOC]
  ngModelController API 地址
  Methods $render(); 触发该方法的情况如下：
@@ -703,10 +703,10 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>ngModel学习笔记</title>
-      <link>/blog/post/angular/directive/ngmodelngmodeloptions/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ngmodelngmodeloptions/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ngmodelngmodeloptions/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ngmodelngmodeloptions/</guid>
       <description>ngModel学习笔记  建议1： 比较的是引用而不是值，所以对于值为数组或对象时需要特别注意
  getter/setter  建议2： 由于angular会频繁的调用getter,所以get方法尽量要速度快
  ngModelOptions  注意1： ng-submit提交时处于pending状态的ng-model会立刻触发pending，然后才会提交updated model，而ng-click方式则不会触发ng-model的pending状态，会把当前的ng-model立即提交，详细例子参见ng-form文档 注意2： 该指令会影响当前元素和其子类元素的ng-model
@@ -716,10 +716,10 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>ngModel学习笔记</title>
-      <link>/blog/post/angular/ng-model/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/ng-model/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/ng-model/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/ng-model/</guid>
       <description>ngModel学习笔记  建议1： 比较的是引用而不是值，所以对于值为数组或对象时需要特别注意 注意1： ngModel自动创建的对象，是创建到当前$scope中的，所以需要注意创建的区域是否有其他Scope对象
  getter/setter  建议2： 由于angular会频繁的调用getter,所以get方法尽量要速度快
  ngModelOptions  注意1： ng-submit提交时处于pending状态的ng-model会立刻触发pending，然后才会提交updated model，而ng-click方式则不会触发ng-model的pending状态，会把当前的ng-model立即提交，详细例子参见ng-form文档 注意2： 该指令会影响当前元素和其子类元素的ng-model
@@ -729,10 +729,10 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>ngPluralize学习笔记</title>
-      <link>/blog/post/angular/directive/ng-pluralize/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-pluralize/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-pluralize/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-pluralize/</guid>
       <description>ngPluralize学习笔记  ngPluralize API链接
   重点： 该指令依赖于 en-US localization rules，该规则已经绑定于angular.js当中，重写方法参见**Angular i18n** , 根据配置不同指令的使用参数表示意思参见**Plural categories** **Angular&#39;s default en-US locale: &amp;ldquo;one&amp;rdquo; and &amp;ldquo;other&amp;rdquo;.**
  Arguments    Param Type Details     count string expression The variable to be bound to.   when string The mapping between plural category to its corresponding strings.   offset(optional) number Offset to deduct from the total number.    使用方法1 &amp;ndash; count and when (default:&amp;lsquo;en&amp;rsquo;) &amp;lt;input type=&amp;#34;text&amp;#34; ng-model=&amp;#34;personCount&amp;#34;&amp;gt; &amp;lt;ng-pluralize count=&amp;#34;personCount&amp;#34; when=&amp;#34;{&amp;#39;0&amp;#39;: &amp;#39;Nobody is viewing.</description>
@@ -740,10 +740,10 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>no-cloak学习笔记</title>
-      <link>/blog/post/angular/directive/ng-cloak/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-cloak/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/ng-cloak/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/ng-cloak/</guid>
       <description>#no-cloak学习笔记
 完整代码 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;cloakModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;../bower_components/angular/angular.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; angular.module(&amp;#39;cloakModule&amp;#39;, []) .controller(&amp;#39;CloakController&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope) { var self = this; self.testCloak = &amp;#34;tedt&amp;#34;; } ]); &amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body ng-controller=&amp;#34;CloakController as cloakCtrl&amp;#34;&amp;gt; no-cloak:&amp;lt;span&amp;gt;{{cloakCtrl.testCloak}}&amp;lt;/span&amp;gt; &amp;lt;br&amp;gt; ng-cloak:&amp;lt;span ng-cloak&amp;gt;{{cloakCtrl.testCloak}}&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; for (var i = 0; i &amp;lt; 1000 * 100; i++) { document.write(&amp;#34;-&amp;#34;) } &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  Written with StackEdit.
  </description>
@@ -751,10 +751,10 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>rootScope.Scope学习笔记</title>
-      <link>/blog/post/angular/type/rootscope-scope/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/type/rootscope-scope/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/type/rootscope-scope/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/type/rootscope-scope/</guid>
       <description>rootScope.Scope学习笔记 [TOC]
  注意： scope对象的$parent并不代表该scope一定继承自该$parentScope(或者说可以调用该$parentScope中的方法或属性)，而仅仅表示具有DOM中的上下级关系。真正能够访问的方法或属性是来自原型继承的parentScope(proto)
  Methods $new(isolate,parent); Parameters
@@ -763,10 +763,10 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>select学习笔记</title>
-      <link>/blog/post/angular/directive/select/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/directive/select/</link>
       <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/directive/select/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/directive/select/</guid>
       <description>select学习笔记  重点： 生成select的两种方式ng-options和ng-model 区别： ng-model绑定的值会转换为string，如果想要绑定不是string的值可以自己用directive convert
  官方例子（绑定数字） &amp;lt;select ng-model=&amp;#34;model.id&amp;#34; convert-to-number&amp;gt; &amp;lt;option value=&amp;#34;0&amp;#34;&amp;gt;Zero&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;1&amp;#34;&amp;gt;One&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;2&amp;#34;&amp;gt;Two&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; {{ model }} angular.module(&amp;#39;nonStringSelect&amp;#39;, []) .run(function($rootScope) { $rootScope.model = { id: 2 }; }) .directive(&amp;#39;convertToNumber&amp;#39;, function() { return { require: &amp;#39;ngModel&amp;#39;, link: function(scope, element, attrs, ngModel) { ngModel.$parsers.push(function(val) { return parseInt(val, 10); }); ngModel.$formatters.push(function(val) { return &amp;#39;&amp;#39; + val; }); } }; });  解释： 如果不用convertToNumber指令，则会出现select选中空白的情况，因为两者不相等。
  完整例子 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;selectModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;select&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;.</description>
@@ -774,20 +774,20 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>/blog/example/goisforlovers/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/goisforlovers/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/goisforlovers/</guid>
       <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
 This document is a brief primer on using go templates.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>/blog/example/hugoisforlovers/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/hugoisforlovers/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo
@@ -798,10 +798,10 @@ Follow the following steps:
     
     <item>
       <title>Migrate from Jekyll</title>
-      <link>/blog/example/migrate-from-jekyll/</link>
+      <link>https://hui1hui2hui3.github.io/blog/example/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/blog/example/migrate-from-jekyll/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/example/migrate-from-jekyll/</guid>
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&#39;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
@@ -809,10 +809,10 @@ Follow the following steps:
     
     <item>
       <title></title>
-      <link>/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</guid>
       <description>Angular学习笔记&amp;ndash;Oauth2 标签（空格分隔）： Angular Oauth2
  为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是application/x-www-form-urlencoded格式的，而Angular的$http默认的处理方式是application/json,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：
 方式1-自定义请求处理，转化JSON为key=value&amp;amp;key=value的形式： $http({ method: &#39;POST&#39;, url: url, headers: {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;}, transformRequest: function(obj) { var str = []; for(var p in obj) str.push(encodeURIComponent(p) + &amp;quot;=&amp;quot; + encodeURIComponent(obj[p])); return str.join(&amp;quot;&amp;amp;&amp;quot;); }, data: {username: $scope.userName, password: $scope.password} }).success(function () {}); 方式2-使用encodeURIComponent直接拼接 $http.post(loginUrl, &amp;quot;userName=&amp;quot; + encodeURIComponent(email) + &amp;quot;&amp;amp;password=&amp;quot; + encodeURIComponent(password) + &amp;quot;&amp;amp;grant_type=password&amp;quot; ).success(function (data) { 方式3-使用$httpParamSerializerJQLike或$httpParamSerializer $httpParamSerializerJQLike - a serializer inspired by jQuery&#39;s .param() (recommended) $httpParamSerializer - a serializer used by Angular itself for GET requests</description>
@@ -820,10 +820,10 @@ Follow the following steps:
     
     <item>
       <title>关于</title>
-      <link>/blog/about/</link>
+      <link>https://hui1hui2hui3.github.io/blog/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/about/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/about/</guid>
       <description>关于我 关于博客 本博客的主要目的是用来学习和总结，写下自己学习中、生活中知识，用来提高自己的知识留存率。 从12年开始就想建一个自己博客，三分钟热度+懒惰+缺乏计划，导致始终没有开始，一直到21年，中间将近十年的时光流逝了。 但还不晚，希望我能坚持每月每周都能有内容输出，把我的经历用信息存档，即使我死后，也能在这个信息化的时代留下点东西。
 推荐的读物 《认知觉醒》 《稀缺》 《跃迁》 《冯唐成事心法》
 关注我  如对我写的内容有兴趣，也欢迎关注我的微信公众号：  </description>

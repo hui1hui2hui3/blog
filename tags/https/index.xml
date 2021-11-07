@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTPS on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/https/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/https/</link>
     <description>Recent content in HTTPS on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 13 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/https/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/https/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTTPS讲解</title>
-      <link>/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</link>
       <pubDate>Tue, 13 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/https%E8%AE%B2%E8%A7%A3/</guid>
       <description>HTTP缺点  通信使用的是明文，内容可能会被窃听 不验证通信方的身份，有可能遭遇伪装 无法证明报文的完整性，有可能已遭篡改  通信使用的是明文 问题：
 内容被窃听  应对方法：
 1.通信加密

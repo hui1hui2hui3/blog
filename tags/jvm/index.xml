@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JVM on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/jvm/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/jvm/</link>
     <description>Recent content in JVM on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JVM调优笔记-JVM调优攻略</title>
-      <link>/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</link>
       <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/jvm%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0-jvm%E8%B0%83%E4%BC%98%E6%94%BB%E7%95%A5/</guid>
       <description>在Java虚拟机的参数中，有3种表示方法（出自：http://www.cnblogs.com/wenfeng762/archive/2011/08/14/2137810.html），用ps -ef |grep “java”命令，可以得到当前Java进程的所有启动参数和配置参数：
  标准参数（-），所有的JVM实现都必须实现这些参数的功能，而且向后兼容； 非标准参数（-X），默认jvm实现这些参数的功能，但是并不保证所有jvm实现都满足，且不保证向后兼容； 非Stable参数（-XX），此类参数各个jvm实现会有所不同，将来可能会随时取消，需要慎重使用（但是，这些参数往往是非常有用的）；  （额外的，-DpropertyName=“value”的形式定义了一些全局属性值，下面有介绍。） 本文只重点介绍一些重要和常用的参数，如果想了解全部参数，可以参考下面的文章： 《Java HotSpot VM Options》 《JVM启动参数大全》
 标准参数 其实标准参数是用过Java的人都最熟悉的，就是你在运行java命令时后面加上的参数，如java -version, java -jar 等，输入命令java -help或java -?就能获得当前机器所有java的标准参数列表。

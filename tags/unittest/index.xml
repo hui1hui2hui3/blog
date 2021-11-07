@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UnitTest on Rabbit&amp;Carrot</title>
-    <link>/blog/tags/unittest/</link>
+    <link>https://hui1hui2hui3.github.io/blog/tags/unittest/</link>
     <description>Recent content in UnitTest on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 26 Sep 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/unittest/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/unittest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python Selenium学习笔记</title>
-      <link>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
+      <link>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Mon, 26 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://hui1hui2hui3.github.io/blog/post/tech/python-selenium%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
       <description>如何运行单元测试时只运行一个浏览器，而不是每个TestCase都打开一个浏览器 具体实现方法：
 class BaseUnitTest(unittest.TestCase): # --实例属性区-- &amp;quot;&amp;quot;&amp;quot;是否开启TestCase级别的单驱动模式,默认False 开启时, 一个TestCase只会打开一个浏览器,也就是method之间是公用浏览器, 而不是每个测试Method都打开一个浏览器 &amp;quot;&amp;quot;&amp;quot; SINGLE_DRIVER = False # --类方法区-- @classmethod def setUpClass(cls): cls.driver = None @classmethod def tearDownClass(cls): if cls.SINGLE_DRIVER: BaseUnitTest.__quit_driver(cls.driver) # --静态方法区-- @staticmethod def __new_driver(): driver = browser(env.BROWSER, env.DRIVER_PATH) driver.maximize_window() return driver @staticmethod def __quit_driver(driver): if env.BROWSER.upper() == &#39;PHANTOMJS&#39;: # 这里是为了能够真正的退出 driver.service.process.send_signal(signal.SIGTERM) driver.quit() def setUp(self): if self.SINGLE_DRIVER: if self.__class__.driver is None: self.driver = BaseUnitTest.__new_driver() self.__class__.SINGLE_DRIVER = self.SINGLE_DRIVER self.__class__.driver = self.driver else: self.driver = self.</description>
     </item>

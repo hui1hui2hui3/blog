@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Angular on Rabbit&amp;Carrot</title>
+    <link>https://hui1hui2hui3.github.io/blog/tags/angular/</link>
+    <description>Recent content in Angular on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Angular学习笔记--Oauth2</title>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</guid>
+      <description>Angular学习笔记&amp;ndash;Oauth2 为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是application/x-www-form-urlencoded格式的，而Angular的$http默认的处理方式是application/json,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：
+方式1-自定义请求处理，转化JSON为key=value&amp;amp;key=value的形式： $http({ method: &#39;POST&#39;, url: url, headers: {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;}, transformRequest: function(obj) { var str = []; for(var p in obj) str.push(encodeURIComponent(p) + &amp;quot;=&amp;quot; + encodeURIComponent(obj[p])); return str.join(&amp;quot;&amp;amp;&amp;quot;); }, data: {username: $scope.userName, password: $scope.password} }).success(function () {}); 方式2-使用encodeURIComponent直接拼接 $http.post(loginUrl, &amp;quot;userName=&amp;quot; + encodeURIComponent(email) + &amp;quot;&amp;amp;password=&amp;quot; + encodeURIComponent(password) + &amp;quot;&amp;amp;grant_type=password&amp;quot; ).success(function (data) { 方式3-使用$httpParamSerializerJQLike或$httpParamSerializer $httpParamSerializerJQLike - a serializer inspired by jQuery&#39;s .param() (recommended) $httpParamSerializer - a serializer used by Angular itself for GET requests</description>
+    </item>
+    
+  </channel>
+</rss>

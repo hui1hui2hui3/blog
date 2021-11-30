@@ -96,6 +96,16 @@
     </item>
     
     <item>
+      <title>Angular学习笔记--Oauth2</title>
+      <link>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</guid>
+      <description>Angular学习笔记&amp;ndash;Oauth2 为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是application/x-www-form-urlencoded格式的，而Angular的$http默认的处理方式是application/json,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：
+方式1-自定义请求处理，转化JSON为key=value&amp;amp;key=value的形式： $http({ method: &#39;POST&#39;, url: url, headers: {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;}, transformRequest: function(obj) { var str = []; for(var p in obj) str.push(encodeURIComponent(p) + &amp;quot;=&amp;quot; + encodeURIComponent(obj[p])); return str.join(&amp;quot;&amp;amp;&amp;quot;); }, data: {username: $scope.userName, password: $scope.password} }).success(function () {}); 方式2-使用encodeURIComponent直接拼接 $http.post(loginUrl, &amp;quot;userName=&amp;quot; + encodeURIComponent(email) + &amp;quot;&amp;amp;password=&amp;quot; + encodeURIComponent(password) + &amp;quot;&amp;amp;grant_type=password&amp;quot; ).success(function (data) { 方式3-使用$httpParamSerializerJQLike或$httpParamSerializer $httpParamSerializerJQLike - a serializer inspired by jQuery&#39;s .param() (recommended) $httpParamSerializer - a serializer used by Angular itself for GET requests</description>
+    </item>
+    
+    <item>
       <title>Python多环境管理</title>
       <link>https://hui1hui2hui3.github.io/blog/post/tech/python%E5%A4%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</link>
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
@@ -757,17 +767,6 @@ $setValidity(validationErrorKey, isValid); Parameters    Param Type Details     
       <description>select学习笔记  重点： 生成select的两种方式ng-options和ng-model 区别： ng-model绑定的值会转换为string，如果想要绑定不是string的值可以自己用directive convert
  官方例子（绑定数字） &amp;lt;select ng-model=&amp;#34;model.id&amp;#34; convert-to-number&amp;gt; &amp;lt;option value=&amp;#34;0&amp;#34;&amp;gt;Zero&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;1&amp;#34;&amp;gt;One&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;2&amp;#34;&amp;gt;Two&amp;lt;/option&amp;gt; &amp;lt;/select&amp;gt; {{ model }} angular.module(&amp;#39;nonStringSelect&amp;#39;, []) .run(function($rootScope) { $rootScope.model = { id: 2 }; }) .directive(&amp;#39;convertToNumber&amp;#39;, function() { return { require: &amp;#39;ngModel&amp;#39;, link: function(scope, element, attrs, ngModel) { ngModel.$parsers.push(function(val) { return parseInt(val, 10); }); ngModel.$formatters.push(function(val) { return &amp;#39;&amp;#39; + val; }); } }; });  解释： 如果不用convertToNumber指令，则会出现select选中空白的情况，因为两者不相等。
  完整例子 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html ng-app=&amp;#34;selectModule&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;select&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hui1hui2hui3.github.io/blog/post/angular/angular%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-oauth2/</guid>
-      <description>Angular学习笔记&amp;ndash;Oauth2 标签（空格分隔）： Angular Oauth2
- 为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是application/x-www-form-urlencoded格式的，而Angular的$http默认的处理方式是application/json,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：
-方式1-自定义请求处理，转化JSON为key=value&amp;amp;key=value的形式： $http({ method: &#39;POST&#39;, url: url, headers: {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;}, transformRequest: function(obj) { var str = []; for(var p in obj) str.push(encodeURIComponent(p) + &amp;quot;=&amp;quot; + encodeURIComponent(obj[p])); return str.join(&amp;quot;&amp;amp;&amp;quot;); }, data: {username: $scope.userName, password: $scope.password} }).success(function () {}); 方式2-使用encodeURIComponent直接拼接 $http.post(loginUrl, &amp;quot;userName=&amp;quot; + encodeURIComponent(email) + &amp;quot;&amp;amp;password=&amp;quot; + encodeURIComponent(password) + &amp;quot;&amp;amp;grant_type=password&amp;quot; ).success(function (data) { 方式3-使用$httpParamSerializerJQLike或$httpParamSerializer $httpParamSerializerJQLike - a serializer inspired by jQuery&#39;s .param() (recommended) $httpParamSerializer - a serializer used by Angular itself for GET requests</description>
     </item>
     
   </channel>

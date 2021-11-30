@@ -8,7 +8,7 @@
 		<meta name="referrer" content="never">
 ﻿		<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
 		<meta name="google-site-verification" content="dPRIGT6c9t7qlyu4J5tqBvaNa5kOCUrxT7H4m6x6LK8" />
-        <title></title>
+        <title>Angular学习笔记--Oauth2</title>
         
         <style>
 
@@ -93,7 +93,7 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#"></a>
+                    <a class="navbar-brand visible-xs" href="#">Angular学习笔记--Oauth2</a>
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -129,15 +129,17 @@
 <main>
 
     <div>
-        <h2></h2>
-        <h5>January 1, 0001</h5>
+        <h2>Angular学习笔记--Oauth2</h2>
+        <h5>October 16, 2019</h5>
         
+<a href="https://hui1hui2hui3.github.io/blog/tags/angular"><kbd class="item-tag">Angular</kbd></a>
+
+<a href="https://hui1hui2hui3.github.io/blog/tags/oauth2"><kbd class="item-tag">Oauth2</kbd></a>
+
 
     </div>
 
     <div align="start" class="content"><h1 id="angular学习笔记--oauth2">Angular学习笔记&ndash;Oauth2</h1>
-<p>标签（空格分隔）： Angular Oauth2</p>
-<hr>
 <p>为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是<code>application/x-www-form-urlencoded</code>格式的，而Angular的$http默认的处理方式是<code>application/json</code>,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：</p>
 <h2 id="方式1-自定义请求处理转化json为keyvaluekeyvalue的形式">方式1-自定义请求处理，转化JSON为key=value&amp;key=value的形式：</h2>
 <pre><code>$http({

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "FFMepg使用笔记"
 date: 2017-05-22
 tags: ["ffmepg"]

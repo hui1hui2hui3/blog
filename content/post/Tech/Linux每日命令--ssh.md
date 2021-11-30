@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Linux每日命令--ssh"
 date: 2017-04-12
 tags: ["Linux"]

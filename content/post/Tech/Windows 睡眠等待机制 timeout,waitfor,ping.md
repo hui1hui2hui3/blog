@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Windows 睡眠等待机制 timeout,waitfor,ping"
 date: 2017-10-30
 tags: ["Windows","Batch"]

@@ -1,8 +1,10 @@
-﻿# Angular学习笔记--Oauth2
-
-标签（空格分隔）： Angular Oauth2
-
 ---
+title: "Angular学习笔记--Oauth2"
+date: 2019-10-16
+tags: ["Angular","Oauth2"]
+draft: false
+---
+ # Angular学习笔记--Oauth2
 
 为了代码的安全性和易用性需要Oauth2认证，我们知道Oauth2的获取Access_Token必须是`application/x-www-form-urlencoded`格式的，而Angular的$http默认的处理方式是`application/json`,这就导致请求无法成功，那要如何处理才能成功呢？看下面代码：
 

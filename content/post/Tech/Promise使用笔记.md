@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Promise使用笔记"
 date: 2016-10-14
 tags: ["NodeJs","Promise"]

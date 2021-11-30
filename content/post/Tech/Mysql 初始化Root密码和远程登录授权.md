@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Mysql 初始化Root密码和远程登录授权"
 date: 2017-04-19
 tags: ["Mysql"]

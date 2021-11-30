@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Linux每日命令--du,df"
 date: 2017-02-14
 tags: ["Linux"]

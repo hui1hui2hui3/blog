@@ -1,4 +1,4 @@
-﻿---
+---
 title: "如何查看git提交近期的所有的改动或新增的文件-Python实现"
 date: 2016-09-22
 tags: ["Git","Python"]

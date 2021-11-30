@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Windows Batch 编程--For，Exist"
 date: 2017-07-03
 tags: ["Batch"]

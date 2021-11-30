@@ -1,4 +1,4 @@
-﻿---
+---
 title: "如何在 Zsh 中使用 tab 键来补全 docker 和 docker-compose 命令"
 date: 2016-12-02
 tags: ["Zsh"]

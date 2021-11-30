@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Windows 查询进程和杀进程--taskkill,tasklist,tskill"
 date: 2017-05-22
 tags: ["Windows"]

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Windows 远程命令行控制--PsExec"
 date: 2017-07-19
 tags: ["Windows"]

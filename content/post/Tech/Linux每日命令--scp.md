@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Linux每日命令--scp"
 date: 2017-02-22
 tags: ["Linux"]

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Shell 编程入门笔记--运算"
 date: 2017-01-11
 tags: ["Shell"]

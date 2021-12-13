@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>电梯 on Rabbit&amp;Carrot</title>
+    <link>https://hui1hui2hui3.github.io/blog/tags/%E7%94%B5%E6%A2%AF/</link>
+    <description>Recent content in 电梯 on Rabbit&amp;Carrot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/%E7%94%B5%E6%A2%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在扶手电梯上是走还是站？</title>
+      <link>https://hui1hui2hui3.github.io/blog/post/life/%E7%94%B5%E6%A2%AF%E9%9A%BE%E9%A2%98/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hui1hui2hui3.github.io/blog/post/life/%E7%94%B5%E6%A2%AF%E9%9A%BE%E9%A2%98/</guid>
+      <description>正常电梯可以并行站立 2 个人通行，但在上班高峰时，电梯就被分成了 2 侧，一侧用于那些想要快速走过的人，一侧用于那些正常乘坐电梯的人。
+每次上下班通过电梯时看到拥堵的人群，总是忍不住去想，这种分成 2 侧的方案对于整体来说到底是快了还是慢了？第一感觉是不是觉得肯定有加速通道的快？
+我打算自己估算一下。
+01
+—
+前提准备
+**方案划分：**我把这两种方案起一个名字，方便后续说明，就叫：
+ 方案 1： 并行 2 人站立通过的方式
+ 方案 2：有加速通道的方式
+电梯速度：我自行通过站立和行走的方式，测量了 2 种方式通过电梯的时长，站立的时长大约为行走时的 2 倍，所以为了方便计算，我就这样定义速度：
+ 方案 1：站立通过速度为 1/s，也就是并行情况下，1s 可以通行 2 人
+ 方案 2：行走通过速度为 2/s，也就是并行情况下，1s 可以通行 4 人
+人员行走比率：我通过观察统计大致估算了一下比率为 30% 左右，这只是用来对比，不用很准。
+02
+—
+人数固定，哪种耗时最短？
+方案 1：人数 / 2 就是所需时间。
+方案 2：根据人员比率计算出总速度，然后求出总时间。
+得出结果：
+并行耗时 比率：1.00，速度：1.0，耗时：50.0 加速耗时 比率：0.30，速度：4.5，耗时：48.8 加速耗时 比率：0.40，速度：4.0，耗时：45.5 加速耗时 比率：0.50，速度：3.5，耗时：44.4 加速耗时 比率：0.90，速度：3.0，耗时：35.7 根据这个结果发现：
+方案 2：在加速比率为 30% 参与时，速度要站立的 4.</description>
+    </item>
+    
+  </channel>
+</rss>

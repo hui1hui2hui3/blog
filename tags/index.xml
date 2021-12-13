@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Rabbit&amp;Carrot</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hui1hui2hui3.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python</title>
+      <link>https://hui1hui2hui3.github.io/blog/tags/python/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hui1hui2hui3.github.io/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>生活</title>
+      <link>https://hui1hui2hui3.github.io/blog/tags/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hui1hui2hui3.github.io/blog/tags/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>电梯</title>
+      <link>https://hui1hui2hui3.github.io/blog/tags/%E7%94%B5%E6%A2%AF/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hui1hui2hui3.github.io/blog/tags/%E7%94%B5%E6%A2%AF/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>梦境</title>
@@ -17,15 +44,6 @@
       <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hui1hui2hui3.github.io/blog/tags/%E6%A2%A6%E5%A2%83/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>生活</title>
-      <link>https://hui1hui2hui3.github.io/blog/tags/%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://hui1hui2hui3.github.io/blog/tags/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     
@@ -53,15 +71,6 @@
       <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://hui1hui2hui3.github.io/blog/tags/oauth2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://hui1hui2hui3.github.io/blog/tags/python/</link>
-      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://hui1hui2hui3.github.io/blog/tags/python/</guid>
       <description></description>
     </item>
     
